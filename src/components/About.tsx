@@ -6,7 +6,7 @@ export function About() {
   const { t } = useI18n();
 
   return (
-    <section id="about" className="py-16 sm:py-20 lg:py-32 bg-white">
+    <section id="about" className="section-padding bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">

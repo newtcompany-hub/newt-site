@@ -17,6 +17,7 @@ export default {
         '18': '4.5rem',
         '22': '5.5rem',
         '15': '3.75rem',
+        '30': '7.5rem',
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-out',

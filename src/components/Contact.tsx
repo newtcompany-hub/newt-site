@@ -11,6 +11,7 @@ export function Contact() {
     email: '',
     message: '',
     budget: '',
+    source: '',
     consent: false
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -32,6 +33,9 @@ export function Contact() {
     }
     if (!formData.budget) {
       newErrors.budget = t.contact.form.required;
+    }
+    if (!formData.source) {
+      newErrors.source = t.contact.form.required;
     }
     if (!formData.consent) {
       newErrors.consent = t.contact.form.required;
@@ -56,6 +60,7 @@ export function Contact() {
 *Telefone:* ${formData.phone}
 *E-mail:* ${formData.email}
 *Orçamento:* ${formData.budget}
+*Como nos conheceu:* ${formData.source}
 
 ${formData.message ? `*Mensagem:* ${formData.message}` : ''}
 
@@ -72,8 +77,10 @@ Enviado através do site (${locale})`;
     }
   };
 
+  const sourceOptions = ['WhatsApp', 'YouTube', 'Instagram', 'TikTok', 'LinkedIn', 'Friends/Referral'];
+
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-gray-50">
+    <section id="contact" className="section-padding bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
@@ -99,7 +106,7 @@ Enviado através do site (${locale})`;
                   id="name"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg focus:ring-2 focus:ring-newt-red focus:border-newt-red transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.name ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={t.contact.form.name}
@@ -117,7 +124,7 @@ Enviado através do site (${locale})`;
                   id="company"
                   value={formData.company}
                   onChange={(e) => handleInputChange('company', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg focus:ring-2 focus:ring-newt-red focus:border-newt-red transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.company ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={t.contact.form.company}
@@ -135,7 +142,7 @@ Enviado através do site (${locale})`;
                   id="phone"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg focus:ring-2 focus:ring-newt-red focus:border-newt-red transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.phone ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={t.contact.form.phonePlaceholder}
@@ -153,7 +160,7 @@ Enviado através do site (${locale})`;
                   id="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg focus:ring-2 focus:ring-newt-red focus:border-newt-red transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.email ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={t.contact.form.emailPlaceholder}
@@ -172,7 +179,7 @@ Enviado através do site (${locale})`;
                 rows={3}
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
-                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-newt-red focus:border-newt-red transition-colors duration-200 resize-none font-inter text-sm sm:text-base sm:rows-4"
+                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg custom-focus transition-colors duration-200 resize-none font-inter text-sm sm:text-base sm:rows-4"
                 placeholder={t.contact.form.messagePlaceholder}
               ></textarea>
             </div>
@@ -186,7 +193,7 @@ Enviado através do site (${locale})`;
                 {t.contact.form.budgetOptions.map((option, index) => (
                   <label
                     key={index}
-                    className={`relative flex items-center p-3 sm:p-4 border rounded-lg cursor-pointer hover:bg-red-50 hover:border-newt-red transition-all duration-200 min-h-[48px] ${
+                    className={`relative flex items-center p-3 sm:p-4 border rounded-lg cursor-pointer hover:bg-red-50 hover:border-newt-red transition-all duration-200 min-h-[48px] custom-focus ${
                       formData.budget === option ? 'bg-red-50 border-newt-red' : 'border-gray-300'
                     }`}
                   >
@@ -212,9 +219,30 @@ Enviado através do site (${locale})`;
               {errors.budget && <p className="text-newt-red text-sm mt-2 font-inter">{errors.budget}</p>}
             </div>
 
+            {/* How did you hear about us */}
+            <div className="mb-4 sm:mb-6">
+              <label htmlFor="source" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                How did you hear about us? *
+              </label>
+              <select
+                id="source"
+                value={formData.source}
+                onChange={(e) => handleInputChange('source', e.target.value)}
+                className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
+                  errors.source ? 'border-newt-red' : 'border-gray-300'
+                }`}
+              >
+                <option value="">Select an option</option>
+                {sourceOptions.map((option) => (
+                  <option key={option} value={option}>{option}</option>
+                ))}
+              </select>
+              {errors.source && <p className="text-newt-red text-sm mt-1 font-inter">{errors.source}</p>}
+            </div>
+
             {/* Consent */}
             <div className="mb-6 sm:mb-8">
-              <label className="flex items-start space-x-2 sm:space-x-3 cursor-pointer group">
+              <label className="flex items-start space-x-2 sm:space-x-3 cursor-pointer group custom-focus">
                 <div className="relative mt-0.5 sm:mt-1 flex-shrink-0">
                   <input
                     type="checkbox"
@@ -238,7 +266,7 @@ Enviado através do site (${locale})`;
             {/* Submit Button */}
             <button
               type="submit"
-              className="group w-full bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter min-h-[52px] sm:min-h-[56px]"
+              className="group w-full bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg flex items-center justify-center space-x-2 custom-focus font-inter min-h-[52px] sm:min-h-[56px]"
             >
               <span>{t.contact.form.submit}</span>
               <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" />

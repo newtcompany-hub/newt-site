@@ -47,7 +47,7 @@ export function Header() {
           <div className="flex-shrink-0">
             <button
               onClick={() => scrollToSection('home')}
-              className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm p-1 -ml-1"
+              className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200 custom-focus rounded-sm p-1 -ml-1"
               aria-label="Newt Company - Voltar ao início"
             >
               <img 
@@ -60,12 +60,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm px-2 py-1">{t.nav.home}</button>
-            <button onClick={() => scrollToSection('about')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm px-2 py-1">{t.nav.about}</button>
-            <button onClick={() => scrollToSection('services')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm px-2 py-1">{t.nav.services}</button>
-            <button onClick={() => scrollToSection('products')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm px-2 py-1">{t.nav.products}</button>
-            <button onClick={() => scrollToSection('faq')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm px-2 py-1">{t.nav.faq}</button>
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm px-2 py-1">{t.nav.contact}</button>
+            <button onClick={() => scrollToSection('home')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter custom-focus rounded-sm px-2 py-1">{t.nav.home}</button>
+            <button onClick={() => scrollToSection('about')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter custom-focus rounded-sm px-2 py-1">{t.nav.about}</button>
+            <button onClick={() => scrollToSection('services')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter custom-focus rounded-sm px-2 py-1">{t.nav.services}</button>
+            <button onClick={() => scrollToSection('products')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter custom-focus rounded-sm px-2 py-1">{t.nav.products}</button>
+            <button onClick={() => scrollToSection('faq')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter custom-focus rounded-sm px-2 py-1">{t.nav.faq}</button>
+            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter custom-focus rounded-sm px-2 py-1">{t.nav.contact}</button>
           </nav>
 
           {/* Desktop CTA and Language Selector */}
@@ -74,7 +74,7 @@ export function Header() {
             <div className="relative">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center space-x-2 text-white hover:text-newt-red transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm px-2 py-1"
+                className="flex items-center space-x-2 text-white hover:text-newt-red transition-colors duration-200 custom-focus rounded-sm px-2 py-1"
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4" />
@@ -87,7 +87,7 @@ export function Header() {
                     <button
                       key={loc}
                       onClick={() => handleLocaleChange(loc)}
-                      className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-inset font-inter ${
+                      className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg custom-focus font-inter ${
                         locale === loc ? 'text-newt-red bg-red-50' : 'text-gray-700'
                       }`}
                     >
@@ -114,7 +114,7 @@ export function Header() {
             <div className="relative">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center space-x-1 text-white hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[44px] min-w-[44px] justify-center"
+                className="flex items-center space-x-1 text-white hover:text-newt-red transition-colors duration-200 p-2 custom-focus rounded-sm min-h-[44px] min-w-[44px] justify-center"
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4" />
@@ -126,7 +126,7 @@ export function Header() {
                     <button
                       key={loc}
                       onClick={() => handleLocaleChange(loc)}
-                      className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-inset font-inter ${
+                      className={`block w-full text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg custom-focus font-inter ${
                         locale === loc ? 'text-newt-red bg-red-50' : 'text-gray-700'
                       }`}
                     >
@@ -139,7 +139,7 @@ export function Header() {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="text-white hover:text-newt-red transition-colors duration-200 p-2 custom-focus rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Menu"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -151,12 +151,12 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden border-t border-gray-800 bg-newt-black/98 backdrop-blur-sm">
             <nav className="py-6 space-y-1">
-              <button onClick={() => scrollToSection('home')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[48px]">{t.nav.home}</button>
-              <button onClick={() => scrollToSection('about')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[48px]">{t.nav.about}</button>
-              <button onClick={() => scrollToSection('services')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[48px]">{t.nav.services}</button>
-              <button onClick={() => scrollToSection('products')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[48px]">{t.nav.products}</button>
-              <button onClick={() => scrollToSection('faq')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[48px]">{t.nav.faq}</button>
-              <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black rounded-sm min-h-[48px]">{t.nav.contact}</button>
+              <button onClick={() => scrollToSection('home')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter custom-focus rounded-sm min-h-[48px]">{t.nav.home}</button>
+              <button onClick={() => scrollToSection('about')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter custom-focus rounded-sm min-h-[48px]">{t.nav.about}</button>
+              <button onClick={() => scrollToSection('services')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter custom-focus rounded-sm min-h-[48px]">{t.nav.services}</button>
+              <button onClick={() => scrollToSection('products')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter custom-focus rounded-sm min-h-[48px]">{t.nav.products}</button>
+              <button onClick={() => scrollToSection('faq')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter custom-focus rounded-sm min-h-[48px]">{t.nav.faq}</button>
+              <button onClick={() => scrollToSection('contact')} className="block w-full text-left text-white hover:text-newt-red hover:bg-gray-900 transition-all duration-200 py-3 px-4 font-medium font-inter custom-focus rounded-sm min-h-[48px]">{t.nav.contact}</button>
               <div className="pt-6 px-4 border-t border-gray-800 mt-4">
                 <a
                   href="https://wa.me/5591998382662"

@@ -13,18 +13,14 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-newt-black flex items-center justify-center overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, #E11D2A 0%, transparent 50%), 
-                           radial-gradient(circle at 75% 75%, #E11D2A 0%, transparent 50%)`,
-          backgroundSize: '400px 400px'
-        }}></div>
+    <section id="home" className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden py-15 sm:py-20 lg:py-30">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="hero-animation"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in pt-16 sm:pt-0">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-heading font-poppins animate-slide-up px-2">
             {t.hero.headline}
@@ -54,13 +50,6 @@ export function Hero() {
               {t.hero.cta2}
             </button>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
