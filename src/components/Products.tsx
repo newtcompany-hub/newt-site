@@ -106,31 +106,16 @@ export function Products() {
                   {product.desc}
                 </p>
                 
-                {!product.comingSoon && (
-                  <ul className="space-y-2 sm:space-y-3">
-                    {product.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
-                        <div className="w-2 h-2 bg-newt-red rounded-full group-hover:scale-125 transition-transform duration-200"></div>
-                        <span className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-300">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                
-                {product.comingSoon && (
-                  <ul className="space-y-2 sm:space-y-3">
-                    {product.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
-                        <div className="w-2 h-2 bg-newt-red rounded-full group-hover:scale-125 transition-transform duration-200"></div>
-                        <span className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-300">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <ul className="space-y-2 sm:space-y-3">
+                  {product.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
+                      <div className="w-2 h-2 bg-newt-red rounded-full group-hover:scale-125 transition-transform duration-200"></div>
+                      <span className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-300">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}

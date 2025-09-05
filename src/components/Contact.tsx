@@ -240,6 +240,27 @@ Enviado através do site (${locale})`;
               {errors.source && <p className="text-newt-red text-sm mt-1 font-inter">{errors.source}</p>}
             </div>
 
+            {/* How did you hear about us */}
+            <div className="mb-4 sm:mb-6">
+              <label htmlFor="source" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                How did you hear about us? *
+              </label>
+              <select
+                id="source"
+                value={formData.source}
+                onChange={(e) => handleInputChange('source', e.target.value)}
+                className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
+                  errors.source ? 'border-newt-red' : 'border-gray-300'
+                }`}
+              >
+                <option value="">Select an option</option>
+                {sourceOptions.map((option) => (
+                  <option key={option} value={option}>{option}</option>
+                ))}
+              </select>
+              {errors.source && <p className="text-newt-red text-sm mt-1 font-inter">{errors.source}</p>}
+            </div>
+
             {/* Consent */}
             <div className="mb-6 sm:mb-8">
               <label className="flex items-start space-x-2 sm:space-x-3 cursor-pointer group custom-focus">
