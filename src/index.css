@@ -3,57 +3,6 @@
 @tailwind utilities;
 
 /* Hero Background Animation */
-.hero-section {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.animated-gradient-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: linear-gradient(45deg, #ff4e00, #ff0000, #4d0000, #000000);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px;
-}
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .animated-gradient-background {
-    animation: none;
-    background: linear-gradient(45deg, #ff4e00, #ff0000, #4d0000, #000000);
-  }
-}
 
 /* Custom animations */
 @keyframes fadeIn {

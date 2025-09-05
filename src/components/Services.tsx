@@ -57,15 +57,21 @@ export function Services() {
           <div className="group relative bg-white hover:bg-newt-black p-6 sm:p-8 rounded-2xl border border-gray-200 hover:border-newt-red card-hover">
             <div className="space-y-4 sm:space-y-6">
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-300 font-poppins leading-heading">
-                Co-produção
+                {locale === 'en' ? 'Content Co-Production' : 'Co-produção'}
               </h3>
               
               <p className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 leading-body font-inter transition-colors duration-300">
-                Produção estratégica de conteúdos com execução ponta a ponta para acelerar autoridade e vendas.
+                {locale === 'en' 
+                  ? 'End-to-end strategic content production to accelerate authority building and sales growth.'
+                  : 'Produção estratégica de conteúdos com execução ponta a ponta para acelerar autoridade e vendas.'
+                }
               </p>
               
               <ul className="space-y-2 sm:space-y-3">
-                {['Planejamento editorial', 'Roteiro & captação', 'Edição e pós', 'Distribuição multiplataforma', 'Cortes para Reels/Shorts', 'Métricas e otimização contínua'].map((bullet, bulletIndex) => (
+                {(locale === 'en' 
+                  ? ['Editorial planning', 'Script & filming', 'Editing & post-production', 'Multi-platform distribution', 'Reels/Shorts creation', 'Analytics & optimization']
+                  : ['Planejamento editorial', 'Roteiro & captação', 'Edição e pós', 'Distribuição multiplataforma', 'Cortes para Reels/Shorts', 'Métricas e otimização contínua']
+                ).map((bullet, bulletIndex) => (
                   <li key={bulletIndex} className="flex items-center space-x-2 sm:space-x-3">
                     <div className="w-2 h-2 bg-newt-red rounded-full group-hover:scale-125 transition-transform duration-200"></div>
                     <span className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 font-inter transition-colors duration-300">

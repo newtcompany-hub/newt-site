@@ -16,7 +16,7 @@ export const translations = {
     
     // Hero
     hero: {
-      headline: 'Sites e automações que vendem todos os dias.',
+      headline: 'Fazemos empresas venderem mais com automações, webdesign, tráfego pago e estratégias exclusivas.',
       subheadline: 'Estúdio criativo que une web design premium, automação inteligente e tráfego qualificado para acelerar seus resultados.',
       cta1: 'Falar no WhatsApp',
       cta2: 'Ver Serviços'
@@ -200,7 +200,7 @@ export const translations = {
     
     // Hero
     hero: {
-      headline: 'Sites e automações que vendem todos os dias.',
+      headline: 'Fazemos empresas venderem mais com automações, webdesign, tráfego pago e estratégias exclusivas.',
       subheadline: 'Estúdio criativo que une web design premium, automação inteligente e tráfego qualificado para acelerar os seus resultados.',
       cta1: 'Falar no WhatsApp',
       cta2: 'Ver Serviços'
@@ -236,28 +236,28 @@ export const translations = {
       subtitle: 'Soluções completas para acelerar o seu crescimento digital',
       items: [
         {
-          title: 'Tunning Business',
-          desc: 'União dos nossos serviços conforme o foco da sua empresa. "Tunamos" empresas ao máximo potencial.',
+          title: 'Business Optimization',
+          desc: 'Complete business transformation combining our services. We optimize companies to their maximum potential.',
           bullets: ['Diagnóstico 360°', 'Plano de upgrades', 'Execução ágil', 'Métricas claras']
         },
         {
-          title: 'Gestão de Automação',
-          desc: 'Automatize processos e vendas com inteligência.',
+          title: 'Marketing Automation',
+          desc: 'Streamline your sales process with intelligent automation systems.',
           bullets: ['Bots WhatsApp e email', 'Funis de conversão', 'Integrações CRM', 'Contratos e faturação']
         },
         {
-          title: 'Gestão de Tráfego',
-          desc: 'Atraia visitantes qualificados e converta mais.',
+          title: 'Digital Advertising',
+          desc: 'Drive qualified traffic and boost your conversion rates.',
           bullets: ['Planeamento estratégico', 'Criativos de alta conversão', 'Testes A/B', 'Relatórios detalhados']
         },
         {
           title: 'Web Design',
-          desc: 'Sites que impressionam e convertem visitantes em clientes.',
+          desc: 'Stunning websites that turn visitors into paying customers.',
           bullets: ['UX/UI premium', 'SEO otimizado', 'Performance máxima', 'Responsivo total']
         },
         {
-          title: 'Consultoria Estratégica',
-          desc: 'Diagnóstico profissional e plano acionável.',
+          title: 'Strategic Consulting',
+          desc: 'Professional business analysis with actionable growth plans.',
           bullets: ['Análise completa', 'Estratégia personalizada', 'Plano de ação', 'Investimento acessível']
         }
       ]
@@ -269,24 +269,24 @@ export const translations = {
       subtitle: 'Ferramentas proprietárias para potencializar o seu negócio',
       items: [
         {
-          title: 'NewtMind',
-          desc: 'Criador de conteúdo 24h com IA.',
-          features: ['Roteiros automáticos', 'Thumbnails personalizadas', 'Ideias no hype', 'Calendário editorial']
+          title: 'ContentAI Pro',
+          desc: '24/7 AI-powered content creation suite.',
+          features: ['Auto-generated scripts', 'Custom thumbnails', 'Trending topics', 'Content calendar']
         },
         {
-          title: 'NewtFlows',
-          desc: 'Automações de processos empresariais.',
-          features: ['Atendimento automático', 'Suporte inteligente', 'CRM integrado', 'Vendas automatizadas']
+          title: 'FlowMaster',
+          desc: 'Complete business process automation platform.',
+          features: ['Smart customer service', 'Intelligent support', 'Integrated CRM', 'Sales automation']
         },
         {
-          title: 'SaaS #1',
-          desc: 'Em breve - Revolucione a sua gestão.',
+          title: 'FinanceFlow',
+          desc: 'Coming soon - Revolutionary financial management.',
           features: ['Coming soon'],
           comingSoon: true
         },
         {
-          title: 'SaaS #2',
-          desc: 'Em breve - Potencialize resultados.',
+          title: 'LeadEngine',
+          desc: 'Coming soon - Supercharge your lead generation.',
           features: ['Coming soon'],
           comingSoon: true
         }
@@ -299,36 +299,36 @@ export const translations = {
       subtitle: 'Esclareça as suas dúvidas sobre os nossos serviços',
       items: [
         {
-          question: 'Qual o prazo médio de entrega?',
-          answer: 'Sites: 7-15 dias úteis. Automações: 5-10 dias. Consultoria: 2-5 dias. Os prazos podem variar conforme a complexidade.'
+          question: 'What are your typical delivery times?',
+          answer: 'Websites: 7-15 business days. Automations: 5-10 days. Consulting: 2-5 days. Timelines may vary based on project complexity.'
         },
         {
-          question: 'Quantas revisões estão incluídas?',
-          answer: 'Incluímos até 3 rondas de revisões sem custo adicional. Mudanças estruturais são avaliadas separadamente.'
+          question: 'How many revisions are included?',
+          answer: 'We include up to 3 revision rounds at no extra cost. Major structural changes are quoted separately.'
         },
         {
-          question: 'Como começamos o projeto?',
-          answer: 'Conversamos via WhatsApp, fazemos o diagnóstico inicial, apresentamos a proposta e, aprovada, iniciamos o desenvolvimento.'
+          question: 'How do we get started?',
+          answer: 'We chat via WhatsApp, conduct initial analysis, present our proposal, and once approved, begin development immediately.'
         },
         {
-          question: 'Que formas de pagamento aceitam?',
-          answer: 'Transferência bancária, cartão de crédito e parcelamos projectos maiores. Entrada de 50% para iniciar.'
+          question: 'What payment methods do you accept?',
+          answer: 'Bank transfers, credit cards, and we offer payment plans for larger projects. 50% deposit required to start.'
         },
         {
-          question: 'Oferecem suporte pós-entrega?',
-          answer: 'Sim! Incluímos 30 dias de suporte gratuito. Depois, oferecemos planos mensais de manutenção.'
+          question: 'Do you provide post-launch support?',
+          answer: 'Absolutely! We include 30 days of complimentary support, followed by optional monthly maintenance plans.'
         },
         {
-          question: 'Como garantem a segurança dos meus dados?',
-          answer: 'Seguimos o RGPD rigorosamente. Dados encriptados, acesso restrito e políticas claras de privacidade.'
+          question: 'How do you ensure data security?',
+          answer: 'We strictly follow GDPR/CCPA regulations. All data is encrypted, access is restricted, and we maintain clear privacy policies.'
         }
       ]
     },
     
     // Contact
     contact: {
-      title: 'Entre em Contacto',
-      subtitle: 'Vamos conversar sobre como podemos acelerar os seus resultados',
+      title: 'Get In Touch',
+      subtitle: 'Let\'s discuss how we can accelerate your business growth',
       form: {
         name: 'Nome',
         company: 'Nome da empresa',
@@ -384,7 +384,7 @@ export const translations = {
     
     // Hero
     hero: {
-      headline: 'Websites and automations that sell every day.',
+      headline: 'We help companies sell more with automations, web design, paid traffic and exclusive strategies.',
       subheadline: 'Creative studio that combines premium web design, intelligent automation and qualified traffic to accelerate your results.',
       cta1: 'Chat on WhatsApp',
       cta2: 'See Services'
@@ -522,21 +522,21 @@ export const translations = {
         emailPlaceholder: 'your@email.com',
         message: 'Message (optional)',
         messagePlaceholder: 'Tell us about your project...',
-        budget: 'What\'s your budget range?',
+        budget: 'What\'s your investment range?',
         budgetOptions: [
           'Up to $850',
           'Between $1,000 and $3,000',
           'Above $3,000'
         ],
-        submit: 'Talk to a Consultant',
-        consent: 'By submitting, you agree to our Privacy Policy (GDPR/LGPD).',
+        submit: 'Get Free Consultation',
+        consent: 'By submitting, you agree to our Privacy Policy and Terms of Service.',
         required: 'Required field'
       }
     },
     
     // Footer
     footer: {
-      tagline: 'Websites and automations that accelerate results',
+      tagline: 'Digital solutions that drive real business growth',
       quickLinks: 'Quick Links',
       legal: 'Legal',
       contact: 'Contact',

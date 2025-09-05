@@ -14,12 +14,25 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden hero-padding">
-      {/* Animated Background */}
-      <div className="hero-section">
-        <div className="animated-gradient-background"></div>
+      {/* Enhanced Animated Background with Artistic Blur */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-900 via-red-900 to-black opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-800 via-orange-800 to-black opacity-80 animate-pulse"></div>
+        <div 
+          className="absolute inset-0 opacity-60"
+          style={{
+            background: `
+              radial-gradient(ellipse 800px 600px at 20% 30%, rgba(180, 50, 20, 0.4) 0%, transparent 50%),
+              radial-gradient(ellipse 600px 800px at 80% 70%, rgba(120, 30, 10, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse 400px 400px at 50% 50%, rgba(200, 80, 40, 0.2) 0%, transparent 50%)
+            `,
+            filter: 'blur(40px)',
+            animation: 'heroFlow 10s ease-in-out infinite'
+          }}
+        ></div>
       </div>
 
-      <div className="hero-content container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex items-center justify-center min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex items-center justify-center min-h-screen">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-heading font-poppins animate-slide-up px-2">

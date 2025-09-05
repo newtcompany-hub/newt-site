@@ -26,27 +26,35 @@ export function Products() {
 
   const productData = [
     {
-      title: 'NewtMind',
-      desc: 'Criador de conteúdo 24h com IA.',
-      features: ['Roteiros automáticos', 'Thumbnails personalizadas', 'Ideias no hype', 'Calendário editorial'],
+      title: locale === 'en' ? 'ContentAI Pro' : 'NewtMind',
+      desc: locale === 'en' ? '24/7 AI-powered content creation suite.' : 'Criador de conteúdo 24h com IA.',
+      features: locale === 'en' 
+        ? ['Auto-generated scripts', 'Custom thumbnails', 'Trending topics', 'Content calendar']
+        : ['Roteiros automáticos', 'Thumbnails personalizadas', 'Ideias no hype', 'Calendário editorial'],
       comingSoon: false
     },
     {
-      title: 'NewtFlows',
-      desc: 'Automações de processos empresariais.',
-      features: ['Atendimento automático', 'Suporte inteligente', 'CRM integrado', 'Vendas automatizadas'],
+      title: locale === 'en' ? 'FlowMaster' : 'NewtFlows',
+      desc: locale === 'en' ? 'Complete business process automation platform.' : 'Automações de processos empresariais.',
+      features: locale === 'en'
+        ? ['Smart customer service', 'Intelligent support', 'Integrated CRM', 'Sales automation']
+        : ['Atendimento automático', 'Suporte inteligente', 'CRM integrado', 'Vendas automatizadas'],
       comingSoon: false
     },
     {
-      title: 'FinZap',
-      desc: 'SaaS financeiro via WhatsApp.',
-      features: ['Controle de entradas e saídas', 'Emissão de cobranças no WhatsApp', 'Relatórios automáticos', 'Integração com planilhas'],
+      title: locale === 'en' ? 'FinanceFlow' : 'FinZap',
+      desc: locale === 'en' ? 'Revolutionary financial management SaaS.' : 'SaaS financeiro via WhatsApp.',
+      features: locale === 'en'
+        ? ['Income & expense tracking', 'WhatsApp billing', 'Automated reports', 'Spreadsheet integration']
+        : ['Controle de entradas e saídas', 'Emissão de cobranças no WhatsApp', 'Relatórios automáticos', 'Integração com planilhas'],
       comingSoon: true
     },
     {
-      title: 'LeadForge',
-      desc: 'Prospecção e captação de leads.',
-      features: ['Busca e qualificação de leads', 'Captura multicanal (form/WhatsApp)', 'Enriquecimento de contatos', 'Pipeline e follow-ups automáticos'],
+      title: locale === 'en' ? 'LeadEngine' : 'LeadForge',
+      desc: locale === 'en' ? 'Advanced lead generation and prospecting.' : 'Prospecção e captação de leads.',
+      features: locale === 'en'
+        ? ['Lead search & qualification', 'Multi-channel capture', 'Contact enrichment', 'Automated pipeline & follow-ups']
+        : ['Busca e qualificação de leads', 'Captura multicanal (form/WhatsApp)', 'Enriquecimento de contatos', 'Pipeline e follow-ups automáticos'],
       comingSoon: true
     }
   ];
