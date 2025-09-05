@@ -13,13 +13,13 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden hero-padding">
+    <section id="home" className="relative min-h-screen bg-black overflow-hidden hero-padding">
       {/* Animated Background */}
-      <div className="absolute inset-0">
-        <div className="hero-gradient-animation"></div>
+      <div className="hero-section">
+        <div className="animated-gradient-background"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div className="hero-content container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex items-center justify-center min-h-screen">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-heading font-poppins animate-slide-up px-2">

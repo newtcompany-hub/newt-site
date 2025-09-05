@@ -32,9 +32,9 @@ export function Header() {
   };
 
   const localeLabels = {
-    'pt-BR': '🇧🇷 PT-BR',
-    'pt-PT': '🇵🇹 PT-PT', 
-    'en': '🇺🇸 EN'
+    'pt-BR': '🇧🇷',
+    'pt-PT': '🇵🇹', 
+    'en': '🇺🇸'
   };
 
   return (
