@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
 
 export function Services() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <section id="services" className="section-padding bg-gray-50">

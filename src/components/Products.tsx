@@ -2,7 +2,7 @@ import React from 'react';
 import { useI18n } from '../hooks/useI18n';
 
 export function Products() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const getProductIcon = (index: number) => {
     const icons = [
