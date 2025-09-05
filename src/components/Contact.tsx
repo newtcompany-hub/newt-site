@@ -12,6 +12,7 @@ export function Contact() {
     message: '',
     budget: '',
     source: '',
+    sourceOther: '',
     consent: false
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -20,22 +21,37 @@ export function Contact() {
     const newErrors: Record<string, string> = {};
     
     if (!formData.name.trim()) {
-      newErrors.name = t.contact.form.required;
+      newErrors.name = locale === 'pt-BR' ? 'Precisamos do seu nome.' : 
+                      locale === 'pt-PT' ? 'Precisamos do seu nome.' : 
+                      'We need your name.';
     }
     if (!formData.company.trim()) {
-      newErrors.company = t.contact.form.required;
+      newErrors.company = locale === 'pt-BR' ? 'Informe o nome da empresa (ou "Profissional Autônomo").' :
+                         locale === 'pt-PT' ? 'Informe o nome da empresa (ou "Profissional Autónomo").' :
+                         'Please provide company name (or "Freelancer").';
     }
     if (!formData.phone.trim()) {
-      newErrors.phone = t.contact.form.required;
+      newErrors.phone = locale === 'pt-BR' ? 'Coloque um número válido com DDD.' :
+                       locale === 'pt-PT' ? 'Coloque um número válido.' :
+                       'Please provide a valid phone number.';
     }
     if (!formData.email.trim()) {
-      newErrors.email = t.contact.form.required;
+      newErrors.email = locale === 'pt-BR' ? 'Digite um e‑mail válido.' :
+                       locale === 'pt-PT' ? 'Digite um email válido.' :
+                       'Please enter a valid email.';
     }
     if (!formData.budget) {
       newErrors.budget = t.contact.form.required;
     }
     if (!formData.source) {
-      newErrors.source = t.contact.form.required;
+      newErrors.source = locale === 'pt-BR' ? 'Selecione como nos conheceu.' :
+                        locale === 'pt-PT' ? 'Selecione como nos conheceu.' :
+                        'Please select how you heard about us.';
+    }
+    if (formData.source === 'Outro (vou explicar)' && !formData.sourceOther.trim()) {
+      newErrors.sourceOther = locale === 'pt-BR' ? 'Por favor, explique como nos conheceu.' :
+                             locale === 'pt-PT' ? 'Por favor, explique como nos conheceu.' :
+                             'Please explain how you heard about us.';
     }
     if (!formData.consent) {
       newErrors.consent = t.contact.form.required;
@@ -53,14 +69,17 @@ export function Contact() {
     }
 
     // Create WhatsApp message
+    const sourceText = formData.source === 'Outro (vou explicar)' ? 
+      `${formData.source}: ${formData.sourceOther}` : formData.source;
+
     const message = `*Nova solicitação de proposta*
 
 *Nome:* ${formData.name}
 *Empresa:* ${formData.company}
-*Telefone:* ${formData.phone}
+*WhatsApp:* ${formData.phone}
 *E-mail:* ${formData.email}
 *Orçamento:* ${formData.budget}
-*Como nos conheceu:* ${formData.source}
+*Como nos conheceu:* ${sourceText}
 
 ${formData.message ? `*Mensagem:* ${formData.message}` : ''}
 
@@ -77,7 +96,63 @@ Enviado através do site (${locale})`;
     }
   };
 
-  const sourceOptions = ['WhatsApp', 'YouTube', 'Instagram', 'TikTok', 'LinkedIn', 'Friends/Referral'];
+  const getSourceOptions = () => {
+    if (locale === 'pt-BR' || locale === 'pt-PT') {
+      return [
+        'Indicação / Amigos',
+        'Instagram',
+        'LinkedIn', 
+        'YouTube',
+        'Google',
+        'TikTok',
+        'WhatsApp',
+        'Outro (vou explicar)'
+      ];
+    } else {
+      return [
+        'Friends/Referral',
+        'Instagram',
+        'LinkedIn',
+        'YouTube', 
+        'Google',
+        'TikTok',
+        'WhatsApp',
+        'Other (will explain)'
+      ];
+    }
+  };
+
+  const getSourceLabel = () => {
+    if (locale === 'pt-BR' || locale === 'pt-PT') {
+      return 'Como nos conheceu?';
+    } else {
+      return 'How did you hear about us?';
+    }
+  };
+
+  const getSourcePlaceholder = () => {
+    if (locale === 'pt-BR' || locale === 'pt-PT') {
+      return 'Selecione uma opção';
+    } else {
+      return 'Select an option';
+    }
+  };
+
+  const getOtherLabel = () => {
+    if (locale === 'pt-BR' || locale === 'pt-PT') {
+      return 'Conte em uma frase';
+    } else {
+      return 'Tell us in one sentence';
+    }
+  };
+
+  const getOtherPlaceholder = () => {
+    if (locale === 'pt-BR' || locale === 'pt-PT') {
+      return 'Ex.: Vi um post no fórum X';
+    } else {
+      return 'Ex.: Saw a post on forum X';
+    }
+  };
 
   return (
     <section id="contact" className="section-padding bg-gray-50">
@@ -99,7 +174,7 @@ Enviado através do site (${locale})`;
               {/* Name */}
               <div>
                 <label htmlFor="name" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
-                  {t.contact.form.name} *
+                  {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nome' : 'Name'} *
                 </label>
                 <input
                   type="text"
@@ -109,15 +184,18 @@ Enviado através do site (${locale})`;
                   className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.name ? 'border-newt-red' : 'border-gray-300'
                   }`}
-                  placeholder={t.contact.form.name}
+                  placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Como devemos te chamar?' : 'What should we call you?'}
                 />
                 {errors.name && <p className="text-newt-red text-sm mt-1 font-inter">{errors.name}</p>}
+                <p className="text-xs text-gray-500 mt-1 font-inter">
+                  {locale === 'pt-BR' || locale === 'pt-PT' ? 'Pode ser só o primeiro nome.' : 'First name is fine.'}
+                </p>
               </div>
 
               {/* Company */}
               <div>
                 <label htmlFor="company" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
-                  {t.contact.form.company} *
+                  {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nome da empresa' : 'Company name'} *
                 </label>
                 <input
                   type="text"
@@ -127,15 +205,20 @@ Enviado através do site (${locale})`;
                   className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.company ? 'border-newt-red' : 'border-gray-300'
                   }`}
-                  placeholder={t.contact.form.company}
+                  placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Qual é o nome da sua empresa?' : 'What is your company name?'}
                 />
                 {errors.company && <p className="text-newt-red text-sm mt-1 font-inter">{errors.company}</p>}
+                <p className="text-xs text-gray-500 mt-1 font-inter">
+                  {locale === 'pt-BR' ? 'Se for MEI, use o nome fantasia.' : 
+                   locale === 'pt-PT' ? 'Se for freelancer, use o nome comercial.' :
+                   'If freelancer, use your business name.'}
+                </p>
               </div>
 
               {/* Phone */}
               <div>
                 <label htmlFor="phone" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
-                  {t.contact.form.phone} *
+                  WhatsApp *
                 </label>
                 <input
                   type="tel"
@@ -145,15 +228,20 @@ Enviado através do site (${locale})`;
                   className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.phone ? 'border-newt-red' : 'border-gray-300'
                   }`}
-                  placeholder={t.contact.form.phonePlaceholder}
+                  placeholder={locale === 'pt-BR' ? '(DDD) 90000‑0000' : 
+                              locale === 'pt-PT' ? '+351 912 345 678' :
+                              '+1 (555) 123-4567'}
                 />
                 {errors.phone && <p className="text-newt-red text-sm mt-1 font-inter">{errors.phone}</p>}
+                <p className="text-xs text-gray-500 mt-1 font-inter">
+                  {locale === 'pt-BR' || locale === 'pt-PT' ? 'Prometemos não te colocar em grupos.' : 'We promise not to add you to groups.'}
+                </p>
               </div>
 
               {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
-                  {t.contact.form.email} *
+                  E‑mail *
                 </label>
                 <input
                   type="email"
@@ -163,9 +251,12 @@ Enviado através do site (${locale})`;
                   className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.email ? 'border-newt-red' : 'border-gray-300'
                   }`}
-                  placeholder={t.contact.form.emailPlaceholder}
+                  placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Onde você quer receber o plano de ação?' : 'Where should we send the action plan?'}
                 />
                 {errors.email && <p className="text-newt-red text-sm mt-1 font-inter">{errors.email}</p>}
+                <p className="text-xs text-gray-500 mt-1 font-inter">
+                  {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nada de spam. Só o que move a agulha.' : 'No spam. Only what moves the needle.'}
+                </p>
               </div>
             </div>
 
@@ -222,7 +313,7 @@ Enviado através do site (${locale})`;
             {/* How did you hear about us */}
             <div className="mb-4 sm:mb-6">
               <label htmlFor="source" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
-                How did you hear about us? *
+                {getSourceLabel()} *
               </label>
               <select
                 id="source"
@@ -232,34 +323,33 @@ Enviado através do site (${locale})`;
                   errors.source ? 'border-newt-red' : 'border-gray-300'
                 }`}
               >
-                <option value="">Select an option</option>
-                {sourceOptions.map((option) => (
+                <option value="">{getSourcePlaceholder()}</option>
+                {getSourceOptions().map((option) => (
                   <option key={option} value={option}>{option}</option>
                 ))}
               </select>
               {errors.source && <p className="text-newt-red text-sm mt-1 font-inter">{errors.source}</p>}
             </div>
 
-            {/* How did you hear about us */}
-            <div className="mb-4 sm:mb-6">
-              <label htmlFor="source" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
-                How did you hear about us? *
-              </label>
-              <select
-                id="source"
-                value={formData.source}
-                onChange={(e) => handleInputChange('source', e.target.value)}
-                className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
-                  errors.source ? 'border-newt-red' : 'border-gray-300'
-                }`}
-              >
-                <option value="">Select an option</option>
-                {sourceOptions.map((option) => (
-                  <option key={option} value={option}>{option}</option>
-                ))}
-              </select>
-              {errors.source && <p className="text-newt-red text-sm mt-1 font-inter">{errors.source}</p>}
-            </div>
+            {/* Conditional field for "Other" */}
+            {(formData.source === 'Outro (vou explicar)' || formData.source === 'Other (will explain)') && (
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="sourceOther" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                  {getOtherLabel()} *
+                </label>
+                <input
+                  type="text"
+                  id="sourceOther"
+                  value={formData.sourceOther}
+                  onChange={(e) => handleInputChange('sourceOther', e.target.value)}
+                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                    errors.sourceOther ? 'border-newt-red' : 'border-gray-300'
+                  }`}
+                  placeholder={getOtherPlaceholder()}
+                />
+                {errors.sourceOther && <p className="text-newt-red text-sm mt-1 font-inter">{errors.sourceOther}</p>}
+              </div>
+            )}
 
             {/* Consent */}
             <div className="mb-6 sm:mb-8">

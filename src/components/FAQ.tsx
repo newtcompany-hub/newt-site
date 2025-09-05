@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';

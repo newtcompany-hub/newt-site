@@ -16,7 +16,7 @@ export function Hero() {
     <section id="home" className="relative min-h-screen bg-black flex items-center justify-center overflow-hidden hero-padding">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="hero-background"></div>
+        <div className="hero-gradient-animation"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
