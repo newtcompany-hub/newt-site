@@ -6,18 +6,10 @@ export function Products() {
 
   const getProductIcon = (index: number) => {
     const icons = [
-      // NewtMind - Brain icon
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M8.5 7.5a2.5 2.5 0 1 1 5 0V20H9.5a3 3 0 0 1-3-3v-1.2a3 3 0 0 1-1.8-2.8c0-1.2.7-2.3 1.8-2.8V9a3 3 0 0 1 2-1.5z"/>
-        <path d="M15.5 7.5a2.5 2.5 0 0 1 3 2.4V11a3 3 0 0 1 1.8 2.8c0 1.2-.7 2.3-1.8 2.8V17a3 3 0 0 1-3 3H12"/>
-      </svg>,
-      // NewtFlows - Connected nodes icon
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <rect x="3" y="5" width="6" height="6" rx="2"/>
-        <rect x="15" y="13" width="6" height="6" rx="2"/>
-        <circle cx="12" cy="11" r="2"/>
-        <path d="M9 8 L11 10 M13 12 L15 13"/>
-      </svg>,
+      // NewtMind - Custom SVG
+      <img src="/ícone de newtmind.svg" alt="NewtMind" width="32" height="32" className="w-8 h-8" />,
+      // NewtFlows - Custom SVG
+      <img src="/ícone do newtflow.svg" alt="NewtFlows" width="32" height="32" className="w-8 h-8" />,
       // FinZap - Clock icon
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10"/>
