@@ -10,6 +10,13 @@ export function useI18n() {
     return 'pt-BR';
   });
 
+  const changeLocale = (newLocale: Locale) => {
+    setLocale(newLocale);
+    localStorage.setItem('newt-locale', newLocale);
+    // Automatically refresh the page when language changes
+    window.location.reload();
+  };
+
   useEffect(() => {
     localStorage.setItem('newt-locale', locale);
     document.documentElement.lang = locale;
@@ -36,5 +43,5 @@ export function useI18n() {
 
   const t = translations[locale];
   
-  return { locale, setLocale, t };
+  return { locale, setLocale: changeLocale, t };
 }
