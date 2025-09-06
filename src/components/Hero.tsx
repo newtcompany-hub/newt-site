@@ -41,7 +41,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight font-poppins animate-slide-up px-2 sm:px-4">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight font-poppins animate-slide-up px-2 sm:px-4 max-w-5xl mx-auto">
             {t.hero.headline}
           </h1>
 
