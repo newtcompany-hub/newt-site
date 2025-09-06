@@ -156,24 +156,24 @@ Enviado através do site (${locale})`;
 
   return (
     <section id="contact" className="section-padding bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-newt-black mb-4 sm:mb-6 font-poppins leading-heading">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
             {t.contact.title}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-body font-inter">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter px-2">
             {t.contact.subtitle}
           </p>
         </div>
 
         {/* Contact Form */}
         <div className="max-w-4xl mx-auto">
-          <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 lg:p-12 rounded-2xl shadow-lg border border-gray-200">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-6">
+          <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="name" className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1 sm:mb-2 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nome' : 'Name'} *
                 </label>
                 <input
@@ -181,20 +181,20 @@ Enviado através do site (${locale})`;
                   id="name"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.name ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Como devemos te chamar?' : 'What should we call you?'}
                 />
-                {errors.name && <p className="text-newt-red text-sm mt-1 font-inter">{errors.name}</p>}
-                <p className="text-xs text-gray-500 mt-1 font-inter">
+                {errors.name && <p className="text-newt-red text-xs sm:text-sm mt-1 font-inter">{errors.name}</p>}
+                <p className="text-xs text-gray-500 mt-0.5 sm:mt-1 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Pode ser só o primeiro nome.' : 'First name is fine.'}
                 </p>
               </div>
 
               {/* Company */}
               <div>
-                <label htmlFor="company" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="company" className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1 sm:mb-2 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nome da empresa' : 'Company name'} *
                 </label>
                 <input
@@ -202,13 +202,13 @@ Enviado através do site (${locale})`;
                   id="company"
                   value={formData.company}
                   onChange={(e) => handleInputChange('company', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.company ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Qual é o nome da sua empresa?' : 'What is your company name?'}
                 />
-                {errors.company && <p className="text-newt-red text-sm mt-1 font-inter">{errors.company}</p>}
-                <p className="text-xs text-gray-500 mt-1 font-inter">
+                {errors.company && <p className="text-newt-red text-xs sm:text-sm mt-1 font-inter">{errors.company}</p>}
+                <p className="text-xs text-gray-500 mt-0.5 sm:mt-1 font-inter">
                   {locale === 'pt-BR' ? 'Se for MEI, use o nome fantasia.' : 
                    locale === 'pt-PT' ? 'Se for freelancer, use o nome comercial.' :
                    'If freelancer, use your business name.'}
@@ -217,7 +217,7 @@ Enviado através do site (${locale})`;
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="phone" className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1 sm:mb-2 font-inter">
                   WhatsApp *
                 </label>
                 <input
@@ -225,22 +225,22 @@ Enviado através do site (${locale})`;
                   id="phone"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.phone ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={locale === 'pt-BR' ? '(DDD) 90000‑0000' : 
                               locale === 'pt-PT' ? '+351 912 345 678' :
                               '+1 (555) 123-4567'}
                 />
-                {errors.phone && <p className="text-newt-red text-sm mt-1 font-inter">{errors.phone}</p>}
-                <p className="text-xs text-gray-500 mt-1 font-inter">
+                {errors.phone && <p className="text-newt-red text-xs sm:text-sm mt-1 font-inter">{errors.phone}</p>}
+                <p className="text-xs text-gray-500 mt-0.5 sm:mt-1 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Prometemos não te colocar em grupos.' : 'We promise not to add you to groups.'}
                 </p>
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="email" className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1 sm:mb-2 font-inter">
                   E‑mail *
                 </label>
                 <input
@@ -248,43 +248,43 @@ Enviado através do site (${locale})`;
                   id="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.email ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Onde você quer receber o plano de ação?' : 'Where should we send the action plan?'}
                 />
-                {errors.email && <p className="text-newt-red text-sm mt-1 font-inter">{errors.email}</p>}
-                <p className="text-xs text-gray-500 mt-1 font-inter">
+                {errors.email && <p className="text-newt-red text-xs sm:text-sm mt-1 font-inter">{errors.email}</p>}
+                <p className="text-xs text-gray-500 mt-0.5 sm:mt-1 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nada de spam. Só o que move a agulha.' : 'No spam. Only what moves the needle.'}
                 </p>
               </div>
             </div>
 
             {/* Message */}
-            <div className="mb-4 sm:mb-6">
-              <label htmlFor="message" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+            <div className="mb-3 sm:mb-4 md:mb-6">
+              <label htmlFor="message" className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1 sm:mb-2 font-inter">
                 {t.contact.form.message}
               </label>
               <textarea
                 id="message"
-                rows={3}
+                rows={2}
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
-                className="w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg custom-focus transition-colors duration-200 resize-none font-inter text-sm sm:text-base sm:rows-4"
+                className="mobile-input w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg custom-focus transition-colors duration-200 resize-none font-inter text-sm sm:text-base sm:rows-3 md:rows-4"
                 placeholder={t.contact.form.messagePlaceholder}
               ></textarea>
             </div>
 
             {/* Budget */}
-            <div className="mb-4 sm:mb-6">
-              <label className="block text-sm sm:text-base font-semibold text-gray-900 mb-3 sm:mb-4 font-inter">
+            <div className="mb-3 sm:mb-4 md:mb-6">
+              <label className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-2 sm:mb-3 md:mb-4 font-inter">
                 {t.contact.form.budget} *
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 md:gap-4">
                 {t.contact.form.budgetOptions.map((option, index) => (
                   <label
                     key={index}
-                    className={`relative flex items-center p-3 sm:p-4 border rounded-lg cursor-pointer hover:bg-red-50 hover:border-newt-red transition-all duration-200 min-h-[48px] custom-focus ${
+                    className={`relative flex items-center p-2.5 sm:p-3 md:p-4 border rounded-lg cursor-pointer hover:bg-red-50 hover:border-newt-red transition-all duration-200 min-h-[44px] sm:min-h-[48px] custom-focus ${
                       formData.budget === option ? 'bg-red-50 border-newt-red' : 'border-gray-300'
                     }`}
                   >
@@ -303,23 +303,23 @@ Enviado através do site (${locale})`;
                         <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-newt-red rounded-full"></div>
                       )}
                     </div>
-                    <span className="text-sm sm:text-base text-gray-900 font-medium font-inter">{option}</span>
+                    <span className="text-xs sm:text-sm md:text-base text-gray-900 font-medium font-inter">{option}</span>
                   </label>
                 ))}
               </div>
-              {errors.budget && <p className="text-newt-red text-sm mt-2 font-inter">{errors.budget}</p>}
+              {errors.budget && <p className="text-newt-red text-xs sm:text-sm mt-1 sm:mt-2 font-inter">{errors.budget}</p>}
             </div>
 
             {/* How did you hear about us */}
-            <div className="mb-4 sm:mb-6">
-              <label htmlFor="source" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+            <div className="mb-3 sm:mb-4 md:mb-6">
+              <label htmlFor="source" className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1 sm:mb-2 font-inter">
                 {getSourceLabel()} *
               </label>
               <select
                 id="source"
                 value={formData.source}
                 onChange={(e) => handleInputChange('source', e.target.value)}
-                className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
+                className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
                   errors.source ? 'border-newt-red' : 'border-gray-300'
                 }`}
               >
@@ -328,13 +328,13 @@ Enviado através do site (${locale})`;
                   <option key={option} value={option}>{option}</option>
                 ))}
               </select>
-              {errors.source && <p className="text-newt-red text-sm mt-1 font-inter">{errors.source}</p>}
+              {errors.source && <p className="text-newt-red text-xs sm:text-sm mt-1 font-inter">{errors.source}</p>}
             </div>
 
             {/* Conditional field for "Other" */}
             {(formData.source === 'Outro (vou explicar)' || formData.source === 'Other (will explain)') && (
-              <div className="mb-4 sm:mb-6">
-                <label htmlFor="sourceOther" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+              <div className="mb-3 sm:mb-4 md:mb-6">
+                <label htmlFor="sourceOther" className="block text-xs sm:text-sm md:text-base font-semibold text-gray-900 mb-1 sm:mb-2 font-inter">
                   {getOtherLabel()} *
                 </label>
                 <input
@@ -342,17 +342,17 @@ Enviado através do site (${locale})`;
                   id="sourceOther"
                   value={formData.sourceOther}
                   onChange={(e) => handleInputChange('sourceOther', e.target.value)}
-                  className={`w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.sourceOther ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={getOtherPlaceholder()}
                 />
-                {errors.sourceOther && <p className="text-newt-red text-sm mt-1 font-inter">{errors.sourceOther}</p>}
+                {errors.sourceOther && <p className="text-newt-red text-xs sm:text-sm mt-1 font-inter">{errors.sourceOther}</p>}
               </div>
             )}
 
             {/* Consent */}
-            <div className="mb-6 sm:mb-8">
+            <div className="mb-4 sm:mb-6 md:mb-8">
               <label className="flex items-start space-x-2 sm:space-x-3 cursor-pointer group custom-focus">
                 <div className="relative mt-0.5 sm:mt-1 flex-shrink-0">
                   <input
@@ -371,13 +371,13 @@ Enviado através do site (${locale})`;
                   {t.contact.form.consent}
                 </span>
               </label>
-              {errors.consent && <p className="text-newt-red text-sm mt-2 font-inter">{errors.consent}</p>}
+              {errors.consent && <p className="text-newt-red text-xs sm:text-sm mt-1 sm:mt-2 font-inter">{errors.consent}</p>}
             </div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="group w-full bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg flex items-center justify-center space-x-2 custom-focus font-inter min-h-[52px] sm:min-h-[56px]"
+              className="mobile-btn group w-full bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg flex items-center justify-center space-x-2 custom-focus font-inter min-h-[48px] sm:min-h-[52px] md:min-h-[56px]"
             >
               <span>{t.contact.form.submit}</span>
               <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" />

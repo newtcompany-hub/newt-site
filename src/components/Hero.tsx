@@ -33,38 +33,38 @@ export function Hero() {
         ></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full py-20 sm:py-24 lg:py-32">
-        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center relative z-10 w-full py-16 sm:py-20 md:py-24 lg:py-32">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
           {/* Welcome Badge */}
-          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">
+          <div className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs sm:text-sm md:text-base text-white font-medium animate-slide-up font-inter">
             {t.hero.welcome}
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-heading font-poppins animate-slide-up px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight font-poppins animate-slide-up px-2 sm:px-4">
             {t.hero.headline}
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto leading-body font-inter animate-slide-up-delay px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-inter animate-slide-up-delay px-4 sm:px-6">
             {t.hero.subheadline}
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 animate-slide-up-delay-2 px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 pt-4 sm:pt-6 md:pt-8 animate-slide-up-delay-2 px-4 sm:px-6">
             <a
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center space-x-2 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter min-h-[48px]"
+              className="mobile-btn group bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center space-x-2 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter min-h-[48px]"
             >
               <span>{t.hero.cta1}</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </a>
             
             <button
               onClick={() => scrollToSection('services')}
-              className="btn-secondary w-full sm:w-auto font-inter min-h-[48px] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
+              className="mobile-btn btn-secondary w-full sm:w-auto font-inter min-h-[48px] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg"
             >
               {t.hero.cta2}
             </button>
