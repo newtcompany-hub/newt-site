@@ -5,8 +5,6 @@ import { useI18n } from '../hooks/useI18n';
 export function FAQ() {
   const { t } = useI18n();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
 
   const toggleQuestion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -16,14 +14,15 @@ export function FAQ() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
+          if (entry.isIntersecting) {
             const items = entry.target.querySelectorAll('.faq-item');
             items.forEach((item, index) => {
               setTimeout(() => {
-                item.classList.add('animate-in');
+                item.classList.remove('opacity-0', 'translate-y-8');
+                item.classList.add('opacity-100', 'translate-y-0');
               }, index * 100);
             });
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -33,16 +32,16 @@ export function FAQ() {
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const faqSection = document.getElementById('faq');
+    if (faqSection) {
+      observer.observe(faqSection);
     }
 
     return () => observer.disconnect();
-  }, [hasAnimated]);
+  }, []);
 
   return (
     <section 
-      ref={sectionRef}
       id="faq" 
       className="section-padding bg-white"
     >
@@ -62,7 +61,7 @@ export function FAQ() {
           {t.faq.items.map((item, index) => (
             <div
               key={index}
-              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-colors duration-200"
+              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-all duration-300"
             >
               <button
                 onClick={() => toggleQuestion(index)}
@@ -86,12 +85,12 @@ export function FAQ() {
               
               <div 
                 id={`faq-content-${index}`}
-                className={`overflow-hidden transition-all duration-200 ${
+                className={`overflow-hidden transition-all duration-300 ${
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
                 aria-hidden={openIndex !== index}
               >
-                <div className="p-3 sm:p-4 md:p-6 lg:p-8 pt-0 bg-gray-50 border-t border-gray-100">
+                <div className="p-3 sm:p-4 md:p-6 lg:p-8 pt-0 bg-gray-50">
                   <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-inter max-w-3xl">
                     {item.answer}
                   </p>
