@@ -114,7 +114,7 @@ export function Products() {
 
   const handleWhatsAppClick = (message: string) => {
     const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/5591998382662?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
   };
 
