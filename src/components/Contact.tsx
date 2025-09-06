@@ -162,9 +162,9 @@ Enviado através do site (${locale})`;
   };
 
   return (
-    <div id="contact" className="relative">
+    <div id="contact" className="relative max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center lg:text-left mb-8 sm:mb-12 md:mb-16 lg:mb-12">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
             {t.contact.title}
           </h2>
