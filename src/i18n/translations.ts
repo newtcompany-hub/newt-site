@@ -169,7 +169,7 @@ export const translations = {
     
     // Footer
     footer: {
-      tagline: 'Sites e automações que aceleram resultados',
+      tagline: 'Tunning your Business',
       quickLinks: 'Links Rápidos',
       legal: 'Legal',
       contact: 'Contato',
@@ -354,7 +354,7 @@ export const translations = {
     
     // Footer
     footer: {
-      tagline: 'Sites e automações que aceleram resultados',
+      tagline: 'Tunning your Business',
       quickLinks: 'Links Rápidos',
       legal: 'Legal',
       contact: 'Contacto',
@@ -539,7 +539,7 @@ export const translations = {
     
     // Footer
     footer: {
-      tagline: 'Digital solutions that drive real business growth',
+      tagline: 'Tunning your Business',
       quickLinks: 'Quick Links',
       legal: 'Legal',
       contact: 'Contact',
