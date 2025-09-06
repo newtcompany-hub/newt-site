@@ -48,7 +48,7 @@ export function FAQ() {
     >
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
             {t.faq.title}
           </h2>
@@ -62,7 +62,7 @@ export function FAQ() {
           {t.faq.items.map((item, index) => (
             <div
               key={index}
-              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8"
+              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-colors duration-200"
             >
               <button
                 onClick={() => toggleQuestion(index)}
