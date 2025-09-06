@@ -28,14 +28,14 @@ export function About() {
             {t.about.timeline.map((step, index) => (
               <div
                 key={index}
-                className="mobile-card group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 lg:p-8 rounded-xl border border-gray-200 hover:border-newt-red transition-colors duration-200"
+                className="mobile-card group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 lg:p-8 rounded-xl border border-gray-200 hover:border-newt-red transition-all duration-200"
               >
                 {/* Step Number */}
                 <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-newt-red text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold font-inter">
                   {index + 1}
                 </div>
                 
-                <h4 className="text-base sm:text-lg md:text-xl font-semibold text-newt-black mb-2 sm:mb-3 font-poppins group-hover:text-newt-red transition-colors duration-200">
+                <h4 className="text-base sm:text-lg md:text-xl font-semibold text-newt-black mb-2 sm:mb-3 font-poppins group-hover:text-newt-red transition-colors duration-200 pt-2">
                   {step.title}
                 </h4>
                 <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-inter">

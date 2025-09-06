@@ -96,7 +96,7 @@ export function Products() {
             >
               {/* Coming Soon Badge */}
               {product.comingSoon && (
-                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-newt-red text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold font-inter">
+                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-newt-red text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold font-inter z-10">
                   {t.common.comingSoon}
                 </div>
               )}
@@ -122,7 +122,7 @@ export function Products() {
                 <ul className="space-y-1.5 sm:space-y-2 md:space-y-3">
                   {product.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-2 h-2 bg-newt-red rounded-full"></div>
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
                       <span className="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-200">
                         {feature}
                       </span>

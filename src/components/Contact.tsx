@@ -20,22 +20,22 @@ export function Contact() {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
-    if (!formData.name.trim()) {
+    if (!formData.name?.trim()) {
       newErrors.name = locale === 'pt-BR' ? 'Precisamos do seu nome.' : 
                       locale === 'pt-PT' ? 'Precisamos do seu nome.' : 
                       'We need your name.';
     }
-    if (!formData.company.trim()) {
+    if (!formData.company?.trim()) {
       newErrors.company = locale === 'pt-BR' ? 'Informe o nome da empresa (ou "Profissional Autônomo").' :
                          locale === 'pt-PT' ? 'Informe o nome da empresa (ou "Profissional Autónomo").' :
                          'Please provide company name (or "Freelancer").';
     }
-    if (!formData.phone.trim()) {
+    if (!formData.phone?.trim()) {
       newErrors.phone = locale === 'pt-BR' ? 'Coloque um número válido com DDD.' :
                        locale === 'pt-PT' ? 'Coloque um número válido.' :
                        'Please provide a valid phone number.';
     }
-    if (!formData.email.trim()) {
+    if (!formData.email?.trim() || !/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = locale === 'pt-BR' ? 'Digite um e‑mail válido.' :
                        locale === 'pt-PT' ? 'Digite um email válido.' :
                        'Please enter a valid email.';
@@ -48,7 +48,7 @@ export function Contact() {
                         locale === 'pt-PT' ? 'Selecione como nos conheceu.' :
                         'Please select how you heard about us.';
     }
-    if (formData.source === 'Outro (vou explicar)' && !formData.sourceOther.trim()) {
+    if ((formData.source === 'Outro (vou explicar)' || formData.source === 'Other (will explain)') && !formData.sourceOther?.trim()) {
       newErrors.sourceOther = locale === 'pt-BR' ? 'Por favor, explique como nos conheceu.' :
                              locale === 'pt-PT' ? 'Por favor, explique como nos conheceu.' :
                              'Please explain how you heard about us.';
@@ -70,7 +70,7 @@ export function Contact() {
       const element = document.getElementById(firstErrorField);
       if (element) {
         element.focus();
-        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
       return;
     }

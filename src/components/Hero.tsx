@@ -16,8 +16,8 @@ export function Hero() {
     <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90 will-change-transform"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-red-700 via-red-900 to-black opacity-80 will-change-transform"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-700 via-red-900 to-black opacity-80"></div>
         <div className="absolute inset-0 opacity-60">
           <div 
             className="absolute inset-0"
@@ -28,7 +28,7 @@ export function Hero() {
                 radial-gradient(ellipse 400px 400px at 50% 50%, rgba(239, 68, 68, 0.2) 0%, transparent 50%),
                 repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.02) 2px, rgba(255, 255, 255, 0.02) 4px)
               `,
-              filter: 'blur(30px)'
+              filter: 'blur(20px)'
             }}
           ></div>
         </div>

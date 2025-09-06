@@ -23,7 +23,7 @@ export function Services() {
           {t.services.items.map((service, index) => (
             <div
               key={index}
-              className="mobile-card group relative bg-white hover:bg-newt-black p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red transition-colors duration-200"
+              className="mobile-card group relative bg-white hover:bg-newt-black p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red transition-all duration-200 hover:shadow-lg"
             >
               <div className="space-y-3 sm:space-y-4 md:space-y-6">
                 <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-200 font-poppins leading-heading">
@@ -37,7 +37,7 @@ export function Services() {
                 <ul className="space-y-1.5 sm:space-y-2 md:space-y-3">
                   {service.bullets.map((bullet, bulletIndex) => (
                     <li key={bulletIndex} className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-2 h-2 bg-newt-red rounded-full"></div>
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
                       <span className="text-xs sm:text-sm md:text-base text-gray-700 group-hover:text-gray-300 font-inter transition-colors duration-200">
                         {bullet}
                       </span>
@@ -54,7 +54,7 @@ export function Services() {
           ))}
           
           {/* New Co-produção Service */}
-          <div className="mobile-card group relative bg-white hover:bg-newt-black p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red transition-colors duration-200">
+          <div className="mobile-card group relative bg-white hover:bg-newt-black p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red transition-all duration-200 hover:shadow-lg">
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-200 font-poppins leading-heading">
                 Co-produção
@@ -73,7 +73,7 @@ export function Services() {
                   : ['Planejamento editorial', 'Roteiro & captação', 'Edição e pós', 'Distribuição multiplataforma', 'Cortes para Reels/Shorts', 'Métricas e otimização contínua']
                 ).map((bullet, bulletIndex) => (
                   <li key={bulletIndex} className="flex items-center space-x-2 sm:space-x-3">
-                    <div className="w-2 h-2 bg-newt-red rounded-full"></div>
+                    <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
                     <span className="text-xs sm:text-sm md:text-base text-gray-700 group-hover:text-gray-300 font-inter transition-colors duration-200">
                       {bullet}
                     </span>

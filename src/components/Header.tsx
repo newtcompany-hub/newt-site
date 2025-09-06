@@ -14,32 +14,23 @@ export function Header() {
       setIsScrolled(window.scrollY > 50);
     };
     
-    // Throttle scroll events for better performance
-    let ticking = false;
-    const throttledScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-    
-    window.addEventListener('scroll', throttledScroll, { passive: true });
-    return () => window.removeEventListener('scroll', throttledScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Close menus when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isLangMenuOpen && !(event.target as Element).closest('.language-selector')) {
+      const target = event.target as Element;
+      if (isLangMenuOpen && !target.closest('.language-selector')) {
         setIsLangMenuOpen(false);
       }
     };
     
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    if (isLangMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
   }, [isLangMenuOpen]);
 
   const scrollToSection = (sectionId: string) => {

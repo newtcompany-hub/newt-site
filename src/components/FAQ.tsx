@@ -13,7 +13,6 @@ export function FAQ() {
   };
 
   useEffect(() => {
-    // Intersection Observer with better performance
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -21,19 +20,16 @@ export function FAQ() {
             setHasAnimated(true);
             const items = entry.target.querySelectorAll('.faq-item');
             items.forEach((item, index) => {
-              // Use requestAnimationFrame for better performance
-              requestAnimationFrame(() => {
-                setTimeout(() => {
-                  item.classList.add('animate-in');
-                }, index * 50);
-              });
+              setTimeout(() => {
+                item.classList.add('animate-in');
+              }, index * 100);
             });
           }
         });
       },
       { 
         threshold: 0.1,
-        rootMargin: '50px 0px'
+        rootMargin: '0px 0px -50px 0px'
       }
     );
 
