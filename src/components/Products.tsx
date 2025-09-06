@@ -117,6 +117,13 @@ export function Products() {
     window.open(whatsappUrl, '_blank');
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent, index: number) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setSelectedProduct(index);
+    }
+  };
+
   const closeModal = () => {
     setSelectedProduct(null);
   };
@@ -140,6 +147,10 @@ export function Products() {
             <div
               key={index}
               onClick={() => setSelectedProduct(index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              tabIndex={0}
+              role="button"
+              aria-label={`Ver detalhes do ${product.title}`}
               className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
@@ -215,6 +226,7 @@ export function Products() {
                 </div>
                 <button
                   onClick={closeModal}
+                  aria-label="Fechar modal"
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 >
                   <X className="w-6 h-6 text-gray-500" />
