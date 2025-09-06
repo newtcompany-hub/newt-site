@@ -51,7 +51,7 @@ export function Products() {
       desc: locale === 'en' ? 'AI image generator via WhatsApp.' : 'Gerador de imagens com IA via WhatsApp.',
       features: locale === 'en'
         ? ['AI image generation', 'WhatsApp integration', 'Multiple styles', 'Instant delivery']
-        : ['Geração de imagens com IA', 'Integração WhatsApp', 'Múltiplos estilos', 'Usa nanobanana do Google', 'Entrega instantânea'],
+        : ['Geração de imagens com IA', 'Integração WhatsApp', 'Múltiplos estilos', 'Integração com Nano Banana', 'Entrega instantânea'],
       comingSoon: true
     },
     {
