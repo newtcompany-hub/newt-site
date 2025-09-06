@@ -16,7 +16,7 @@ export const translations = {
     
     // Hero
     hero: {
-      welcome: 'Bem-vindo ao seu Tunning Business',
+      welcome: 'A última peça que falta para o seu negócio',
       headline: 'Escalamos seu negócio com automações, web design e tráfego pago',
       subheadline: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
       cta1: 'Falar no WhatsApp',
@@ -201,7 +201,7 @@ export const translations = {
     
     // Hero
     hero: {
-      welcome: 'Bem-vindo ao seu Tunning Business',
+      welcome: 'A última peça que falta para o seu negócio',
       headline: 'Escalamos seu negócio com automações, web design e tráfego pago',
       subheadline: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
       cta1: 'Falar no WhatsApp',
@@ -386,7 +386,7 @@ export const translations = {
     
     // Hero
     hero: {
-      welcome: 'Welcome to your Business Tunning',
+      welcome: 'The missing piece for your business',
       headline: 'We scale your business with automations, web design and paid traffic',
       subheadline: 'We are a creative studio specialized in AI automations, websites and paid traffic.',
       cta1: 'Chat on WhatsApp',
