@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { X, ExternalLink, MessageCircle } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
 
 export function Products() {
   const { t, locale } = useI18n();
+  const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
 
   const getProductIcon = (index: number) => {
     const icons = [
@@ -40,7 +42,12 @@ export function Products() {
       features: locale === 'en' 
         ? ['Auto-generated scripts', 'Custom thumbnails', 'Trending topics', 'Content calendar']
         : ['Roteiros automáticos', 'Thumbnails personalizadas', 'Ideias no hype', 'Calendário editorial'],
-      comingSoon: false
+      comingSoon: false,
+      detailedDesc: locale === 'en' 
+        ? 'NewtMind is your 24/7 AI-powered content creation assistant. Generate unlimited scripts, custom thumbnails, and trending content ideas automatically. Perfect for content creators, agencies, and businesses looking to scale their content production without losing quality.'
+        : 'O NewtMind é seu assistente de criação de conteúdo com IA 24h. Gere roteiros ilimitados, thumbnails personalizadas e ideias de conteúdo em alta automaticamente. Perfeito para criadores de conteúdo, agências e empresas que querem escalar a produção sem perder qualidade.',
+      hasAccess: true,
+      accessLink: 'https://payment.ticto.app/O75DCDB36'
     },
     {
       title: locale === 'en' ? 'FlowMaster' : 'NewtFlows',
@@ -48,7 +55,14 @@ export function Products() {
       features: locale === 'en'
         ? ['Smart customer service', 'Intelligent support', 'Integrated CRM', 'Sales automation']
         : ['Atendimento automático', 'Suporte inteligente', 'CRM integrado', 'Vendas automatizadas'],
-      comingSoon: false
+      comingSoon: false,
+      detailedDesc: locale === 'en'
+        ? 'NewtFlows revolutionizes your business processes with intelligent automation. From customer service to sales, our platform integrates WhatsApp, email, CRM and payment systems to create seamless workflows that convert leads into customers automatically.'
+        : 'O NewtFlows revoluciona seus processos empresariais com automação inteligente. Do atendimento às vendas, nossa plataforma integra WhatsApp, e-mail, CRM e sistemas de pagamento para criar fluxos que convertem leads em clientes automaticamente.',
+      hasAccess: false,
+      whatsappMessage: locale === 'en' 
+        ? 'I want to know more about NewtFlows, how does it work?'
+        : 'Quero saber mais sobre o NewtFlows, como funciona?'
     },
     {
       title: locale === 'en' ? 'PhotoAI Pro' : 'NewtPhotos',
@@ -56,7 +70,10 @@ export function Products() {
       features: locale === 'en'
         ? ['AI image generation', 'WhatsApp integration', 'Multiple styles', 'Instant delivery']
         : ['Geração de imagens com IA', 'Integração WhatsApp', 'Múltiplos estilos', 'Integração com Nano Banana', 'Entrega instantânea'],
-      comingSoon: true
+      comingSoon: true,
+      detailedDesc: locale === 'en'
+        ? 'NewtPhotos brings AI image generation directly to your WhatsApp. Create professional images, logos, social media content and more using simple text commands. Powered by advanced AI models including Google\'s Nano Banana technology for superior results.'
+        : 'O NewtPhotos traz geração de imagens com IA diretamente para seu WhatsApp. Crie imagens profissionais, logos, conteúdo para redes sociais e muito mais usando comandos de texto simples. Powered pela tecnologia Nano Banana do Google para resultados superiores.'
     },
     {
       title: locale === 'en' ? 'FinanceFlow' : 'FinZap',
@@ -64,7 +81,10 @@ export function Products() {
       features: locale === 'en'
         ? ['Income & expense tracking', 'WhatsApp billing', 'Automated reports', 'Spreadsheet integration']
         : ['Controle de entradas e saídas', 'Emissão de cobranças no WhatsApp', 'Relatórios automáticos', 'Integração com planilhas'],
-      comingSoon: true
+      comingSoon: true,
+      detailedDesc: locale === 'en'
+        ? 'FinZap transforms financial management into a simple WhatsApp conversation. Track income and expenses, generate invoices, send payment reminders, and get automated financial reports - all through WhatsApp. Perfect for freelancers, small businesses and professionals.'
+        : 'O FinZap transforma gestão financeira em uma conversa simples no WhatsApp. Controle entradas e saídas, gere cobranças, envie lembretes de pagamento e receba relatórios financeiros automáticos - tudo pelo WhatsApp. Perfeito para freelancers, pequenas empresas e profissionais.'
     },
     {
       title: locale === 'en' ? 'LeadEngine' : 'LeadForge',
@@ -72,7 +92,10 @@ export function Products() {
       features: locale === 'en'
         ? ['Lead search & qualification', 'Multi-channel capture', 'Contact enrichment', 'Automated pipeline & follow-ups']
         : ['Busca e qualificação de leads', 'Captura multicanal (form/WhatsApp)', 'Enriquecimento de contatos', 'Pipeline e follow-ups automáticos'],
-      comingSoon: true
+      comingSoon: true,
+      detailedDesc: locale === 'en'
+        ? 'LeadForge is your complete lead generation and prospecting solution. Find, qualify and nurture leads automatically across multiple channels. Advanced contact enrichment, automated follow-ups and intelligent pipeline management to maximize your conversion rates.'
+        : 'O LeadForge é sua solução completa de geração e prospecção de leads. Encontre, qualifique e nutra leads automaticamente em múltiplos canais. Enriquecimento avançado de contatos, follow-ups automáticos e gestão inteligente de pipeline para maximizar suas conversões.'
     },
     {
       title: 'FicaLeve',
@@ -82,9 +105,21 @@ export function Products() {
       features: locale === 'en'
         ? ['Photo analysis & calorie counting', 'Personalized diet plans', 'Custom workout routines', '100% WhatsApp integration', 'Goal-based recommendations']
         : ['Análise de fotos e cálculo de calorias', 'Planos de dieta personalizados', 'Treinos customizados por objetivo', '100% integração WhatsApp', 'Recomendações baseadas em metas'],
-      comingSoon: true
+      comingSoon: true,
+      detailedDesc: locale === 'en'
+        ? 'FicaLeve is your personal trainer and nutritionist right in WhatsApp. Simply send a photo of your meal or body and our AI analyzes, calculates calories, creates personalized diet plans and workouts according to your goals. 100% on WhatsApp, no complicated apps. Simple, fast and motivating: the easiest way to lose weight, gain muscle or just feel lighter every day.'
+        : 'O FicaLeve é seu personal trainer e nutricionista direto no WhatsApp. Basta enviar uma foto da sua refeição ou do seu físico e nossa inteligência artificial analisa, calcula calorias, cria planos de dieta e treinos personalizados de acordo com o seu objetivo. 100% no WhatsApp, sem apps complicados. Simples, rápido e motivador: o jeito mais fácil de perder peso, ganhar massa ou apenas se sentir mais leve no dia a dia.'
     }
   ];
+
+  const handleWhatsAppClick = (message: string) => {
+    const whatsappUrl = `https://wa.me/5591998382662?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+  };
 
   return (
     <section id="products" className="section-padding bg-newt-black">
@@ -104,7 +139,8 @@ export function Products() {
           {productData.map((product, index) => (
             <div
               key={index}
-              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-colors duration-200 ${
+              onClick={() => setSelectedProduct(index)}
+              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
             >
@@ -134,7 +170,7 @@ export function Products() {
                 </p>
                 
                 <ul className="space-y-1.5 sm:space-y-2 md:space-y-3">
-                  {product.features.map((feature, featureIndex) => (
+                  {product.features.slice(0, 3).map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
                       <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
                       <span className="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-200">
@@ -142,11 +178,112 @@ export function Products() {
                       </span>
                     </li>
                   ))}
+                  {product.features.length > 3 && (
+                    <li className="flex items-center space-x-2 sm:space-x-3">
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
+                      <span className="text-xs sm:text-sm md:text-base text-newt-red font-inter font-medium">
+                        +{product.features.length - 3} {locale === 'en' ? 'more features' : 'mais recursos'}
+                      </span>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Modal */}
+        {selectedProduct !== null && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              {/* Modal Header */}
+              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 bg-newt-red text-white rounded-lg">
+                    {getProductIcon(selectedProduct)}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-newt-black font-poppins">
+                      {productData[selectedProduct].title}
+                    </h3>
+                    {productData[selectedProduct].comingSoon && (
+                      <span className="inline-block bg-newt-red text-white text-xs px-2 py-1 rounded-full font-semibold font-inter mt-1">
+                        {t.common.comingSoon}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <button
+                  onClick={closeModal}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                >
+                  <X className="w-6 h-6 text-gray-500" />
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-6">
+                <p className="text-gray-700 text-base leading-relaxed mb-6 font-inter">
+                  {productData[selectedProduct].detailedDesc}
+                </p>
+
+                {/* Features List */}
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold text-newt-black mb-4 font-poppins">
+                    {locale === 'en' ? 'Features:' : 'Recursos:'}
+                  </h4>
+                  <ul className="space-y-3">
+                    {productData[selectedProduct].features.map((feature, index) => (
+                      <li key={index} className="flex items-center space-x-3">
+                        <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
+                        <span className="text-gray-700 font-inter">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3">
+                  {productData[selectedProduct].hasAccess && (
+                    <a
+                      href={productData[selectedProduct].accessLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center space-x-2 bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter"
+                    >
+                      <span>{locale === 'en' ? 'Access NewtMind' : 'Acessar NewtMind'}</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                  
+                  {productData[selectedProduct].whatsappMessage && (
+                    <button
+                      onClick={() => handleWhatsAppClick(productData[selectedProduct].whatsappMessage!)}
+                      className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>{locale === 'en' ? 'Learn More' : 'Saber Mais'}</span>
+                    </button>
+                  )}
+                  
+                  {!productData[selectedProduct].hasAccess && !productData[selectedProduct].whatsappMessage && (
+                    <button
+                      onClick={() => handleWhatsAppClick(
+                        locale === 'en' 
+                          ? `I'm interested in ${productData[selectedProduct].title}. When will it be available?`
+                          : `Tenho interesse no ${productData[selectedProduct].title}. Quando estará disponível?`
+                      )}
+                      className="flex items-center justify-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>{locale === 'en' ? 'Get Notified' : 'Me Avisar'}</span>
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
