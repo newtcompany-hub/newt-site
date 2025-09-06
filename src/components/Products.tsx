@@ -52,7 +52,7 @@ export function Products() {
       features: locale === 'en'
         ? ['AI image generation', 'WhatsApp integration', 'Multiple styles', 'Instant delivery']
         : ['Geração de imagens com IA', 'Integração WhatsApp', 'Múltiplos estilos', 'Entrega instantânea'],
-      comingSoon: false
+      comingSoon: true
     },
     {
       title: locale === 'en' ? 'FinanceFlow' : 'FinZap',
