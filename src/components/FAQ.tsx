@@ -45,23 +45,24 @@ export function FAQ() {
   }, [hasAnimated]);
 
   return (
-    <div 
+    <section 
       ref={sectionRef}
       id="faq" 
-      className="relative"
+      className="section-padding bg-white"
     >
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center lg:text-left mb-8 sm:mb-12 md:mb-16 lg:mb-12">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
             {t.faq.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter px-2">
             {t.faq.subtitle}
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div>
+        <div className="max-w-4xl mx-auto">
           {t.faq.items.map((item, index) => (
             <div
               key={index}
@@ -103,6 +104,7 @@ export function FAQ() {
             </div>
           ))}
         </div>
-    </div>
+      </div>
+    </section>
   );
 }
