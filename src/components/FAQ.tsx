@@ -65,23 +65,23 @@ export function FAQ() {
           {t.faq.items.map((item, index) => (
             <div
               key={index}
-              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white will-change-transform"
+              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="mobile-input w-full text-left p-3 sm:p-4 md:p-6 lg:p-8 hover:bg-gray-50 transition-all duration-300 custom-focus min-h-[56px] sm:min-h-[60px] md:min-h-[auto] will-change-auto"
+                className="mobile-input w-full text-left p-3 sm:p-4 md:p-6 lg:p-8 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[56px] sm:min-h-[60px] md:min-h-[auto]"
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className={`faq-question text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-newt-black font-poppins pr-2 sm:pr-3 md:pr-4 leading-heading ${
-                    openIndex === index ? 'expanded' : ''
+                  <h3 className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-newt-black font-poppins pr-2 sm:pr-3 md:pr-4 leading-heading ${
+                    openIndex === index ? 'font-bold' : ''
                   }`}>
                     {item.question}
                   </h3>
                   <ChevronDown
-                    className={`faq-chevron w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red flex-shrink-0 will-change-transform ${
-                      openIndex === index ? 'rotated' : ''
+                    className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red flex-shrink-0 transition-transform duration-200 ${
+                      openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
                 </div>
@@ -89,8 +89,8 @@ export function FAQ() {
               
               <div 
                 id={`faq-content-${index}`}
-                className={`faq-content ${
-                openIndex === index ? 'expanded' : ''
+                className={`overflow-hidden transition-all duration-200 ${
+                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
                 aria-hidden={openIndex !== index}
               >

@@ -189,7 +189,7 @@ Enviado através do site (${locale})`;
                   onChange={(e) => handleInputChange('name', e.target.value)}
                   className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-300 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.name ? 'border-newt-red' : 'border-gray-300'
-                  }`}
+                  } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Como devemos te chamar?' : 'What should we call you?'}
                   autoComplete="given-name"
                 />
@@ -211,7 +211,7 @@ Enviado através do site (${locale})`;
                   onChange={(e) => handleInputChange('company', e.target.value)}
                   className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-300 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.company ? 'border-newt-red' : 'border-gray-300'
-                  }`}
+                  } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Qual é o nome da sua empresa?' : 'What is your company name?'}
                   autoComplete="organization"
                 />
@@ -235,7 +235,7 @@ Enviado através do site (${locale})`;
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-300 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.phone ? 'border-newt-red' : 'border-gray-300'
-                  }`}
+                  } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' ? '(DDD) 90000‑0000' : 
                               locale === 'pt-PT' ? '+351 912 345 678' :
                               '+1 (555) 123-4567'}
@@ -259,7 +259,7 @@ Enviado através do site (${locale})`;
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-300 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.email ? 'border-newt-red' : 'border-gray-300'
-                  }`}
+                  } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Onde você quer receber o plano de ação?' : 'Where should we send the action plan?'}
                   autoComplete="email"
                 />
@@ -280,7 +280,7 @@ Enviado através do site (${locale})`;
                 rows={2}
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
-                className="mobile-input w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg custom-focus transition-colors duration-300 resize-none font-inter text-sm sm:text-base sm:rows-3 md:rows-4"
+                className="mobile-input w-full px-3 sm:px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 transition-colors duration-200 resize-none font-inter text-sm sm:text-base sm:rows-3 md:rows-4"
                 placeholder={t.contact.form.messagePlaceholder}
               ></textarea>
             </div>
@@ -294,7 +294,7 @@ Enviado através do site (${locale})`;
                 {t.contact.form.budgetOptions.map((option, index) => (
                   <label
                     key={index}
-                    className={`relative flex items-center p-2.5 sm:p-3 md:p-4 border rounded-lg cursor-pointer hover:bg-red-50 hover:border-newt-red transition-all duration-300 min-h-[44px] sm:min-h-[48px] custom-focus will-change-auto ${
+                    className={`relative flex items-center p-2.5 sm:p-3 md:p-4 border rounded-lg cursor-pointer hover:bg-red-50 hover:border-newt-red transition-colors duration-200 min-h-[44px] sm:min-h-[48px] focus-within:ring-2 focus-within:ring-newt-red focus-within:ring-offset-2 ${
                       formData.budget === option ? 'bg-red-50 border-newt-red' : 'border-gray-300'
                     }`}
                   >
@@ -310,7 +310,7 @@ Enviado através do site (${locale})`;
                       formData.budget === option ? 'border-newt-red' : 'border-gray-300'
                     }`}>
                       {formData.budget === option && (
-                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-newt-red rounded-full animate-pulse-slow"></div>
+                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-newt-red rounded-full"></div>
                       )}
                     </div>
                     <span className="text-xs sm:text-sm md:text-base text-gray-900 font-medium font-inter">{option}</span>
@@ -329,7 +329,7 @@ Enviado através do site (${locale})`;
                 id="source"
                 value={formData.source}
                 onChange={(e) => handleInputChange('source', e.target.value)}
-                className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-300 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
+                className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
                   errors.source ? 'border-newt-red' : 'border-gray-300'
                 }`}
               >
@@ -352,7 +352,7 @@ Enviado através do site (${locale})`;
                   id="sourceOther"
                   value={formData.sourceOther}
                   onChange={(e) => handleInputChange('sourceOther', e.target.value)}
-                  className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg custom-focus transition-colors duration-300 font-inter text-sm sm:text-base min-h-[48px] ${
+                  className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] ${
                     errors.sourceOther ? 'border-newt-red' : 'border-gray-300'
                   }`}
                   placeholder={getOtherPlaceholder()}
@@ -363,7 +363,7 @@ Enviado através do site (${locale})`;
 
             {/* Consent */}
             <div className="mb-4 sm:mb-6 md:mb-8">
-              <label className="flex items-start space-x-2 sm:space-x-3 cursor-pointer group custom-focus will-change-auto">
+              <label className="flex items-start space-x-2 sm:space-x-3 cursor-pointer group focus-within:ring-2 focus-within:ring-newt-red focus-within:ring-offset-2 rounded">
                 <div className="relative mt-0.5 sm:mt-1 flex-shrink-0">
                   <input
                     type="checkbox"
@@ -371,10 +371,10 @@ Enviado através do site (${locale})`;
                     onChange={(e) => handleInputChange('consent', e.target.checked)}
                     className="sr-only"
                   />
-                  <div className={`w-4 h-4 sm:w-5 sm:h-5 border-2 rounded flex items-center justify-center transition-all duration-300 ${
+                  <div className={`w-4 h-4 sm:w-5 sm:h-5 border-2 rounded flex items-center justify-center transition-colors duration-200 ${
                     formData.consent ? 'bg-newt-red border-newt-red' : 'border-gray-300 group-hover:border-newt-red'
                   }`}>
-                    {formData.consent && <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white animate-pulse-slow" />}
+                    {formData.consent && <Check className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />}
                   </div>
                 </div>
                 <span className="text-xs sm:text-sm text-gray-700 leading-body font-inter">
@@ -387,10 +387,10 @@ Enviado através do site (${locale})`;
             {/* Submit Button */}
             <button
               type="submit"
-              className="mobile-btn group w-full bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex items-center justify-center space-x-2 custom-focus font-inter min-h-[48px] sm:min-h-[52px] md:min-h-[56px] will-change-transform"
+              className="mobile-btn group w-full bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base md:text-lg transition-colors duration-200 flex items-center justify-center space-x-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter min-h-[48px] sm:min-h-[52px] md:min-h-[56px]"
             >
               <span>{t.contact.form.submit}</span>
-              <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              <Send className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </form>
         </div>

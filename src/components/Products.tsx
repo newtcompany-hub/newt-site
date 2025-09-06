@@ -90,13 +90,13 @@ export function Products() {
           {productData.map((product, index) => (
             <div
               key={index}
-              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red card-hover will-change-transform ${
+              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-colors duration-200 ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
             >
               {/* Coming Soon Badge */}
               {product.comingSoon && (
-                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-newt-red text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold font-inter animate-pulse-slow">
+                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-newt-red text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold font-inter">
                   {t.common.comingSoon}
                 </div>
               )}
@@ -107,7 +107,7 @@ export function Products() {
                   product.comingSoon 
                     ? 'bg-gray-700 text-gray-400' 
                     : 'bg-newt-red text-white group-hover:bg-red-500'
-                } transition-colors duration-300`}>
+                } transition-colors duration-200`}>
                   {getProductIcon(index)}
                 </div>
                 
@@ -122,8 +122,8 @@ export function Products() {
                 <ul className="space-y-1.5 sm:space-y-2 md:space-y-3">
                   {product.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-2 h-2 bg-newt-red rounded-full group-hover:scale-125 transition-transform duration-300 will-change-transform"></div>
-                      <span className="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-300">
+                      <div className="w-2 h-2 bg-newt-red rounded-full"></div>
+                      <span className="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-200">
                         {feature}
                       </span>
                     </li>
