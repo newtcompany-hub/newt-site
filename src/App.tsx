@@ -10,16 +10,21 @@ import { Footer } from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Add scroll reveal animations
+    // Optimized scroll reveal animations with Intersection Observer
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      rootMargin: '50px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-reveal');
+          // Use requestAnimationFrame for better performance
+          requestAnimationFrame(() => {
+            entry.target.classList.add('animate-reveal');
+          });
+          // Stop observing once animated
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
@@ -31,12 +36,24 @@ function App() {
       observer.observe(section);
     });
 
+    // Preload critical images
+    const criticalImages = [
+      '/Logo Completa Newt Company.png',
+      '/ícone de newtmind.svg',
+      '/ícone do newtflow.svg'
+    ];
+    
+    criticalImages.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+
     // Clean up
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="font-inter bg-white">
+    <div className="font-inter bg-white overflow-x-hidden">
       <Header />
       <main>
         <Hero />

@@ -5,6 +5,23 @@
 /* Hero Background Animation */
 
 /* Custom animations */
+@keyframes heroFlow {
+  0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+  25% { transform: translateX(10px) translateY(-5px) rotate(1deg); }
+  50% { transform: translateX(-5px) translateY(10px) rotate(-1deg); }
+  75% { transform: translateX(-10px) translateY(-5px) rotate(0.5deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -114,26 +131,20 @@ html {
 }
 
 /* Custom focus styles */
-.custom-focus:focus,
 .custom-focus:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4), 0 0 8px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(225, 29, 42, 0.5), 0 0 8px rgba(225, 29, 42, 0.3);
   border-radius: 6px;
 }
 
 /* Global focus styles for all interactive elements */
-button:focus,
 button:focus-visible,
-a:focus,
 a:focus-visible,
-input:focus,
 input:focus-visible,
-select:focus,
 select:focus-visible,
-textarea:focus,
 textarea:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4), 0 0 8px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 2px rgba(225, 29, 42, 0.5), 0 0 8px rgba(225, 29, 42, 0.3);
   border-radius: 6px;
 }
 
@@ -185,16 +196,25 @@ textarea:focus-visible {
 
 /* Button hover effects */
 .btn-primary {
-  @apply bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  @apply bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-newt-red focus-visible:ring-offset-2;
 }
 
 .btn-secondary {
-  @apply border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  @apply border-2 border-white text-white hover:bg-white hover:text-black px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2;
 }
 
 /* Card hover effects */
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2;
+  @apply transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-3 hover:scale-[1.02];
+}
+
+/* Optimized animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
 }
 
 /* Loading states */
@@ -204,13 +224,28 @@ textarea:focus-visible {
   animation: shimmer 1.5s infinite;
 }
 
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* FAQ Enhanced Styles */
 .faq-item {
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
 }
 
 @keyframes shimmer {
@@ -264,7 +299,7 @@ textarea:focus-visible {
 
 /* Enhanced FAQ animations */
 .faq-item {
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(20px);
 }
@@ -275,8 +310,9 @@ textarea:focus-visible {
 }
 
 .faq-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   background-color: rgba(249, 250, 251, 0.8);
+  transform: translateY(-2px);
 }
 
 .faq-content {
@@ -305,6 +341,24 @@ textarea:focus-visible {
 
 .faq-question.expanded {
   font-weight: 700;
+}
+
+/* Image optimization */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Responsive typography */

@@ -28,14 +28,14 @@ export function About() {
             {t.about.timeline.map((step, index) => (
               <div
                 key={index}
-                className="mobile-card group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 lg:p-8 rounded-xl border border-gray-200 hover:border-newt-red card-hover"
+                className="mobile-card group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 lg:p-8 rounded-xl border border-gray-200 hover:border-newt-red card-hover will-change-transform"
               >
                 {/* Step Number */}
-                <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-newt-red text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold group-hover:scale-110 transition-transform duration-200 font-inter">
+                <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 md:-top-4 md:-left-4 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 bg-newt-red text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold group-hover:scale-110 transition-transform duration-300 font-inter will-change-transform">
                   {index + 1}
                 </div>
                 
-                <h4 className="text-base sm:text-lg md:text-xl font-semibold text-newt-black mb-2 sm:mb-3 font-poppins group-hover:text-newt-red transition-colors duration-200">
+                <h4 className="text-base sm:text-lg md:text-xl font-semibold text-newt-black mb-2 sm:mb-3 font-poppins group-hover:text-newt-red transition-colors duration-300">
                   {step.title}
                 </h4>
                 <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-inter">
@@ -58,8 +58,8 @@ export function About() {
                 key={index}
                 className="flex items-start space-x-2 sm:space-x-3 md:space-x-4 group"
               >
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red mt-0.5 sm:mt-1 group-hover:scale-110 transition-transform duration-200 flex-shrink-0" />
-                <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed font-inter group-hover:text-white transition-colors duration-200">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red mt-0.5 sm:mt-1 group-hover:scale-110 transition-transform duration-300 flex-shrink-0 will-change-transform" />
+                <p className="text-gray-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed font-inter group-hover:text-white transition-colors duration-300">
                   {item}
                 </p>
               </div>

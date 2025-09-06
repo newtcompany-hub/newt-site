@@ -16,10 +16,10 @@ export function Hero() {
     <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-red-700 via-red-900 to-black opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90 will-change-transform"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-700 via-red-900 to-black opacity-80 will-change-transform"></div>
         <div 
-          className="absolute inset-0 opacity-60"
+          className="absolute inset-0 opacity-60 will-change-transform"
           style={{
             background: `
               radial-gradient(ellipse 800px 600px at 20% 30%, rgba(220, 38, 38, 0.4) 0%, transparent 50%),
@@ -28,43 +28,43 @@ export function Hero() {
               repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.02) 2px, rgba(255, 255, 255, 0.02) 4px)
             `,
             filter: 'blur(30px)',
-            animation: 'heroFlow 10s ease-in-out infinite'
+            animation: 'heroFlow 15s ease-in-out infinite'
           }}
         ></div>
       </div>
 
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center relative z-10 w-full py-16 sm:py-20 md:py-24 lg:py-32">
-        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in will-change-transform">
           {/* Welcome Badge */}
-          <div className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs sm:text-sm md:text-base text-white font-medium animate-slide-up font-inter">
+          <div className="inline-flex items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs sm:text-sm md:text-base text-white font-medium animate-slide-up font-inter animate-float">
             {t.hero.welcome}
           </div>
 
           {/* Headline */}
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight font-poppins animate-slide-up px-2 sm:px-4 max-w-5xl mx-auto">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight font-poppins animate-slide-up px-2 sm:px-4 max-w-5xl mx-auto will-change-transform">
             {t.hero.headline}
           </h1>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-inter animate-slide-up-delay px-4 sm:px-6">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-inter animate-slide-up-delay px-4 sm:px-6 will-change-opacity">
             {t.hero.subheadline}
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 pt-4 sm:pt-6 md:pt-8 animate-slide-up-delay-2 px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 pt-4 sm:pt-6 md:pt-8 animate-slide-up-delay-2 px-4 sm:px-6 will-change-transform">
             <a
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="mobile-btn group bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center space-x-2 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter min-h-[48px]"
+              className="mobile-btn group bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center space-x-2 w-full sm:w-auto justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-newt-red focus-visible:ring-offset-2 focus-visible:ring-offset-newt-black font-inter min-h-[48px] will-change-transform"
             >
               <span>{t.hero.cta1}</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </a>
             
             <button
               onClick={() => scrollToSection('services')}
-              className="mobile-btn btn-secondary w-full sm:w-auto font-inter min-h-[48px] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg"
+              className="mobile-btn btn-secondary w-full sm:w-auto font-inter min-h-[48px] px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg will-change-transform"
             >
               {t.hero.cta2}
             </button>

@@ -13,6 +13,7 @@ export function FAQ() {
   };
 
   useEffect(() => {
+    // Intersection Observer with better performance
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,14 +21,20 @@ export function FAQ() {
             setHasAnimated(true);
             const items = entry.target.querySelectorAll('.faq-item');
             items.forEach((item, index) => {
-              setTimeout(() => {
-                item.classList.add('animate-in');
-              }, index * 40);
+              // Use requestAnimationFrame for better performance
+              requestAnimationFrame(() => {
+                setTimeout(() => {
+                  item.classList.add('animate-in');
+                }, index * 50);
+              });
             });
           }
         });
       },
-      { threshold: 0.1 }
+      { 
+        threshold: 0.1,
+        rootMargin: '50px 0px'
+      }
     );
 
     if (sectionRef.current) {
@@ -58,12 +65,13 @@ export function FAQ() {
           {t.faq.items.map((item, index) => (
             <div
               key={index}
-              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white"
+              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white will-change-transform"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="mobile-input w-full text-left p-3 sm:p-4 md:p-6 lg:p-8 hover:bg-gray-50 transition-all duration-300 custom-focus min-h-[56px] sm:min-h-[60px] md:min-h-[auto]"
+                className="mobile-input w-full text-left p-3 sm:p-4 md:p-6 lg:p-8 hover:bg-gray-50 transition-all duration-300 custom-focus min-h-[56px] sm:min-h-[60px] md:min-h-[auto] will-change-auto"
                 aria-expanded={openIndex === index}
+                aria-controls={`faq-content-${index}`}
               >
                 <div className="flex items-center justify-between">
                   <h3 className={`faq-question text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-newt-black font-poppins pr-2 sm:pr-3 md:pr-4 leading-heading ${
@@ -72,16 +80,20 @@ export function FAQ() {
                     {item.question}
                   </h3>
                   <ChevronDown
-                    className={`faq-chevron w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red flex-shrink-0 ${
+                    className={`faq-chevron w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red flex-shrink-0 will-change-transform ${
                       openIndex === index ? 'rotated' : ''
                     }`}
                   />
                 </div>
               </button>
               
-              <div className={`faq-content ${
+              <div 
+                id={`faq-content-${index}`}
+                className={`faq-content ${
                 openIndex === index ? 'expanded' : ''
-              }`}>
+                }`}
+                aria-hidden={openIndex !== index}
+              >
                 <div className="p-3 sm:p-4 md:p-6 lg:p-8 pt-0 bg-gray-50 border-t border-gray-100">
                   <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-inter max-w-3xl">
                     {item.answer}
