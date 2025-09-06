@@ -110,6 +110,14 @@ export function Products() {
         ? 'FicaLeve is your personal trainer and nutritionist right in WhatsApp. Simply send a photo of your meal or body and our AI analyzes, calculates calories, creates personalized diet plans and workouts according to your goals. 100% on WhatsApp, no complicated apps. Simple, fast and motivating: the easiest way to lose weight, gain muscle or just feel lighter every day.'
         : 'O FicaLeve é seu personal trainer e nutricionista direto no WhatsApp. Basta enviar uma foto da sua refeição ou do seu físico e nossa inteligência artificial analisa, calcula calorias, cria planos de dieta e treinos personalizados de acordo com o seu objetivo. 100% no WhatsApp, sem apps complicados. Simples, rápido e motivador: o jeito mais fácil de perder peso, ganhar massa ou apenas se sentir mais leve no dia a dia.'
     }
+  ];
+
+  const handleWhatsAppClick = (message: string) => {
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/5511999999999?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const closeModal = () => {
     setSelectedProduct(null);
   };
@@ -207,6 +215,7 @@ export function Products() {
                   </div>
                 </div>
                 <button
+                  onClick={closeModal}
                   className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
                 >
                   <X className="w-6 h-6 text-gray-500" />
