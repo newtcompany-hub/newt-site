@@ -38,27 +38,23 @@ export function FAQ() {
   }, [hasAnimated]);
 
   return (
-    <section 
+    <div 
       ref={sectionRef}
       id="faq" 
-      className="section-padding bg-gradient-to-b from-gray-50 to-white relative"
+      className="relative"
     >
-      {/* Subtle top glow */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-newt-red/30 to-transparent"></div>
-      
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+        <div className="text-center lg:text-left mb-8 sm:mb-12 md:mb-16 lg:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
             {t.faq.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter px-2">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter">
             {t.faq.subtitle}
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="max-w-4xl mx-auto">
+        <div>
           {t.faq.items.map((item, index) => (
             <div
               key={index}
@@ -95,7 +91,6 @@ export function FAQ() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+    </div>
   );
 }

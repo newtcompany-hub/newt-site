@@ -155,20 +155,19 @@ Enviado através do site (${locale})`;
   };
 
   return (
-    <section id="contact" className="section-padding bg-gray-50">
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+    <div id="contact" className="relative">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
+        <div className="text-center lg:text-left mb-8 sm:mb-12 md:mb-16 lg:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
             {t.contact.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter px-2">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter">
             {t.contact.subtitle}
           </p>
         </div>
 
         {/* Contact Form */}
-        <div className="max-w-4xl mx-auto">
+        <div>
           <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6">
               {/* Name */}
@@ -384,7 +383,6 @@ Enviado através do site (${locale})`;
             </button>
           </form>
         </div>
-      </div>
-    </section>
+    </div>
   );
 }
