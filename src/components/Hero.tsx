@@ -13,26 +13,27 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-black overflow-hidden hero-padding">
+    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-900 via-red-900 to-black opacity-90"></div>
-        <div className="absolute inset-0 bg-gradient-to-tr from-red-800 via-orange-800 to-black opacity-80 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-700 via-red-900 to-black opacity-80"></div>
         <div 
           className="absolute inset-0 opacity-60"
           style={{
             background: `
-              radial-gradient(ellipse 800px 600px at 20% 30%, rgba(180, 50, 20, 0.4) 0%, transparent 50%),
-              radial-gradient(ellipse 600px 800px at 80% 70%, rgba(120, 30, 10, 0.3) 0%, transparent 50%),
-              radial-gradient(ellipse 400px 400px at 50% 50%, rgba(200, 80, 40, 0.2) 0%, transparent 50%)
+              radial-gradient(ellipse 800px 600px at 20% 30%, rgba(220, 38, 38, 0.4) 0%, transparent 50%),
+              radial-gradient(ellipse 600px 800px at 80% 70%, rgba(185, 28, 28, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse 400px 400px at 50% 50%, rgba(239, 68, 68, 0.2) 0%, transparent 50%),
+              repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255, 255, 255, 0.02) 2px, rgba(255, 255, 255, 0.02) 4px)
             `,
-            filter: 'blur(40px)',
+            filter: 'blur(30px)',
             animation: 'heroFlow 10s ease-in-out infinite'
           }}
         ></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex items-center justify-center min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 w-full py-20 sm:py-24 lg:py-32">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
           {/* Welcome Badge */}
           <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">

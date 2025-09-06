@@ -329,8 +329,8 @@ export const translations = {
     
     // Contact
     contact: {
-      title: 'Get In Touch',
-      subtitle: 'Let\'s discuss how we can accelerate your business growth',
+      title: 'Entre em Contacto',
+      subtitle: 'Vamos conversar sobre como podemos acelerar o crescimento do seu negócio',
       form: {
         name: 'Nome',
         company: 'Nome da empresa',
@@ -346,7 +346,7 @@ export const translations = {
           'Entre € 850 e € 2.500',
           'Acima de € 2.500'
         ],
-        submit: 'Fale com um Consultor',
+        submit: 'Falar com um Consultor',
         consent: 'Ao submeter, aceita a nossa Política de Privacidade (RGPD).',
         required: 'Campo obrigatório'
       }

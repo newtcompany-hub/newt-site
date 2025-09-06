@@ -10,6 +10,11 @@ export function Products() {
       <img src="/ícone de newtmind.svg" alt="NewtMind" width="32" height="32" className="w-8 h-8" />,
       // NewtFlows - Custom SVG
       <img src="/ícone do newtflow.svg" alt="NewtFlows" width="32" height="32" className="w-8 h-8" />,
+      // NewtPhotos - Camera icon
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+        <circle cx="12" cy="13" r="3"/>
+      </svg>,
       // FinZap - Clock icon
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="10"/>
@@ -39,6 +44,14 @@ export function Products() {
       features: locale === 'en'
         ? ['Smart customer service', 'Intelligent support', 'Integrated CRM', 'Sales automation']
         : ['Atendimento automático', 'Suporte inteligente', 'CRM integrado', 'Vendas automatizadas'],
+      comingSoon: false
+    },
+    {
+      title: locale === 'en' ? 'PhotoAI Pro' : 'NewtPhotos',
+      desc: locale === 'en' ? 'AI image generator via WhatsApp.' : 'Gerador de imagens com IA via WhatsApp.',
+      features: locale === 'en'
+        ? ['AI image generation', 'WhatsApp integration', 'Multiple styles', 'Instant delivery']
+        : ['Geração de imagens com IA', 'Integração WhatsApp', 'Múltiplos estilos', 'Entrega instantânea'],
       comingSoon: false
     },
     {
@@ -73,7 +86,7 @@ export function Products() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-6">
           {productData.map((product, index) => (
             <div
               key={index}
