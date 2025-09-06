@@ -34,6 +34,11 @@ export function Hero() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex items-center justify-center min-h-screen">
         <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
+          {/* Welcome Badge */}
+          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">
+            {t.hero.welcome}
+          </div>
+
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-heading font-poppins animate-slide-up px-2">
             {t.hero.headline}

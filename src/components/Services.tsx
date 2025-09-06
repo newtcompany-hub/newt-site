@@ -57,7 +57,7 @@ export function Services() {
           <div className="group relative bg-white hover:bg-newt-black p-6 sm:p-8 rounded-2xl border border-gray-200 hover:border-newt-red card-hover">
             <div className="space-y-4 sm:space-y-6">
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-300 font-poppins leading-heading">
-                {locale === 'en' ? 'Content Co-Production' : 'Co-produção'}
+                Co-produção
               </h3>
               
               <p className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 leading-body font-inter transition-colors duration-300">

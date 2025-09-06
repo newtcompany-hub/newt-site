@@ -16,8 +16,9 @@ export const translations = {
     
     // Hero
     hero: {
-      headline: 'Fazemos empresas venderem mais com automações, webdesign, tráfego pago e estratégias exclusivas.',
-      subheadline: 'Estúdio criativo que une web design premium, automação inteligente e tráfego qualificado para acelerar seus resultados.',
+      welcome: 'Bem-vindo ao seu Tunning Business',
+      headline: 'Escalamos seu negócio com automações, web design e tráfego pago',
+      subheadline: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
       cta1: 'Falar no WhatsApp',
       cta2: 'Ver Serviços'
     },
@@ -25,7 +26,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'Estúdio criativo especializado em sites e automações que geram resultados reais.',
+      subtitle: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
       methodology: 'Nossa Metodologia',
       timeline: [
         { title: 'Diagnóstico', desc: 'Análise completa do seu negócio e oportunidades' },
@@ -95,9 +96,9 @@ export const translations = {
           features: ['Atendimento automático', 'Suporte inteligente', 'CRM integrado', 'Vendas automatizadas']
         },
         {
-          title: 'SaaS #1',
-          desc: 'Em breve - Revolucione sua gestão.',
-          features: ['Coming soon'],
+          title: 'FinZap',
+          desc: 'Controle seu dinheiro pelo WhatsApp.',
+          features: ['Controle de entradas e saídas', 'Emissão de cobranças no WhatsApp', 'Relatórios automáticos', 'Integração com planilhas'],
           comingSoon: true
         },
         {
@@ -200,8 +201,9 @@ export const translations = {
     
     // Hero
     hero: {
-      headline: 'Fazemos empresas venderem mais com automações, webdesign, tráfego pago e estratégias exclusivas.',
-      subheadline: 'Estúdio criativo que une web design premium, automação inteligente e tráfego qualificado para acelerar os seus resultados.',
+      welcome: 'Bem-vindo ao seu Tunning Business',
+      headline: 'Escalamos seu negócio com automações, web design e tráfego pago',
+      subheadline: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
       cta1: 'Falar no WhatsApp',
       cta2: 'Ver Serviços'
     },
@@ -209,7 +211,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'Estúdio criativo especializado em sites e automações que geram resultados reais.',
+      subtitle: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
       methodology: 'A Nossa Metodologia',
       timeline: [
         { title: 'Diagnóstico', desc: 'Análise completa do seu negócio e oportunidades' },
@@ -236,28 +238,28 @@ export const translations = {
       subtitle: 'Soluções completas para acelerar o seu crescimento digital',
       items: [
         {
-          title: 'Business Optimization',
-          desc: 'Complete business transformation combining our services. We optimize companies to their maximum potential.',
+          title: 'Tunning Business',
+          desc: 'União dos nossos serviços conforme o foco da sua empresa. "Tunamos" empresas ao máximo potencial.',
           bullets: ['Diagnóstico 360°', 'Plano de upgrades', 'Execução ágil', 'Métricas claras']
         },
         {
-          title: 'Marketing Automation',
-          desc: 'Streamline your sales process with intelligent automation systems.',
+          title: 'Gestão de Automação',
+          desc: 'Automatize processos e vendas com inteligência.',
           bullets: ['Bots WhatsApp e email', 'Funis de conversão', 'Integrações CRM', 'Contratos e faturação']
         },
         {
-          title: 'Digital Advertising',
-          desc: 'Drive qualified traffic and boost your conversion rates.',
+          title: 'Gestão de Tráfego',
+          desc: 'Atraia visitantes qualificados e converta mais.',
           bullets: ['Planeamento estratégico', 'Criativos de alta conversão', 'Testes A/B', 'Relatórios detalhados']
         },
         {
           title: 'Web Design',
-          desc: 'Stunning websites that turn visitors into paying customers.',
+          desc: 'Sites que impressionam e convertem visitantes em clientes.',
           bullets: ['UX/UI premium', 'SEO otimizado', 'Performance máxima', 'Responsivo total']
         },
         {
-          title: 'Strategic Consulting',
-          desc: 'Professional business analysis with actionable growth plans.',
+          title: 'Consultoria Estratégica',
+          desc: 'Diagnóstico profissional e plano acionável.',
           bullets: ['Análise completa', 'Estratégia personalizada', 'Plano de ação', 'Investimento acessível']
         }
       ]
@@ -279,9 +281,9 @@ export const translations = {
           features: ['Smart customer service', 'Intelligent support', 'Integrated CRM', 'Sales automation']
         },
         {
-          title: 'FinanceFlow',
-          desc: 'Coming soon - Revolutionary financial management.',
-          features: ['Coming soon'],
+          title: 'FinZap',
+          desc: 'Controle seu dinheiro pelo WhatsApp.',
+          features: ['Controle de entradas e saídas', 'Emissão de cobranças no WhatsApp', 'Relatórios automáticos', 'Integração com planilhas'],
           comingSoon: true
         },
         {
@@ -384,8 +386,9 @@ export const translations = {
     
     // Hero
     hero: {
-      headline: 'We help companies sell more with automations, web design, paid traffic and exclusive strategies.',
-      subheadline: 'Creative studio that combines premium web design, intelligent automation and qualified traffic to accelerate your results.',
+      welcome: 'Welcome to your Business Tunning',
+      headline: 'We scale your business with automations, web design and paid traffic',
+      subheadline: 'We are a creative studio specialized in AI automations, websites and paid traffic.',
       cta1: 'Chat on WhatsApp',
       cta2: 'See Services'
     },
@@ -393,7 +396,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'Creative studio specialized in websites and automations that generate real results.',
+      subtitle: 'We are a creative studio specialized in AI automations, websites and paid traffic.',
       methodology: 'Our Methodology',
       timeline: [
         { title: 'Diagnosis', desc: 'Complete analysis of your business and opportunities' },
@@ -425,12 +428,12 @@ export const translations = {
           bullets: ['360° diagnosis', 'Upgrade plan', 'Agile execution', 'Clear metrics']
         },
         {
-          title: 'Automation Management',
+          title: 'Gestão de Automação',
           desc: 'Automate processes and sales with intelligence.',
           bullets: ['WhatsApp & email bots', 'Conversion funnels', 'CRM integrations', 'Contracts & billing']
         },
         {
-          title: 'Traffic Management',
+          title: 'Gestão de Tráfego',
           desc: 'Attract qualified visitors and convert more.',
           bullets: ['Strategic planning', 'High-conversion creatives', 'A/B testing', 'Detailed reports']
         },
@@ -440,7 +443,7 @@ export const translations = {
           bullets: ['Premium UX/UI', 'SEO optimized', 'Maximum performance', 'Fully responsive']
         },
         {
-          title: 'Strategic Consulting',
+          title: 'Consultoria Estratégica',
           desc: 'Professional diagnosis and actionable plan.',
           bullets: ['Complete analysis', 'Personalized strategy', 'Action plan', 'Affordable investment']
         }
@@ -463,9 +466,9 @@ export const translations = {
           features: ['Automatic support', 'Intelligent assistance', 'Integrated CRM', 'Automated sales']
         },
         {
-          title: 'SaaS #1',
-          desc: 'Coming soon - Revolutionize your management.',
-          features: ['Coming soon'],
+          title: 'FinZap',
+          desc: 'Control your money through WhatsApp.',
+          features: ['Income & expense tracking', 'WhatsApp billing', 'Automated reports', 'Spreadsheet integration'],
           comingSoon: true
         },
         {
