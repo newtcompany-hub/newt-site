@@ -56,7 +56,7 @@ export function Products() {
     },
     {
       title: locale === 'en' ? 'FinanceFlow' : 'FinZap',
-      desc: locale === 'en' ? 'Revolutionary financial management SaaS.' : 'SaaS financeiro via WhatsApp.',
+      desc: locale === 'en' ? 'Revolutionary financial management SaaS.' : 'Controle seu dinheiro via WhatsApp.',
       features: locale === 'en'
         ? ['Income & expense tracking', 'WhatsApp billing', 'Automated reports', 'Spreadsheet integration']
         : ['Controle de entradas e saídas', 'Emissão de cobranças no WhatsApp', 'Relatórios automáticos', 'Integração com planilhas'],
