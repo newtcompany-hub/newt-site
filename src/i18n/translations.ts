@@ -301,28 +301,28 @@ export const translations = {
       subtitle: 'Esclareça as suas dúvidas sobre os nossos serviços',
       items: [
         {
-          question: 'What are your typical delivery times?',
-          answer: 'Websites: 7-15 business days. Automations: 5-10 days. Consulting: 2-5 days. Timelines may vary based on project complexity.'
+          question: 'Qual é o prazo médio de entrega?',
+          answer: 'Sites: 7-15 dias úteis. Automações: 5-10 dias. Consultoria: 2-5 dias. Os prazos podem variar conforme a complexidade.'
         },
         {
-          question: 'How many revisions are included?',
-          answer: 'We include up to 3 revision rounds at no extra cost. Major structural changes are quoted separately.'
+          question: 'Quantas revisões estão incluídas?',
+          answer: 'Incluímos até 3 rondas de revisões sem custo adicional. Mudanças estruturais são avaliadas separadamente.'
         },
         {
-          question: 'How do we get started?',
-          answer: 'We chat via WhatsApp, conduct initial analysis, present our proposal, and once approved, begin development immediately.'
+          question: 'Como começamos o projecto?',
+          answer: 'Conversamos via WhatsApp, fazemos o diagnóstico inicial, apresentamos a proposta e, aprovada, iniciamos o desenvolvimento.'
         },
         {
-          question: 'What payment methods do you accept?',
-          answer: 'Bank transfers, credit cards, and we offer payment plans for larger projects. 50% deposit required to start.'
+          question: 'Que formas de pagamento aceitam?',
+          answer: 'Transferência bancária, cartão de crédito e oferecemos planos de pagamento para projectos maiores. Entrada de 50% para iniciar.'
         },
         {
-          question: 'Do you provide post-launch support?',
-          answer: 'Absolutely! We include 30 days of complimentary support, followed by optional monthly maintenance plans.'
+          question: 'Oferecem suporte pós-entrega?',
+          answer: 'Sim! Incluímos 30 dias de suporte gratuito. Depois, oferecemos planos mensais de manutenção.'
         },
         {
-          question: 'How do you ensure data security?',
-          answer: 'We strictly follow GDPR/CCPA regulations. All data is encrypted, access is restricted, and we maintain clear privacy policies.'
+          question: 'Como garantem a segurança dos meus dados?',
+          answer: 'Seguimos rigorosamente o RGPD. Dados encriptados, acesso restrito e políticas claras de privacidade.'
         }
       ]
     },
