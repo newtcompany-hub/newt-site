@@ -40,7 +40,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto text-center relative z-10 w-full pt-16 sm:pt-20 lg:pt-24">
-        <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 animate-fade-in">
+        <div className="max-w-5xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 animate-fade-in">
           {/* Welcome Badge */}
           <div className="inline-flex items-center px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 lg:py-3.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base lg:text-lg text-white font-medium animate-slide-up font-inter">
             {t.hero.welcome}
@@ -57,7 +57,7 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 animate-slide-up-delay-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 pt-8 sm:pt-10 md:pt-12 lg:pt-16 xl:pt-20 animate-slide-up-delay-2">
             <a
               href="https://wa.me/5591998382662"
               target="_blank"
