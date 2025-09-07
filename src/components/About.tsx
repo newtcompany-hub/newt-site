@@ -14,7 +14,12 @@ export function About() {
             {t.about.title}
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-inter px-2">
-            {t.about.subtitle}
+            {t.about.subtitle.split('\n\n').map((paragraph, index) => (
+              <span key={index}>
+                {paragraph}
+                {index < t.about.subtitle.split('\n\n').length - 1 && <><br /><br /></>}
+              </span>
+            ))}
           </p>
         </div>
 
