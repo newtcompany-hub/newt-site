@@ -169,7 +169,7 @@ export function Products() {
             <div
               key={index}
               onClick={() => setSelectedProduct(index)}
-              className={`mobile-card card-animate group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red cursor-pointer hover:scale-105 opacity-0 animate-slide-up transition-all duration-300 ${
+              className={`mobile-card card-animate group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red cursor-pointer hover:scale-[1.02] opacity-0 animate-slide-up ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
               style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
