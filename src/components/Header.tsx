@@ -127,7 +127,7 @@ export function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 ${styles.bg} ${styles.border} transition-all duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
+        <div className="flex items-center justify-between h-12 sm:h-14 md:h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <button
@@ -138,7 +138,7 @@ export function Header() {
               <img 
                 src="/Logo Completa Newt Company.png" 
                 alt="Newt Company" 
-                className="h-5 sm:h-6 md:h-8 lg:h-10 w-auto"
+                className="h-4 sm:h-5 md:h-6 w-auto"
                 loading="eager"
                 decoding="async"
               />
@@ -146,7 +146,7 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             <button onClick={() => scrollToSection('home')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.home}</button>
             <button onClick={() => scrollToSection('about')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.about}</button>
             <button onClick={() => scrollToSection('services')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.services}</button>
@@ -156,7 +156,7 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA and Language Selector */}
-          <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3">
             {/* Language Selector */}
             <div className="relative language-selector">
               <button
@@ -165,17 +165,17 @@ export function Header() {
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4" />
-                <span className="text-xs sm:text-sm font-medium font-inter">{localeLabels[locale]}</span>
+                <span className="text-sm font-medium font-inter">{localeLabels[locale]}</span>
               </button>
               
-              <div className={`absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-32 sm:min-w-40 z-10 transition-all duration-200 ${
+              <div className={`absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-28 z-10 transition-all duration-200 ${
                 isLangMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
               }`}>
                   {(Object.keys(localeLabels) as Locale[]).map((loc) => (
                     <button
                       key={loc}
                       onClick={() => handleLocaleChange(loc)}
-                      className={`block w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter ${
+                      className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter ${
                         locale === loc ? 'text-newt-red bg-red-50' : 'text-gray-700'
                       }`}
                     >
@@ -189,25 +189,25 @@ export function Header() {
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-newt-red hover:bg-red-700 text-white px-4 lg:px-6 py-2 lg:py-3 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-sm lg:text-base"
+              className="bg-newt-red hover:bg-red-700 text-white px-3 py-2 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-sm"
             >
               {t.nav.whatsapp}
             </a>
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center space-x-1 sm:space-x-2">
+          <div className="lg:hidden flex items-center space-x-1">
             {/* Mobile Language Selector */}
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className={`${styles.text} flex items-center justify-center ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px]`}
+                className={`${styles.text} flex items-center justify-center ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[40px] min-w-[40px]`}
                 aria-label="Selecionar idioma"
               >
-                <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Globe className="w-4 h-4" />
               </button>
               
-              <div className={`absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-32 z-10 transition-all duration-200 ${
+              <div className={`absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-24 z-10 transition-all duration-200 ${
                 isLangMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
               }`}>
                   {(Object.keys(localeLabels) as Locale[]).map((loc) => (
@@ -226,10 +226,10 @@ export function Header() {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${styles.text} ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center`}
+              className={`${styles.text} ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[40px] min-w-[40px] flex items-center justify-center`}
               aria-label="Menu"
             >
-              {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -238,20 +238,20 @@ export function Header() {
         <div className={`lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-sm px-2 transition-all duration-200 overflow-hidden mobile-menu ${
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}>
-            <nav className="py-4 space-y-1 pb-safe">
-              <button onClick={() => scrollToSection('home')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[48px]">{t.nav.home}</button>
-              <button onClick={() => scrollToSection('about')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[48px]">{t.nav.about}</button>
-              <button onClick={() => scrollToSection('services')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[48px]">{t.nav.services}</button>
-              <button onClick={() => scrollToSection('products')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[48px]">{t.nav.products}</button>
-              <button onClick={() => scrollToSection('faq')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[48px]">{t.nav.faq}</button>
-              <button onClick={() => scrollToSection('contact')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-3 px-4 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[48px]">{t.nav.contact}</button>
-              <div className="pt-4 px-2 border-t border-gray-200 mt-4 pb-4">
+            <nav className="py-3 space-y-1 pb-safe">
+              <button onClick={() => scrollToSection('home')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.home}</button>
+              <button onClick={() => scrollToSection('about')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.about}</button>
+              <button onClick={() => scrollToSection('services')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.services}</button>
+              <button onClick={() => scrollToSection('products')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.products}</button>
+              <button onClick={() => scrollToSection('faq')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.faq}</button>
+              <button onClick={() => scrollToSection('contact')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.contact}</button>
+              <div className="pt-3 px-2 border-t border-gray-200 mt-3 pb-3">
                 <a
                   href="https://wa.me/5591998382662"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="mobile-btn block bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 text-center font-inter min-h-[48px] flex items-center justify-center"
+                  className="mobile-btn block bg-newt-red hover:bg-red-700 text-white px-4 py-2.5 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 text-center font-inter min-h-[44px] flex items-center justify-center text-sm"
                 >
                   {t.nav.whatsapp}
                 </a>
