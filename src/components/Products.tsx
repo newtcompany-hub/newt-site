@@ -154,7 +154,7 @@ export function Products() {
     <div id="products">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-6 sm:mb-10 md:mb-12 lg:mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
             {t.products.title}
           </h2>

@@ -40,7 +40,7 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full">
-        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 animate-fade-in transform -translate-y-8 sm:-translate-y-12 md:-translate-y-16">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 animate-fade-in transform -translate-y-12 sm:-translate-y-8 md:-translate-y-8 lg:-translate-y-8">
           {/* Welcome Badge */}
           <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">
             {t.hero.welcome}
