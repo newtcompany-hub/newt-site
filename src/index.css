@@ -206,11 +206,6 @@
   }
 }
 
-/* Prevent body scroll when modal is open */
-body.modal-open {
-  overflow: hidden;
-}
-
 .faq-item {
   transition: all .3s ease;
 }
