@@ -72,49 +72,49 @@ export function Header() {
     switch (currentSection) {
       case 'home':
         return {
-          bg: 'bg-transparent',
+          bg: 'bg-black/80 backdrop-blur-md',
           text: 'text-white',
           hover: 'hover:text-newt-red',
           border: ''
         };
       case 'about':
         return {
-          bg: 'bg-white/95 backdrop-blur-md shadow-lg',
-          text: 'text-gray-900',
+          bg: 'bg-black/80 backdrop-blur-md shadow-lg',
+          text: 'text-white',
           hover: 'hover:text-newt-red',
-          border: 'border-b border-gray-200'
+          border: 'border-b border-gray-700'
         };
       case 'services':
         return {
-          bg: 'bg-gray-50/95 backdrop-blur-md shadow-lg',
-          text: 'text-gray-900',
+          bg: 'bg-black/80 backdrop-blur-md shadow-lg',
+          text: 'text-white',
           hover: 'hover:text-newt-red',
-          border: 'border-b border-gray-300'
+          border: 'border-b border-gray-700'
         };
       case 'products':
         return {
-          bg: 'bg-newt-black/95 backdrop-blur-md shadow-lg',
+          bg: 'bg-black/80 backdrop-blur-md shadow-lg',
           text: 'text-white',
           hover: 'hover:text-newt-red',
-          border: 'border-b border-gray-800'
+          border: 'border-b border-gray-700'
         };
       case 'faq':
         return {
-          bg: 'bg-white/95 backdrop-blur-md shadow-lg',
-          text: 'text-gray-900',
+          bg: 'bg-black/80 backdrop-blur-md shadow-lg',
+          text: 'text-white',
           hover: 'hover:text-newt-red',
-          border: 'border-b border-gray-200'
+          border: 'border-b border-gray-700'
         };
       case 'contact':
         return {
-          bg: 'bg-gray-50/95 backdrop-blur-md shadow-lg',
-          text: 'text-gray-900',
+          bg: 'bg-black/80 backdrop-blur-md shadow-lg',
+          text: 'text-white',
           hover: 'hover:text-newt-red',
-          border: 'border-b border-gray-300'
+          border: 'border-b border-gray-700'
         };
       default:
         return {
-          bg: 'bg-transparent',
+          bg: 'bg-black/80 backdrop-blur-md',
           text: 'text-white',
           hover: 'hover:text-newt-red',
           border: ''
@@ -127,7 +127,9 @@ export function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 ${styles.bg} ${styles.border} transition-all duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-12 sm:h-14 md:h-16">
+        <div className={`flex items-center justify-between transition-all duration-300 ${
+          isMenuOpen ? 'h-12 sm:h-14' : 'h-12 sm:h-14 lg:h-16'
+        }`}>
           {/* Logo */}
           <div className="flex-shrink-0">
             <button
@@ -235,7 +237,7 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden bg-gray-900/98 backdrop-blur-sm transition-all duration-200 overflow-hidden mobile-menu ${
+        <div className={`lg:hidden bg-black/95 backdrop-blur-md transition-all duration-200 overflow-hidden mobile-menu ${
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}>
             <nav className="py-6 pb-safe">
@@ -243,31 +245,31 @@ export function Header() {
               <div className="px-6 space-y-0">
                 <button 
                   onClick={() => scrollToSection('home')} 
-                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-700 min-h-[56px] flex items-center"
                 >
                   {t.nav.home}
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')} 
-                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-700 min-h-[56px] flex items-center"
                 >
                   {t.nav.about}
                 </button>
                 <button 
                   onClick={() => scrollToSection('services')} 
-                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-700 min-h-[56px] flex items-center"
                 >
                   {t.nav.services}
                 </button>
                 <button 
                   onClick={() => scrollToSection('products')} 
-                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-700 min-h-[56px] flex items-center"
                 >
                   {t.nav.products}
                 </button>
                 <button 
                   onClick={() => scrollToSection('faq')} 
-                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-700 min-h-[56px] flex items-center"
                 >
                   {t.nav.faq}
                 </button>
@@ -288,7 +290,7 @@ export function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="mobile-btn block bg-newt-red hover:bg-red-700 text-white px-6 py-4 rounded-xl font-semibold transition-colors duration-200 focus:outline-none text-center font-inter min-h-[56px] flex items-center justify-center"
                 >
-                  {t.nav.whatsapp}
+                  Falar no WhatsApp
                 </a>
                 <button
                   onClick={() => {
@@ -297,7 +299,7 @@ export function Header() {
                   }}
                   className="mobile-btn block w-full border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-4 rounded-xl font-semibold transition-colors duration-200 focus:outline-none text-center font-inter min-h-[56px] flex items-center justify-center"
                 >
-                  {t.hero.cta2}
+                  Ver Serviços
                 </button>
               </div>
             </nav>
