@@ -57,7 +57,7 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 pt-12 sm:pt-16 md:pt-20 lg:pt-24 xl:pt-28 animate-slide-up-delay-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 pt-16 sm:pt-20 md:pt-24 lg:pt-28 xl:pt-32 animate-slide-up-delay-2">
             <a
               href="https://wa.me/5591998382662"
               target="_blank"
