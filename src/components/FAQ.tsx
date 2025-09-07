@@ -58,21 +58,21 @@ export function FAQ() {
           {t.faq.items.map((item, index) => (
             <div
               key={index}
-              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-all duration-300"
+              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-all duration-300 hover:shadow-lg"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="mobile-input w-full text-left p-4 sm:p-6 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[56px]"
+                className="mobile-input w-full text-left p-4 sm:p-6 hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[56px] group"
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className={`text-base sm:text-lg md:text-xl font-semibold text-newt-black font-poppins pr-3 sm:pr-4 leading-tight ${
+                  <h3 className={`text-base sm:text-lg md:text-xl font-semibold text-newt-black font-poppins pr-3 sm:pr-4 leading-tight transition-colors duration-300 group-hover:text-newt-red ${
                     openIndex === index ? 'font-bold' : ''
                   }`}>
                     {item.question}
                   </h3>
-                  <ChevronDown className={`w-5 h-5 sm:w-6 sm:h-6 text-newt-red flex-shrink-0 transition-transform duration-200 ${
+                  <ChevronDown className={`w-5 h-5 sm:w-6 sm:h-6 text-newt-red flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`} />
                 </div>
@@ -80,12 +80,12 @@ export function FAQ() {
               
               <div 
                 id={`faq-content-${index}`}
-                className={`overflow-hidden transition-all duration-300 ${
+                className={`overflow-hidden transition-all duration-500 ${
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
                 aria-hidden={openIndex !== index}
               >
-                <div className="p-4 sm:p-6 pt-0 bg-gray-50">
+                <div className="p-4 sm:p-6 pt-0 bg-gray-50 animate-slide-up">
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-inter max-w-4xl">
                     {item.answer}
                   </p>

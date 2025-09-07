@@ -84,11 +84,11 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             <button onClick={() => scrollToSection('home')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.home}</button>
-            <button onClick={() => scrollToSection('about')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.about}</button>
-            <button onClick={() => scrollToSection('services')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.services}</button>
-            <button onClick={() => scrollToSection('products')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.products}</button>
-            <button onClick={() => scrollToSection('faq')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.faq}</button>
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.contact}</button>
+            <button onClick={() => scrollToSection('about')} className="text-white hover:text-newt-red transition-all duration-300 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 hover:scale-105">{t.nav.about}</button>
+            <button onClick={() => scrollToSection('services')} className="text-white hover:text-newt-red transition-all duration-300 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 hover:scale-105">{t.nav.services}</button>
+            <button onClick={() => scrollToSection('products')} className="text-white hover:text-newt-red transition-all duration-300 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 hover:scale-105">{t.nav.products}</button>
+            <button onClick={() => scrollToSection('faq')} className="text-white hover:text-newt-red transition-all duration-300 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 hover:scale-105">{t.nav.faq}</button>
+            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-newt-red transition-all duration-300 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 hover:scale-105">{t.nav.contact}</button>
           </nav>
 
           {/* Desktop CTA and Language Selector */}
@@ -125,7 +125,7 @@ export function Header() {
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-newt-red hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-sm"
+              className="btn-animate bg-newt-red hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-sm"
             >
               {t.nav.whatsapp}
             </a>
@@ -222,7 +222,7 @@ export function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="block bg-newt-red hover:bg-red-700 text-white px-6 py-4 rounded-xl font-semibold transition-colors duration-200 focus:outline-none text-center font-inter"
+                  className="block btn-animate bg-newt-red hover:bg-red-700 text-white px-6 py-4 rounded-xl font-semibold focus:outline-none text-center font-inter"
                 >
                   Falar no WhatsApp
                 </a>
@@ -231,7 +231,7 @@ export function Header() {
                     scrollToSection('services');
                     setIsMenuOpen(false);
                   }}
-                  className="block w-full border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-4 rounded-xl font-semibold transition-colors duration-200 focus:outline-none text-center font-inter"
+                  className="block w-full btn-animate border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-4 rounded-xl font-semibold focus:outline-none text-center font-inter"
                 >
                   Ver Serviços
                 </button>

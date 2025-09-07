@@ -28,17 +28,17 @@ export function About() {
             {t.about.timeline.map((step, index) => (
               <div
                 key={index}
-                className="mobile-card group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-newt-red transition-all duration-200"
+                className="mobile-card card-animate group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-newt-red"
               >
                 {/* Step Number */}
-                <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-6 h-6 sm:w-7 sm:h-7 bg-newt-red text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold font-inter">
+                <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-6 h-6 sm:w-7 sm:h-7 bg-newt-red text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold font-inter transition-transform duration-300 group-hover:scale-110">
                   {index + 1}
                 </div>
                 
-                <h4 className="text-lg sm:text-xl font-semibold text-newt-black mb-2 sm:mb-3 font-poppins group-hover:text-newt-red transition-colors duration-200 pt-2">
+                <h4 className="text-lg sm:text-xl font-semibold text-newt-black mb-2 sm:mb-3 font-poppins group-hover:text-newt-red transition-colors duration-300 pt-2">
                   {step.title}
                 </h4>
-                <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-inter">
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-800">
                   {step.desc}
                 </p>
               </div>
@@ -56,10 +56,11 @@ export function About() {
             {t.about.differentials.items.map((item, index) => (
               <div
                 key={index}
-                className="flex items-start space-x-2 sm:space-x-3 md:space-x-4 group"
+                className="flex items-start space-x-2 sm:space-x-3 md:space-x-4 group opacity-0 animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
               >
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red mt-0.5 sm:mt-1 flex-shrink-0" />
-                <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-inter">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red mt-0.5 sm:mt-1 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-inter transition-colors duration-300 group-hover:text-white">
                   {item}
                 </p>
               </div>

@@ -169,13 +169,14 @@ export function Products() {
             <div
               key={index}
               onClick={() => setSelectedProduct(index)}
-              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
+              className={`mobile-card card-animate group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red cursor-pointer hover:scale-[1.02] opacity-0 animate-slide-up ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
             >
               {/* Coming Soon Badge */}
               {product.comingSoon && (
-                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-newt-red text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold font-inter z-10">
+                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-newt-red text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold font-inter z-10 animate-pulse-glow">
                   {t.common.comingSoon}
                 </div>
               )}
@@ -186,31 +187,31 @@ export function Products() {
                   product.comingSoon 
                     ? 'bg-gray-700 text-gray-400' 
                     : 'bg-newt-red text-white group-hover:bg-red-500'
-                } transition-colors duration-200`}>
+                } transition-all duration-300 group-hover:scale-110`}>
                   {getProductIcon(index)}
                 </div>
                 
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-poppins leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-poppins leading-tight transition-colors duration-300 group-hover:text-newt-red">
                   {product.title}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-inter">
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-inter transition-colors duration-300 group-hover:text-gray-300">
                   {product.desc}
                 </p>
                 
                 <ul className="space-y-1.5 sm:space-y-2 md:space-y-3">
                   {product.features.slice(0, 3).map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
-                      <span className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-200">
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0 transition-transform duration-300 group-hover:scale-125"></div>
+                      <span className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-300">
                         {feature}
                       </span>
                     </li>
                   ))}
                   {product.features.length > 3 && (
                     <li className="flex items-center space-x-2 sm:space-x-3">
-                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
-                      <span className="text-sm sm:text-base text-newt-red font-inter font-medium">
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0 transition-transform duration-300 group-hover:scale-125"></div>
+                      <span className="text-sm sm:text-base text-newt-red font-inter font-medium transition-all duration-300 group-hover:text-red-400">
                         +{product.features.length - 3} {locale === 'en' ? 'more features' : 'mais recursos'}
                       </span>
                     </li>
@@ -285,19 +286,19 @@ export function Products() {
                       href={productData[selectedProduct].accessLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mobile-btn flex items-center justify-center space-x-2 bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter min-h-[48px]"
+                      className="mobile-btn btn-animate flex items-center justify-center space-x-2 bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold font-inter min-h-[48px] group"
                     >
                       <span>{locale === 'en' ? 'Access NewtMind' : 'Acessar NewtMind'}</span>
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </a>
                   )}
                   
                   {productData[selectedProduct].whatsappMessage && (
                     <button
                       onClick={() => handleWhatsAppClick(productData[selectedProduct].whatsappMessage!)}
-                      className="mobile-btn flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter min-h-[48px]"
+                      className="mobile-btn btn-animate flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold font-inter min-h-[48px] group"
                     >
-                      <MessageCircle className="w-4 h-4" />
+                      <MessageCircle className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                       <span>{locale === 'en' ? 'Learn More' : 'Saber Mais'}</span>
                     </button>
                   )}
@@ -309,9 +310,9 @@ export function Products() {
                           ? `I'm interested in ${productData[selectedProduct].title}. When will it be available?`
                           : `Tenho interesse no ${productData[selectedProduct].title}. Quando estará disponível?`
                       )}
-                      className="mobile-btn flex items-center justify-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter min-h-[48px]"
+                      className="mobile-btn btn-animate flex items-center justify-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold font-inter min-h-[48px] group"
                     >
-                      <MessageCircle className="w-4 h-4" />
+                      <MessageCircle className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
                       <span>{locale === 'en' ? 'Get Notified' : 'Me Avisar'}</span>
                     </button>
                   )}
@@ -319,7 +320,7 @@ export function Products() {
               </div>
             </div>
           </div>
-        )}
+                className="p-2 hover:bg-gray-100 rounded-lg transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center hover:rotate-90"
       </div>
     </div>
   );
