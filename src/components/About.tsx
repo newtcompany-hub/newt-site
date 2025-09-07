@@ -28,7 +28,8 @@ export function About() {
             {t.about.timeline.map((step, index) => (
               <div
                 key={index}
-                className="mobile-card card-animate group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-newt-red"
+                className="mobile-card card-animate group relative bg-gray-50 hover:bg-red-50 p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-newt-red transform hover:scale-105 transition-all duration-300"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Step Number */}
                 <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-6 h-6 sm:w-7 sm:h-7 bg-newt-red text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-bold font-inter transition-transform duration-300 group-hover:scale-110">

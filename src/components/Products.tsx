@@ -320,7 +320,7 @@ export function Products() {
               </div>
             </div>
           </div>
-                className="p-2 hover:bg-gray-100 rounded-lg transition-all duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center hover:rotate-90"
+        )}
       </div>
     </div>
   );

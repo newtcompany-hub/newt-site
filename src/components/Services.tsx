@@ -23,7 +23,7 @@ export function Services() {
           {t.services.items.map((service, index) => (
             <div
               key={index}
-              className="mobile-card card-animate group relative bg-white hover:bg-newt-black p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red hover:shadow-lg opacity-0 animate-slide-up"
+              className="mobile-card card-animate group relative bg-white hover:bg-newt-black p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red hover:shadow-lg opacity-0 animate-slide-up transform hover:scale-105 transition-all duration-300"
               style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
             >
               <div className="space-y-3 sm:space-y-4">

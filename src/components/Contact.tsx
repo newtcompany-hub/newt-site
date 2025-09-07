@@ -331,7 +331,7 @@ Enviado através do site (${locale})`;
                 onChange={(e) => handleInputChange('source', e.target.value)}
                 className={`mobile-input w-full px-3 sm:px-4 py-3 sm:py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 transition-colors duration-200 font-inter text-sm sm:text-base min-h-[48px] bg-white ${
                   errors.source ? 'border-newt-red' : 'border-gray-300'
-                className="mobile-btn btn-animate group w-full bg-newt-red hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center space-x-3 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter min-h-[56px]"
+                }`}
               >
                 <option value="">{getSourcePlaceholder()}</option>
                 {getSourceOptions().map((option) => (
