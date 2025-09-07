@@ -10,15 +10,33 @@ export function Products() {
   React.useEffect(() => {
     if (selectedProduct !== null) {
       document.body.classList.add('modal-open');
+      document.body.style.overflow = 'hidden';
     } else {
       document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
     }
     
     // Cleanup on unmount
     return () => {
       document.body.classList.remove('modal-open');
+      document.body.style.overflow = '';
     };
   }, [selectedProduct]);
+
+  // Handle escape key to close modal
+  React.useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedProduct !== null) {
+        setSelectedProduct(null);
+      }
+    };
+
+    if (selectedProduct !== null) {
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [selectedProduct]);
+
   const getProductIcon = (index: number) => {
     const icons = [
       // NewtMind - Custom SVG
