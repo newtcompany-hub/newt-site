@@ -6,7 +6,7 @@ export function Services() {
   const { t, locale } = useI18n();
 
   return (
-    <section id="services" className="section-padding bg-gray-50">
+    <div id="services">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">
@@ -89,6 +89,6 @@ export function Services() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

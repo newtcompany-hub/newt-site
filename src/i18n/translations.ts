@@ -26,7 +26,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
+      subtitle: 'Sabe aquela sensação de que sua empresa tem tudo para crescer, mas algo prende as engrenagens? Processos manuais te atrasam, o site não converte e as campanhas não atraem o público certo. É aí que a Newt entra para destravar esse potencial. Usamos automações, IA, web design e tráfego pago para tunar a sua empresa na medida que você precisa.',
       methodology: 'Nossa Metodologia',
       timeline: [
         { title: 'Diagnóstico', desc: 'Análise completa do seu negócio e oportunidades' },
@@ -211,7 +211,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
+      subtitle: 'Sabe aquela sensação de que sua empresa tem tudo para crescer, mas algo prende as engrenagens? Processos manuais te atrasam, o site não converte e as campanhas não atraem o público certo. É aí que a Newt entra para destravar esse potencial. Usamos automações, IA, web design e tráfego pago para tunar a sua empresa na medida que você precisa.',
       methodology: 'A Nossa Metodologia',
       timeline: [
         { title: 'Diagnóstico', desc: 'Análise completa do seu negócio e oportunidades' },
@@ -396,7 +396,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'We are a creative studio specialized in AI automations, websites and paid traffic.',
+      subtitle: 'You know that feeling that your company has everything to grow, but something holds back the gears? Manual processes slow you down, the website doesn\'t convert and campaigns don\'t attract the right audience. That\'s where Newt comes in to unlock this potential. We use automations, AI, web design and paid traffic to tune your company to the measure you need.',
       methodology: 'Our Methodology',
       timeline: [
         { title: 'Diagnosis', desc: 'Complete analysis of your business and opportunities' },
