@@ -13,7 +13,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative h-screen bg-black overflow-hidden flex items-center">
+    <section id="home" className="relative h-screen bg-black overflow-hidden flex items-center pt-10 sm:pt-12 lg:pt-14">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
