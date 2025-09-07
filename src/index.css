@@ -96,16 +96,79 @@
 
 @media (min-width: 768px) {
   .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-padding {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
+}
+
+/* Mobile optimizations */
+.mobile-card {
+  min-height: 200px;
+}
+
+@media (max-width: 640px) {
+  .mobile-card {
+    min-height: 180px;
+  }
+}
+
+.mobile-btn {
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.mobile-input {
+  min-height: 48px;
+  font-size: 16px; /* Prevents zoom on iOS */
+}
+
+.mobile-nav {
+  min-height: 48px;
+}
+
+/* Desktop harmonization */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Centered modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 0.75rem;
+  max-width: 42rem;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
 }
 
 .faq-item {

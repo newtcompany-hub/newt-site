@@ -126,22 +126,22 @@ export function Products() {
     <section id="products" className="section-padding bg-newt-black">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
+        <div className="text-center max-w-4xl mx-auto mb-6 sm:mb-10 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-poppins leading-tight">
             {t.products.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed font-inter px-2">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed font-inter px-2">
             {t.products.subtitle}
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-6">
           {productData.map((product, index) => (
             <div
               key={index}
               onClick={() => setSelectedProduct(index)}
-              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
+              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
             >
@@ -152,7 +152,7 @@ export function Products() {
                 </div>
               )}
 
-              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+              <div className="space-y-3 sm:space-y-4">
                 {/* Icon */}
                 <div className={`inline-flex p-2 sm:p-3 rounded-lg ${
                   product.comingSoon 
@@ -162,11 +162,11 @@ export function Products() {
                   {getProductIcon(index)}
                 </div>
                 
-                <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white font-poppins leading-heading">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-poppins leading-tight">
                   {product.title}
                 </h3>
                 
-                <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed font-inter">
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-inter">
                   {product.desc}
                 </p>
                 
@@ -174,7 +174,7 @@ export function Products() {
                   {product.features.slice(0, 3).map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
                       <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
-                      <span className="text-xs sm:text-sm md:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-200">
+                      <span className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-200">
                         {feature}
                       </span>
                     </li>
@@ -182,7 +182,7 @@ export function Products() {
                   {product.features.length > 3 && (
                     <li className="flex items-center space-x-2 sm:space-x-3">
                       <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
-                      <span className="text-xs sm:text-sm md:text-base text-newt-red font-inter font-medium">
+                      <span className="text-sm sm:text-base text-newt-red font-inter font-medium">
                         +{product.features.length - 3} {locale === 'en' ? 'more features' : 'mais recursos'}
                       </span>
                     </li>
@@ -195,8 +195,8 @@ export function Products() {
 
         {/* Modal */}
         {selectedProduct !== null && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+          <div className="modal-overlay">
+            <div className="modal-content">
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <div className="flex items-center space-x-4">

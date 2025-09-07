@@ -47,39 +47,37 @@ export function FAQ() {
     >
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-heading">
+        <div className="text-center max-w-4xl mx-auto mb-6 sm:mb-10 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-tight">
             {t.faq.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed font-inter px-2">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-inter px-2">
             {t.faq.subtitle}
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {t.faq.items.map((item, index) => (
             <div
               key={index}
-              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-all duration-300"
+              className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-all duration-300"
             >
               <button
                 onClick={() => toggleQuestion(index)}
-                className="mobile-input w-full text-left p-3 sm:p-4 md:p-6 lg:p-8 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[56px] sm:min-h-[60px] md:min-h-[auto]"
+                className="mobile-input w-full text-left p-4 sm:p-6 hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[56px]"
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className={`text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-newt-black font-poppins pr-2 sm:pr-3 md:pr-4 leading-heading ${
+                  <h3 className={`text-base sm:text-lg md:text-xl font-semibold text-newt-black font-poppins pr-3 sm:pr-4 leading-tight ${
                     openIndex === index ? 'font-bold' : ''
                   }`}>
                     {item.question}
                   </h3>
-                  <ChevronDown
-                    className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red flex-shrink-0 transition-transform duration-200 ${
+                  <ChevronDown className={`w-5 h-5 sm:w-6 sm:h-6 text-newt-red flex-shrink-0 transition-transform duration-200 ${
                       openIndex === index ? 'rotate-180' : ''
-                    }`}
-                  />
+                    }`} />
                 </div>
               </button>
               
@@ -90,8 +88,8 @@ export function FAQ() {
                 }`}
                 aria-hidden={openIndex !== index}
               >
-                <div className="p-3 sm:p-4 md:p-6 lg:p-8 pt-0 bg-gray-50">
-                  <p className="text-xs sm:text-sm md:text-base text-gray-700 leading-relaxed font-inter max-w-3xl">
+                <div className="p-4 sm:p-6 pt-0 bg-gray-50">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-inter max-w-4xl">
                     {item.answer}
                   </p>
                 </div>
