@@ -9,9 +9,9 @@ export function Products() {
   const getProductIcon = (index: number) => {
     const icons = [
       // NewtMind - Custom SVG
-      <img key="newtmind" src="/ícone de newtmind.svg" alt="NewtMind" width="32" height="32" className="w-8 h-8" />,
+      <img key="newtmind" src="/icone-de-newtmind.svg" alt="NewtMind" width="32" height="32" className="w-8 h-8" />,
       // NewtFlows - Custom SVG
-      <img key="newtflows" src="/ícone do newtflow.svg" alt="NewtFlows" width="32" height="32" className="w-8 h-8" />,
+      <img key="newtflows" src="/icone-do-newtflow.svg" alt="NewtFlows" width="32" height="32" className="w-8 h-8" />,
       // NewtPhotos - Camera icon
       <svg key="newtphotos" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
@@ -69,11 +69,11 @@ export function Products() {
       desc: locale === 'en' ? 'AI image generator via WhatsApp.' : 'Gerador de imagens com IA via WhatsApp.',
       features: locale === 'en'
         ? ['AI image generation', 'WhatsApp integration', 'Multiple styles', 'Instant delivery']
-        : ['Geração de imagens com IA', 'Integração WhatsApp', 'Múltiplos estilos', 'Integração com Nano Banana', 'Entrega instantânea'],
+        : ['Geração de imagens com IA', 'Integração WhatsApp', 'Múltiplos estilos', 'Entrega instantânea'],
       comingSoon: true,
       detailedDesc: locale === 'en'
-        ? 'NewtPhotos brings AI image generation directly to your WhatsApp. Create professional images, logos, social media content and more using simple text commands. Powered by advanced AI models including Google\'s Nano Banana technology for superior results.'
-        : 'O NewtPhotos traz geração de imagens com IA diretamente para seu WhatsApp. Crie imagens profissionais, logos, conteúdo para redes sociais e muito mais usando comandos de texto simples. Powered pela tecnologia Nano Banana do Google para resultados superiores.'
+        ? 'NewtPhotos brings AI image generation directly to your WhatsApp. Create professional images, logos, social media content and more using simple text commands. Powered by advanced AI models for superior results.'
+        : 'O NewtPhotos traz geração de imagens com IA diretamente para seu WhatsApp. Crie imagens profissionais, logos, conteúdo para redes sociais e muito mais usando comandos de texto simples. Powered por modelos avançados de IA para resultados superiores.'
     },
     {
       title: locale === 'en' ? 'FinanceFlow' : 'FinZap',
