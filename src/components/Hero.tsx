@@ -18,7 +18,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
+    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
@@ -39,8 +39,8 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full">
-        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 animate-fade-in transform -translate-y-12 sm:-translate-y-8 md:-translate-y-8 lg:-translate-y-8">
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full pt-20">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
           {/* Welcome Badge */}
           <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">
             {t.hero.welcome}
@@ -57,20 +57,20 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 sm:pt-6 md:pt-8 animate-slide-up-delay-2 px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 md:pt-10 animate-slide-up-delay-2 px-4 sm:px-6">
             <a
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="group btn-animate bg-newt-red hover:bg-red-700 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg md:text-xl flex items-center space-x-3 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter transform hover:scale-105"
+              className="group bg-newt-red hover:bg-red-700 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg md:text-xl transition-colors duration-200 flex items-center space-x-3 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter"
             >
               <span>{t.hero.cta1}</span>
-              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:translate-x-1" />
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
             
             <button
               onClick={() => scrollToSection('services')}
-              className="btn-animate border-2 border-white text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold w-full sm:w-auto font-inter text-base sm:text-lg md:text-xl transform hover:scale-105"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold transition-colors duration-200 w-full sm:w-auto font-inter text-base sm:text-lg md:text-xl"
             >
               {t.hero.cta2}
             </button>

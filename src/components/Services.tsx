@@ -23,23 +23,22 @@ export function Services() {
           {t.services.items.map((service, index) => (
             <div
               key={index}
-              className="mobile-card card-animate group relative bg-white hover:bg-newt-black p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red hover:shadow-lg opacity-0 animate-slide-up transform hover:scale-105 transition-all duration-300"
-              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'forwards' }}
+              className="mobile-card group relative bg-white hover:bg-newt-black p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red transition-all duration-200 hover:shadow-lg"
             >
               <div className="space-y-3 sm:space-y-4">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-300 font-poppins leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-200 font-poppins leading-tight">
                   {service.title}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 leading-relaxed font-inter transition-colors duration-300">
+                <p className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 leading-relaxed font-inter transition-colors duration-200">
                   {service.desc}
                 </p>
                 
                 <ul className="space-y-2 sm:space-y-3">
                   {service.bullets.map((bullet, bulletIndex) => (
                     <li key={bulletIndex} className="flex items-start space-x-2 sm:space-x-3">
-                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0 transition-transform duration-300 group-hover:scale-125"></div>
-                      <span className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 font-inter transition-colors duration-300">
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
+                      <span className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 font-inter transition-colors duration-200">
                         {bullet}
                       </span>
                     </li>
@@ -48,20 +47,20 @@ export function Services() {
               </div>
 
               {/* Hover Arrow */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red transition-transform duration-300 group-hover:rotate-12" />
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red" />
               </div>
             </div>
           ))}
           
           {/* New Co-produção Service */}
-          <div className="mobile-card card-animate group relative bg-white hover:bg-newt-black p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red hover:shadow-lg opacity-0 animate-slide-up" style={{ animationDelay: `${t.services.items.length * 0.1}s`, animationFillMode: 'forwards' }}>
+          <div className="mobile-card group relative bg-white hover:bg-newt-black p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 hover:border-newt-red transition-all duration-200 hover:shadow-lg">
             <div className="space-y-3 sm:space-y-4">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-300 font-poppins leading-tight">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-newt-black group-hover:text-white transition-colors duration-200 font-poppins leading-tight">
                 Co-produção
               </h3>
               
-              <p className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 leading-relaxed font-inter transition-colors duration-300">
+              <p className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 leading-relaxed font-inter transition-colors duration-200">
                 {locale === 'en' 
                   ? 'End-to-end strategic content production to accelerate authority building and sales growth.'
                   : 'Produção estratégica de conteúdos com execução ponta a ponta para acelerar autoridade e vendas.'
@@ -74,8 +73,8 @@ export function Services() {
                   : ['Planejamento editorial', 'Roteiro & captação', 'Edição e pós', 'Distribuição multiplataforma', 'Cortes para Reels/Shorts', 'Métricas e otimização contínua']
                 ).map((bullet, bulletIndex) => (
                   <li key={bulletIndex} className="flex items-start space-x-2 sm:space-x-3">
-                    <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0 transition-transform duration-300 group-hover:scale-125"></div>
-                    <span className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 font-inter transition-colors duration-300">
+                    <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
+                    <span className="text-sm sm:text-base text-gray-700 group-hover:text-gray-300 font-inter transition-colors duration-200">
                       {bullet}
                     </span>
                   </li>
@@ -84,8 +83,8 @@ export function Services() {
             </div>
 
             {/* Hover Arrow */}
-            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red transition-transform duration-300 group-hover:rotate-12" />
+            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-newt-red" />
             </div>
           </div>
         </div>

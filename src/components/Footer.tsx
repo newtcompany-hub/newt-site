@@ -83,18 +83,18 @@ export function Footer() {
             </h4>
             <div className="flex space-x-2 sm:space-x-3 md:space-x-4 mb-4 sm:mb-6 md:mb-8">
               <a href="https://www.instagram.com/newtcompany_" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-2.5 md:p-3 bg-gray-800 hover:bg-newt-red rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center" aria-label="Instagram">
-                <Instagram className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 icon-animate" />
+                <Instagram className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
               </a>
               <a href="https://www.tiktok.com/@newt.company" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-2.5 md:p-3 bg-gray-800 hover:bg-newt-red rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center" aria-label="TikTok">
-                <svg className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 icon-animate" viewBox="0 0 24 24" fill="currentColor">
+                <svg className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                 </svg>
               </a>
               <a href="https://open.spotify.com/playlist/70UluII4XHpmVwgjUm3YV3?si=6e2fe62230db4e91" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-2.5 md:p-3 bg-gray-800 hover:bg-newt-red rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center" aria-label="Spotify">
-                <Music className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 icon-animate" />
+                <Music className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
               </a>
               <a href="mailto:contatonewtcompany@gmail.com" className="p-2 sm:p-2.5 md:p-3 bg-gray-800 hover:bg-newt-red rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 min-h-[40px] min-w-[40px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center" aria-label="E-mail">
-                <Mail className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 icon-animate" />
+                <Mail className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
               </a>
             </div>
 
@@ -107,7 +107,7 @@ export function Footer() {
                 <button
                   key={loc}
                   onClick={() => setLocale(loc)}
-                  className={`block text-xs transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm font-inter py-1 hover:scale-110 ${
+                  className={`block text-xs transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm font-inter py-1 ${
                     locale === loc ? 'text-newt-red' : 'text-gray-400 hover:text-newt-red'
                   }`}
                 >
