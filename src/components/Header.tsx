@@ -54,7 +54,7 @@ export function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${
-      isScrolled ? 'bg-newt-black/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
@@ -77,12 +77,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.home}</button>
-            <button onClick={() => scrollToSection('about')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.about}</button>
-            <button onClick={() => scrollToSection('services')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.services}</button>
-            <button onClick={() => scrollToSection('products')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.products}</button>
-            <button onClick={() => scrollToSection('faq')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.faq}</button>
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.contact}</button>
+            <button onClick={() => scrollToSection('home')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-newt-black' : 'text-white'}`}>{t.nav.home}</button>
+            <button onClick={() => scrollToSection('about')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-newt-black' : 'text-white'}`}>{t.nav.about}</button>
+            <button onClick={() => scrollToSection('services')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-newt-black' : 'text-white'}`}>{t.nav.services}</button>
+            <button onClick={() => scrollToSection('products')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-newt-black' : 'text-white'}`}>{t.nav.products}</button>
+            <button onClick={() => scrollToSection('faq')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-newt-black' : 'text-white'}`}>{t.nav.faq}</button>
+            <button onClick={() => scrollToSection('contact')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-newt-black' : 'text-white'}`}>{t.nav.contact}</button>
           </nav>
 
           {/* Desktop CTA and Language Selector */}
@@ -91,7 +91,7 @@ export function Header() {
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center space-x-1 sm:space-x-2 text-white hover:text-newt-red transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1"
+                className={`flex items-center space-x-1 sm:space-x-2 hover:text-newt-red transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-newt-black' : 'text-white'}`}
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4" />
@@ -131,7 +131,7 @@ export function Header() {
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="flex items-center justify-center text-white hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px]"
+                className={`flex items-center justify-center hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] ${isScrolled ? 'text-newt-black' : 'text-white'}`}
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -156,7 +156,7 @@ export function Header() {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className={`hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center ${isScrolled ? 'text-newt-black' : 'text-white'}`}
               aria-label="Menu"
             >
               {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
