@@ -6,7 +6,32 @@ import type { Locale } from '../i18n/translations';
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [currentSection, setCurrentSection] = useState('home');
   const { locale, setLocale, t } = useI18n();
+
+  // Detect current section for adaptive styling
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'services', 'products', 'faq', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Offset for header height
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setCurrentSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close menus when clicking outside
   useEffect(() => {
@@ -42,8 +67,65 @@ export function Header() {
     'en': '🇺🇸'
   };
 
+  // Get adaptive styles based on current section
+  const getHeaderStyles = () => {
+    switch (currentSection) {
+      case 'home':
+        return {
+          bg: 'bg-transparent',
+          text: 'text-white',
+          hover: 'hover:text-newt-red',
+          border: ''
+        };
+      case 'about':
+        return {
+          bg: 'bg-white/95 backdrop-blur-md shadow-lg',
+          text: 'text-gray-900',
+          hover: 'hover:text-newt-red',
+          border: 'border-b border-gray-200'
+        };
+      case 'services':
+        return {
+          bg: 'bg-gray-50/95 backdrop-blur-md shadow-lg',
+          text: 'text-gray-900',
+          hover: 'hover:text-newt-red',
+          border: 'border-b border-gray-300'
+        };
+      case 'products':
+        return {
+          bg: 'bg-newt-black/95 backdrop-blur-md shadow-lg',
+          text: 'text-white',
+          hover: 'hover:text-newt-red',
+          border: 'border-b border-gray-800'
+        };
+      case 'faq':
+        return {
+          bg: 'bg-white/95 backdrop-blur-md shadow-lg',
+          text: 'text-gray-900',
+          hover: 'hover:text-newt-red',
+          border: 'border-b border-gray-200'
+        };
+      case 'contact':
+        return {
+          bg: 'bg-gray-50/95 backdrop-blur-md shadow-lg',
+          text: 'text-gray-900',
+          hover: 'hover:text-newt-red',
+          border: 'border-b border-gray-300'
+        };
+      default:
+        return {
+          bg: 'bg-transparent',
+          text: 'text-white',
+          hover: 'hover:text-newt-red',
+          border: ''
+        };
+    }
+  };
+
+  const styles = getHeaderStyles();
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+    <header className={`fixed top-0 left-0 right-0 z-50 ${styles.bg} ${styles.border} transition-all duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
@@ -65,12 +147,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <button onClick={() => scrollToSection('home')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.home}</button>
-            <button onClick={() => scrollToSection('about')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.about}</button>
-            <button onClick={() => scrollToSection('services')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.services}</button>
-            <button onClick={() => scrollToSection('products')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.products}</button>
-            <button onClick={() => scrollToSection('faq')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.faq}</button>
-            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.contact}</button>
+            <button onClick={() => scrollToSection('home')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.home}</button>
+            <button onClick={() => scrollToSection('about')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.about}</button>
+            <button onClick={() => scrollToSection('services')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.services}</button>
+            <button onClick={() => scrollToSection('products')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.products}</button>
+            <button onClick={() => scrollToSection('faq')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.faq}</button>
+            <button onClick={() => scrollToSection('contact')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.contact}</button>
           </nav>
 
           {/* Desktop CTA and Language Selector */}
@@ -79,7 +161,7 @@ export function Header() {
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="text-white flex items-center space-x-1 sm:space-x-2 hover:text-newt-red transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1"
+                className={`${styles.text} flex items-center space-x-1 sm:space-x-2 ${styles.hover} transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4" />
@@ -119,7 +201,7 @@ export function Header() {
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className="text-white flex items-center justify-center hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px]"
+                className={`${styles.text} flex items-center justify-center ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px]`}
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -144,7 +226,7 @@ export function Header() {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className={`${styles.text} ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center`}
               aria-label="Menu"
             >
               {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
