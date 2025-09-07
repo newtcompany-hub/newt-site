@@ -17,8 +17,8 @@ export const translations = {
     // Hero
     hero: {
       welcome: 'A última peça que falta para o seu negócio',
-      headline: 'Escalamos seu negócio com automações, web design e tráfego pago',
-      subheadline: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
+      headline: 'Agência de IA que escala seu negócio com automações N8N e marketing digital',
+      subheadline: 'Newt Company: Especialistas em automações N8N, gestão de tráfego, consultoria e tunning business. Automatize WhatsApp, Instagram e processos.',
       cta1: 'Falar no WhatsApp',
       cta2: 'Ver Serviços'
     },
@@ -26,7 +26,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'Sabe aquela sensação de que sua empresa tem tudo para crescer, mas algo prende as engrenagens? Processos manuais te atrasam, o site não converte e as campanhas não atraem o público certo. É aí que a Newt entra para destravar esse potencial. Usamos automações, IA, web design e tráfego pago para tunar a sua empresa na medida que você precisa.',
+      subtitle: 'Agência especializada em IA e automações N8N que destrava o potencial do seu negócio. Processos manuais te atrasam? Campanhas não convertem? A Newt Company usa automações inteligentes, gestão de tráfego e consultoria estratégica para fazer tunning business na sua empresa.',
       methodology: 'Nossa Metodologia',
       timeline: [
         { title: 'Diagnóstico', desc: 'Análise completa do seu negócio e oportunidades' },
@@ -41,7 +41,7 @@ export const translations = {
         items: [
           'Foco total em conversão e resultados',
           'Velocidade de entrega premium',
-          'Stack moderna: n8n, ManyChat, CRM integrado',
+          'Stack moderna: N8N, ManyChat, IA e CRM integrado',
           'Suporte contínuo e acompanhamento'
         ]
       }
@@ -49,32 +49,32 @@ export const translations = {
     
     // Services
     services: {
-      title: 'Nossos Serviços',
-      subtitle: 'Soluções completas para acelerar seu crescimento digital',
+      title: 'Serviços de Automação e Marketing Digital',
+      subtitle: 'Agência completa: IA, automações N8N, gestão de tráfego e consultoria para tunning business',
       items: [
         {
           title: 'Tunning Business',
-          desc: 'União dos nossos serviços conforme o foco da sua empresa. "Tunamos" empresas ao máximo potencial.',
+          desc: 'Serviço completo de otimização empresarial. Tunning business com IA, automações N8N e estratégias personalizadas.',
           bullets: ['Diagnóstico 360°', 'Plano de upgrades', 'Execução ágil', 'Métricas claras']
         },
         {
           title: 'Gestão de Automação',
-          desc: 'Automatize processos e vendas com inteligência.',
-          bullets: ['Bots WhatsApp e e-mail', 'Funis de conversão', 'Integrações CRM', 'Contratos e cobrança']
+          desc: 'Automações N8N para WhatsApp, Instagram e processos. Automatize vendas com IA e integração completa.',
+          bullets: ['Automação WhatsApp/Instagram', 'Automações N8N', 'Funis com IA', 'Integrações CRM']
         },
         {
           title: 'Gestão de Tráfego',
-          desc: 'Atraia visitantes qualificados e converta mais.',
+          desc: 'Marketing digital e tráfego pago estratégico. Campanhas que convertem e geram resultados reais.',
           bullets: ['Planejamento estratégico', 'Criativos de alta conversão', 'Testes A/B', 'Relatórios detalhados']
         },
         {
-          title: 'Web Design',
-          desc: 'Sites que impressionam e convertem visitantes em clientes.',
+          title: 'Web Design e SEO',
+          desc: 'Sites otimizados para conversão e SEO. Design responsivo integrado com automações.',
           bullets: ['UX/UI premium', 'SEO otimizado', 'Performance máxima', 'Responsivo total']
         },
         {
           title: 'Consultoria Estratégica',
-          desc: 'Diagnóstico profissional e plano acionável.',
+          desc: 'Consultoria especializada em IA e automações. Diagnóstico profissional para tunning business.',
           bullets: ['Análise completa', 'Estratégia personalizada', 'Plano de ação', 'Investimento acessível']
         }
       ]
@@ -82,22 +82,22 @@ export const translations = {
     
     // Products
     products: {
-      title: 'Nossos Produtos',
-      subtitle: 'Ferramentas proprietárias para potencializar seu negócio',
+      title: 'Produtos de Automação com IA',
+      subtitle: 'Ferramentas proprietárias com IA para automatizar processos e potencializar resultados',
       items: [
         {
           title: 'NewtMind',
-          desc: 'Criador de conteúdo 24h com IA.',
+          desc: 'IA para criação de conteúdo 24h. Automatize posts, stories e campanhas.',
           features: ['Roteiros automáticos', 'Thumbnails personalizadas', 'Ideias no hype', 'Calendário editorial']
         },
         {
           title: 'NewtFlows',
-          desc: 'Automações de processos empresariais.',
+          desc: 'Plataforma de automações N8N para processos empresariais e vendas.',
           features: ['Atendimento automático', 'Suporte inteligente', 'CRM integrado', 'Vendas automatizadas']
         },
         {
           title: 'FinZap',
-          desc: 'Controle seu dinheiro pelo WhatsApp.',
+          desc: 'Automação financeira via WhatsApp. Controle completo de finanças automatizado.',
           features: ['Controle de entradas e saídas', 'Emissão de cobranças no WhatsApp', 'Relatórios automáticos', 'Integração com planilhas'],
           comingSoon: true
         },

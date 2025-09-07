@@ -18,7 +18,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
+    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center" aria-labelledby="hero-heading">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
@@ -47,7 +47,7 @@ export function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight font-poppins animate-slide-up px-4 sm:px-6 max-w-5xl mx-auto">
+          <h1 id="hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight font-poppins animate-slide-up px-4 sm:px-6 max-w-5xl mx-auto">
             {t.hero.headline}
           </h1>
 

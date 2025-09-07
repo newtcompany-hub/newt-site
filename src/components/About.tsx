@@ -10,17 +10,17 @@ export function About() {
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight" itemProp="name">
             {t.about.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-inter px-2 max-w-5xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-inter px-2 max-w-5xl mx-auto" itemProp="description">
             {t.about.subtitle}
           </p>
         </div>
 
         {/* Methodology Timeline */}
         <div className="mb-6 sm:mb-8 md:mb-12">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-newt-black text-center mb-4 sm:mb-6 md:mb-8 font-poppins leading-tight">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-newt-black text-center mb-4 sm:mb-6 md:mb-8 font-poppins leading-tight" itemProp="serviceType">
             {t.about.methodology}
           </h3>
           
