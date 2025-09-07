@@ -125,7 +125,7 @@ export function Header() {
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-animate bg-newt-red hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-sm"
+               className="btn-animate bg-newt-red hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-sm transform hover:scale-105"
             >
               {t.nav.whatsapp}
             </a>
