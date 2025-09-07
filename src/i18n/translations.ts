@@ -26,7 +26,7 @@ export const translations = {
     // About
     about: {
       title: 'Newt Company',
-      subtitle: 'Somos um estúdio criativo especializado em automações com IA, sites e tráfego pago.',
+      subtitle: 'Sabe aquela sensação de que sua empresa tem tudo para crescer, mas algo prende as engrenagens? Processos manuais te atrasam, o site não converte e as campanhas não atraem o público certo.\n\nÉ aí que a Newt entra para destravar esse potencial. Usamos automações, IA, web design e tráfego pago para tunar a sua empresa na medida que você precisa.',
       methodology: 'Nossa Metodologia',
       timeline: [
         { title: 'Diagnóstico', desc: 'Análise completa do seu negócio e oportunidades' },
