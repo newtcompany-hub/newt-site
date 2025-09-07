@@ -120,8 +120,14 @@
 }
 
 .mobile-btn {
-  min-height: 48px;
+  min-height: 56px;
   touch-action: manipulation;
+}
+
+@media (min-width: 640px) {
+  .mobile-btn {
+    min-height: 60px;
+  }
 }
 
 .mobile-input {

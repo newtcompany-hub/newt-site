@@ -13,7 +13,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
+    <section id="home" className="relative h-screen bg-black overflow-hidden flex items-center">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
@@ -34,38 +34,38 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 text-center relative z-10 w-full py-16 sm:py-20 md:py-24 lg:py-32">
-        <div className="max-w-5xl mx-auto space-y-3 sm:space-y-4 md:space-y-6 animate-fade-in">
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full">
+        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
           {/* Welcome Badge */}
-          <div className="inline-flex items-center px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-xs sm:text-sm md:text-base text-white font-medium animate-slide-up font-inter">
+          <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">
             {t.hero.welcome}
           </div>
 
           {/* Headline */}
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight font-poppins animate-slide-up px-2 sm:px-4 max-w-6xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight font-poppins animate-slide-up px-4 sm:px-6 max-w-5xl mx-auto">
             {t.hero.headline}
           </h1>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl lg:max-w-4xl mx-auto leading-relaxed font-inter animate-slide-up-delay px-4 sm:px-6">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-2xl lg:max-w-3xl mx-auto leading-relaxed font-inter animate-slide-up-delay px-4 sm:px-6">
             {t.hero.subheadline}
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 pt-4 sm:pt-6 md:pt-8 animate-slide-up-delay-2 px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 md:pt-10 animate-slide-up-delay-2 px-4 sm:px-6">
             <a
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="mobile-btn group bg-newt-red hover:bg-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-sm sm:text-base md:text-lg transition-colors duration-200 flex items-center space-x-2 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter min-h-[48px]"
+              className="mobile-btn group bg-newt-red hover:bg-red-700 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg md:text-xl transition-colors duration-200 flex items-center space-x-3 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter min-h-[56px] sm:min-h-[60px]"
             >
               <span>{t.hero.cta1}</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </a>
             
             <button
               onClick={() => scrollToSection('services')}
-              className="mobile-btn border-2 border-white text-white hover:bg-white hover:text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-colors duration-200 w-full sm:w-auto font-inter min-h-[48px] text-sm sm:text-base md:text-lg"
+              className="mobile-btn border-2 border-white text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold transition-colors duration-200 w-full sm:w-auto font-inter min-h-[56px] sm:min-h-[60px] text-base sm:text-lg md:text-xl"
             >
               {t.hero.cta2}
             </button>
