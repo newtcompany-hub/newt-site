@@ -128,7 +128,7 @@ export function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 ${styles.bg} ${styles.border} transition-all duration-300`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`flex items-center justify-between transition-all duration-300 ${
-          isMenuOpen ? 'h-12 sm:h-14' : 'h-12 sm:h-14 lg:h-16'
+          isMenuOpen ? 'h-10 sm:h-12' : 'h-10 sm:h-12 lg:h-14'
         }`}>
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -140,7 +140,7 @@ export function Header() {
               <img 
                 src="/Logo Completa Newt Company.png" 
                 alt="Newt Company" 
-                className="h-4 sm:h-5 md:h-6 w-auto"
+                className="h-3 sm:h-4 md:h-5 w-auto"
                 loading="eager"
                 decoding="async"
               />
@@ -148,7 +148,7 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
+          <nav className="hidden lg:flex items-center space-x-3 xl:space-x-4">
             <button onClick={() => scrollToSection('home')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.home}</button>
             <button onClick={() => scrollToSection('about')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.about}</button>
             <button onClick={() => scrollToSection('services')} className={`${styles.text} ${styles.hover} transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}>{t.nav.services}</button>
@@ -158,16 +158,16 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA and Language Selector */}
-          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3">
+          <div className="hidden lg:flex items-center space-x-1 xl:space-x-2">
             {/* Language Selector */}
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className={`${styles.text} flex items-center space-x-1 sm:space-x-2 ${styles.hover} transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1`}
+                className={`${styles.text} flex items-center space-x-1 ${styles.hover} transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-1 py-1`}
                 aria-label="Selecionar idioma"
               >
-                <Globe className="w-4 h-4" />
-                <span className="text-sm font-medium font-inter">{localeLabels[locale]}</span>
+                <Globe className="w-3 h-3" />
+                <span className="text-xs font-medium font-inter">{localeLabels[locale]}</span>
               </button>
               
               <div className={`absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-28 z-10 transition-all duration-200 ${
@@ -177,7 +177,7 @@ export function Header() {
                     <button
                       key={loc}
                       onClick={() => handleLocaleChange(loc)}
-                      className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter ${
+                      className={`block w-full text-left px-2 py-1.5 text-xs hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter ${
                         locale === loc ? 'text-newt-red bg-red-50' : 'text-gray-700'
                       }`}
                     >
@@ -191,7 +191,7 @@ export function Header() {
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-newt-red hover:bg-red-700 text-white px-3 py-2 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-sm"
+              className="bg-newt-red hover:bg-red-700 text-white px-2 py-1.5 rounded-md font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter text-xs"
             >
               {t.nav.whatsapp}
             </a>
@@ -203,10 +203,10 @@ export function Header() {
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className={`${styles.text} flex items-center justify-center ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[40px] min-w-[40px]`}
+                className={`${styles.text} flex items-center justify-center ${styles.hover} transition-colors duration-200 p-1.5 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[32px] min-w-[32px]`}
                 aria-label="Selecionar idioma"
               >
-                <Globe className="w-4 h-4" />
+                <Globe className="w-3 h-3" />
               </button>
               
               <div className={`absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 min-w-24 z-10 transition-all duration-200 ${
@@ -216,7 +216,7 @@ export function Header() {
                     <button
                       key={loc}
                       onClick={() => handleLocaleChange(loc)}
-                      className={`block w-full text-left px-3 py-2 text-sm hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter ${
+                      className={`block w-full text-left px-2 py-1.5 text-xs hover:bg-gray-50 transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter ${
                         locale === loc ? 'text-newt-red bg-red-50' : 'text-gray-700'
                       }`}
                     >
@@ -228,10 +228,10 @@ export function Header() {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`${styles.text} ${styles.hover} transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[40px] min-w-[40px] flex items-center justify-center`}
+              className={`${styles.text} ${styles.hover} transition-colors duration-200 p-1.5 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[32px] min-w-[32px] flex items-center justify-center`}
               aria-label="Menu"
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
           </div>
         </div>
