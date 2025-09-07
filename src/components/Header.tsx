@@ -235,26 +235,70 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-sm px-2 transition-all duration-200 overflow-hidden mobile-menu ${
+        <div className={`lg:hidden bg-gray-900/98 backdrop-blur-sm transition-all duration-200 overflow-hidden mobile-menu ${
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}>
-            <nav className="py-3 space-y-1 pb-safe">
-              <button onClick={() => scrollToSection('home')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.home}</button>
-              <button onClick={() => scrollToSection('about')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.about}</button>
-              <button onClick={() => scrollToSection('services')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.services}</button>
-              <button onClick={() => scrollToSection('products')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.products}</button>
-              <button onClick={() => scrollToSection('faq')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.faq}</button>
-              <button onClick={() => scrollToSection('contact')} className="mobile-nav block w-full text-left text-gray-900 hover:text-newt-red hover:bg-gray-100 transition-colors duration-200 py-2.5 px-3 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px]">{t.nav.contact}</button>
-              <div className="pt-3 px-2 border-t border-gray-200 mt-3 pb-3">
+            <nav className="py-6 pb-safe">
+              {/* Menu Items */}
+              <div className="px-6 space-y-0">
+                <button 
+                  onClick={() => scrollToSection('home')} 
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                >
+                  {t.nav.home}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                >
+                  {t.nav.about}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('services')} 
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                >
+                  {t.nav.services}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('products')} 
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                >
+                  {t.nav.products}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('faq')} 
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none border-b border-gray-800 min-h-[56px] flex items-center"
+                >
+                  {t.nav.faq}
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className="mobile-nav block w-full text-left text-white hover:text-newt-red transition-colors duration-200 py-4 font-medium font-inter focus:outline-none min-h-[56px] flex items-center"
+                >
+                  {t.nav.contact}
+                </button>
+              </div>
+              
+              {/* Bottom Buttons */}
+              <div className="px-6 mt-8 space-y-3">
                 <a
                   href="https://wa.me/5591998382662"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="mobile-btn block bg-newt-red hover:bg-red-700 text-white px-4 py-2.5 rounded-lg font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 text-center font-inter min-h-[44px] flex items-center justify-center text-sm"
+                  className="mobile-btn block bg-newt-red hover:bg-red-700 text-white px-6 py-4 rounded-xl font-semibold transition-colors duration-200 focus:outline-none text-center font-inter min-h-[56px] flex items-center justify-center"
                 >
                   {t.nav.whatsapp}
                 </a>
+                <button
+                  onClick={() => {
+                    scrollToSection('services');
+                    setIsMenuOpen(false);
+                  }}
+                  className="mobile-btn block w-full border-2 border-white text-white hover:bg-white hover:text-gray-900 px-6 py-4 rounded-xl font-semibold transition-colors duration-200 focus:outline-none text-center font-inter min-h-[56px] flex items-center justify-center"
+                >
+                  {t.hero.cta2}
+                </button>
               </div>
             </nav>
         </div>
