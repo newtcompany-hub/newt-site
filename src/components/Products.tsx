@@ -164,7 +164,7 @@ export function Products() {
   };
 
   return (
-    <section id="products" className="section-padding bg-newt-black">
+    <section id="products" className="section-padding bg-newt-black pt-16 sm:pt-20 lg:pt-24">
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">

@@ -13,7 +13,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative h-screen bg-black overflow-hidden flex items-center pt-10 sm:pt-12 lg:pt-14">
+    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
@@ -34,7 +34,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full">
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full pt-20 sm:pt-24 lg:pt-28">
         <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
           {/* Welcome Badge */}
           <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">

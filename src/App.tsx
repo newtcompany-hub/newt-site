@@ -20,7 +20,9 @@ function App() {
         <FAQ />
         <section className="section-padding bg-gray-50">
           <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+            <div className="pt-16 sm:pt-20 lg:pt-24">
             <Contact />
+            </div>
           </div>
         </section>
       </main>
