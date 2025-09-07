@@ -162,24 +162,24 @@ Enviado através do site (${locale})`;
   };
 
   return (
-    <div id="contact" className="relative max-w-4xl mx-auto">
+    <div id="contact" className="relative max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-4 sm:mb-8 md:mb-10 lg:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-newt-black mb-4 sm:mb-6 md:mb-8 lg:mb-10 font-poppins leading-tight">
             {t.contact.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-inter">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-inter max-w-4xl mx-auto">
             {t.contact.subtitle}
           </p>
         </div>
 
         {/* Contact Form */}
         <div>
-          <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+          <form onSubmit={handleSubmit} className="bg-white p-8 sm:p-10 md:p-12 lg:p-16 rounded-xl sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-gray-200">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 mb-8 sm:mb-10 md:mb-12">
               {/* Name */}
               <div>
-                <label htmlFor="name" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="name" className="block text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nome' : 'Name'} *
                 </label>
                 <input
@@ -187,21 +187,21 @@ Enviado através do site (${locale})`;
                   id="name"
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className={`mobile-input w-full px-4 py-3 border rounded-lg transition-colors duration-300 font-inter text-base min-h-[48px] ${
+                  className={`w-full px-5 sm:px-6 py-4 sm:py-5 border rounded-lg sm:rounded-xl transition-colors duration-300 font-inter text-base sm:text-lg min-h-[56px] sm:min-h-[64px] ${
                     errors.name ? 'border-newt-red' : 'border-gray-300'
                   } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Como devemos te chamar?' : 'What should we call you?'}
                   autoComplete="given-name"
                 />
-                {errors.name && <p className="text-newt-red text-sm mt-1 font-inter">{errors.name}</p>}
-                <p className="text-sm text-gray-500 mt-1 font-inter">
+                {errors.name && <p className="text-newt-red text-sm sm:text-base mt-2 font-inter">{errors.name}</p>}
+                <p className="text-sm sm:text-base text-gray-500 mt-2 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Pode ser só o primeiro nome.' : 'First name is fine.'}
                 </p>
               </div>
 
               {/* Company */}
               <div>
-                <label htmlFor="company" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="company" className="block text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nome da empresa' : 'Company name'} *
                 </label>
                 <input
@@ -209,14 +209,14 @@ Enviado através do site (${locale})`;
                   id="company"
                   value={formData.company}
                   onChange={(e) => handleInputChange('company', e.target.value)}
-                  className={`mobile-input w-full px-4 py-3 border rounded-lg transition-colors duration-300 font-inter text-base min-h-[48px] ${
+                  className={`w-full px-5 sm:px-6 py-4 sm:py-5 border rounded-lg sm:rounded-xl transition-colors duration-300 font-inter text-base sm:text-lg min-h-[56px] sm:min-h-[64px] ${
                     errors.company ? 'border-newt-red' : 'border-gray-300'
                   } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Qual é o nome da sua empresa?' : 'What is your company name?'}
                   autoComplete="organization"
                 />
-                {errors.company && <p className="text-newt-red text-sm mt-1 font-inter">{errors.company}</p>}
-                <p className="text-sm text-gray-500 mt-1 font-inter">
+                {errors.company && <p className="text-newt-red text-sm sm:text-base mt-2 font-inter">{errors.company}</p>}
+                <p className="text-sm sm:text-base text-gray-500 mt-2 font-inter">
                   {locale === 'pt-BR' ? 'Se for MEI, use o nome fantasia.' : 
                    locale === 'pt-PT' ? 'Se for freelancer, use o nome comercial.' :
                    'If freelancer, use your business name.'}
@@ -225,7 +225,7 @@ Enviado através do site (${locale})`;
 
               {/* Phone */}
               <div>
-                <label htmlFor="phone" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="phone" className="block text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 font-inter">
                   WhatsApp *
                 </label>
                 <input
@@ -233,7 +233,7 @@ Enviado através do site (${locale})`;
                   id="phone"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
-                  className={`mobile-input w-full px-4 py-3 border rounded-lg transition-colors duration-300 font-inter text-base min-h-[48px] ${
+                  className={`w-full px-5 sm:px-6 py-4 sm:py-5 border rounded-lg sm:rounded-xl transition-colors duration-300 font-inter text-base sm:text-lg min-h-[56px] sm:min-h-[64px] ${
                     errors.phone ? 'border-newt-red' : 'border-gray-300'
                   } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' ? '(DDD) 90000‑0000' : 
@@ -241,15 +241,15 @@ Enviado através do site (${locale})`;
                               '+1 (555) 123-4567'}
                   autoComplete="tel"
                 />
-                {errors.phone && <p className="text-newt-red text-sm mt-1 font-inter">{errors.phone}</p>}
-                <p className="text-sm text-gray-500 mt-1 font-inter">
+                {errors.phone && <p className="text-newt-red text-sm sm:text-base mt-2 font-inter">{errors.phone}</p>}
+                <p className="text-sm sm:text-base text-gray-500 mt-2 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Prometemos não te colocar em grupos.' : 'We promise not to add you to groups.'}
                 </p>
               </div>
 
               {/* Email */}
               <div>
-                <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+                <label htmlFor="email" className="block text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 font-inter">
                   E‑mail *
                 </label>
                 <input
@@ -257,22 +257,22 @@ Enviado através do site (${locale})`;
                   id="email"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className={`mobile-input w-full px-4 py-3 border rounded-lg transition-colors duration-300 font-inter text-base min-h-[48px] ${
+                  className={`w-full px-5 sm:px-6 py-4 sm:py-5 border rounded-lg sm:rounded-xl transition-colors duration-300 font-inter text-base sm:text-lg min-h-[56px] sm:min-h-[64px] ${
                     errors.email ? 'border-newt-red' : 'border-gray-300'
                   } focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2`}
                   placeholder={locale === 'pt-BR' || locale === 'pt-PT' ? 'Onde você quer receber o plano de ação?' : 'Where should we send the action plan?'}
                   autoComplete="email"
                 />
-                {errors.email && <p className="text-newt-red text-sm mt-1 font-inter">{errors.email}</p>}
-                <p className="text-sm text-gray-500 mt-1 font-inter">
+                {errors.email && <p className="text-newt-red text-sm sm:text-base mt-2 font-inter">{errors.email}</p>}
+                <p className="text-sm sm:text-base text-gray-500 mt-2 font-inter">
                   {locale === 'pt-BR' || locale === 'pt-PT' ? 'Nada de spam. Só o que move a agulha.' : 'No spam. Only what moves the needle.'}
                 </p>
               </div>
             </div>
 
             {/* Message */}
-            <div className="mb-4 sm:mb-6">
-              <label htmlFor="message" className="block text-sm sm:text-base font-semibold text-gray-900 mb-2 font-inter">
+            <div className="mb-8 sm:mb-10 md:mb-12">
+              <label htmlFor="message" className="block text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 font-inter">
                 {t.contact.form.message}
               </label>
               <textarea
@@ -280,21 +280,21 @@ Enviado através do site (${locale})`;
                 rows={2}
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
-                className="mobile-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 transition-colors duration-200 resize-none font-inter text-base"
+                className="w-full px-5 sm:px-6 py-4 sm:py-5 border border-gray-300 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 transition-colors duration-300 resize-none font-inter text-base sm:text-lg min-h-[80px] sm:min-h-[96px]"
                 placeholder={t.contact.form.messagePlaceholder}
               ></textarea>
             </div>
 
             {/* Budget */}
-            <div className="mb-4 sm:mb-6">
-              <label className="block text-sm sm:text-base font-semibold text-gray-900 mb-3 font-inter">
+            <div className="mb-8 sm:mb-10 md:mb-12">
+              <label className="block text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 font-inter">
                 {t.contact.form.budget} *
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 {t.contact.form.budgetOptions.map((option, index) => (
                   <label
                     key={index}
-                    className={`relative flex items-center p-3 sm:p-4 border rounded-lg cursor-pointer hover:bg-red-50 hover:border-newt-red transition-colors duration-200 min-h-[48px] focus-within:ring-2 focus-within:ring-newt-red focus-within:ring-offset-2 ${
+                    className={`relative flex items-center p-4 sm:p-5 md:p-6 border rounded-lg sm:rounded-xl cursor-pointer hover:bg-red-50 hover:border-newt-red transition-colors duration-300 min-h-[56px] sm:min-h-[64px] focus-within:ring-2 focus-within:ring-newt-red focus-within:ring-offset-2 ${
                       formData.budget === option ? 'bg-red-50 border-newt-red' : 'border-gray-300'
                     }`}
                   >
@@ -306,18 +306,18 @@ Enviado através do site (${locale})`;
                       onChange={(e) => handleInputChange('budget', e.target.value)}
                       className="sr-only"
                     />
-                    <div className={`w-5 h-5 border-2 rounded-full mr-3 flex items-center justify-center flex-shrink-0 ${
+                    <div className={`w-5 h-5 sm:w-6 sm:h-6 border-2 rounded-full mr-3 sm:mr-4 flex items-center justify-center flex-shrink-0 ${
                       formData.budget === option ? 'border-newt-red' : 'border-gray-300'
                     }`}>
                       {formData.budget === option && (
-                        <div className="w-2.5 h-2.5 bg-newt-red rounded-full"></div>
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-newt-red rounded-full"></div>
                       )}
                     </div>
-                    <span className="text-sm sm:text-base text-gray-900 font-medium font-inter">{option}</span>
+                    <span className="text-base sm:text-lg text-gray-900 font-medium font-inter">{option}</span>
                   </label>
                 ))}
               </div>
-              {errors.budget && <p className="text-newt-red text-sm mt-2 font-inter">{errors.budget}</p>}
+              {errors.budget && <p className="text-newt-red text-sm sm:text-base mt-3 sm:mt-4 font-inter">{errors.budget}</p>}
             </div>
 
             {/* How did you hear about us */}
@@ -387,10 +387,10 @@ Enviado através do site (${locale})`;
             {/* Submit Button */}
             <button
               type="submit"
-              className="mobile-btn group w-full bg-newt-red hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-base sm:text-lg transition-colors duration-200 flex items-center justify-center space-x-3 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter min-h-[56px]"
+              className="group w-full bg-newt-red hover:bg-red-700 text-white px-8 sm:px-10 py-5 sm:py-6 rounded-xl sm:rounded-2xl font-bold text-lg sm:text-xl md:text-2xl transition-colors duration-300 flex items-center justify-center space-x-4 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 font-inter min-h-[64px] sm:min-h-[72px] lg:min-h-[80px] hover:scale-105 transform"
             >
               <span>{t.contact.form.submit}</span>
-              <Send className="w-5 h-5 sm:w-6 sm:h-6" />
+              <Send className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
             </button>
           </form>
         </div>
