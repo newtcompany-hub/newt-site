@@ -45,20 +45,21 @@ export function FAQ() {
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight" itemProp="name">
             {t.faq.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-inter px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-inter px-2" itemProp="description">
             {t.faq.subtitle}
           </p>
         </div>
 
         {/* FAQ Items */}
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto" itemScope itemType="https://schema.org/FAQPage">
           {t.faq.items.map((item, index) => (
             <div
               key={index}
               className="faq-item border border-gray-200 rounded-lg sm:rounded-xl mb-3 sm:mb-4 overflow-hidden hover:border-newt-red bg-white opacity-0 translate-y-8 transition-all duration-300"
+              itemScope itemType="https://schema.org/Question"
             >
               <button
                 onClick={() => toggleQuestion(index)}
@@ -69,7 +70,7 @@ export function FAQ() {
                 <div className="flex items-center justify-between">
                   <h3 className={`text-base sm:text-lg md:text-xl font-semibold text-newt-black font-poppins pr-3 sm:pr-4 leading-tight ${
                     openIndex === index ? 'font-bold' : ''
-                  }`}>
+                  }`} itemProp="name">
                     {item.question}
                   </h3>
                   <ChevronDown className={`w-5 h-5 sm:w-6 sm:h-6 text-newt-red flex-shrink-0 transition-transform duration-200 ${
@@ -86,8 +87,10 @@ export function FAQ() {
                 aria-hidden={openIndex !== index}
               >
                 <div className="p-4 sm:p-6 pt-0 bg-gray-50">
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-inter max-w-4xl">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed font-inter max-w-4xl" itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                    <span itemProp="text">
                     {item.answer}
+                    </span>
                   </p>
                 </div>
               </div>

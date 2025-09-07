@@ -155,16 +155,16 @@ export function Products() {
       <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight" itemProp="name">
             {t.products.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-inter px-2">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-inter px-2" itemProp="description">
             {t.products.subtitle}
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-6" itemScope itemType="https://schema.org/Product">
           {productData.map((product, index) => (
             <div
               key={index}
@@ -172,6 +172,7 @@ export function Products() {
               className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
+              itemScope itemType="https://schema.org/SoftwareApplication"
             >
               {/* Coming Soon Badge */}
               {product.comingSoon && (
@@ -190,11 +191,11 @@ export function Products() {
                   {getProductIcon(index)}
                 </div>
                 
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-poppins leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-poppins leading-tight" itemProp="name">
                   {product.title}
                 </h3>
                 
-                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-inter">
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-inter" itemProp="description">
                   {product.desc}
                 </p>
                 
