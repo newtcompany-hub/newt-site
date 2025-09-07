@@ -5,18 +5,8 @@ import type { Locale } from '../i18n/translations';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const { locale, setLocale, t } = useI18n();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close menus when clicking outside
   useEffect(() => {
@@ -53,9 +43,7 @@ export function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-transform ${
-      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-100' : 'bg-transparent'
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
@@ -77,12 +65,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <button onClick={() => scrollToSection('home')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>{t.nav.home}</button>
-            <button onClick={() => scrollToSection('about')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>{t.nav.about}</button>
-            <button onClick={() => scrollToSection('services')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>{t.nav.services}</button>
-            <button onClick={() => scrollToSection('products')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>{t.nav.products}</button>
-            <button onClick={() => scrollToSection('faq')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>{t.nav.faq}</button>
-            <button onClick={() => scrollToSection('contact')} className={`hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}>{t.nav.contact}</button>
+            <button onClick={() => scrollToSection('home')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.home}</button>
+            <button onClick={() => scrollToSection('about')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.about}</button>
+            <button onClick={() => scrollToSection('services')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.services}</button>
+            <button onClick={() => scrollToSection('products')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.products}</button>
+            <button onClick={() => scrollToSection('faq')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.faq}</button>
+            <button onClick={() => scrollToSection('contact')} className="text-white hover:text-newt-red transition-colors duration-200 font-medium font-inter focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1">{t.nav.contact}</button>
           </nav>
 
           {/* Desktop CTA and Language Selector */}
@@ -91,7 +79,7 @@ export function Header() {
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className={`flex items-center space-x-1 sm:space-x-2 hover:text-newt-red transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1 ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+                className="text-white flex items-center space-x-1 sm:space-x-2 hover:text-newt-red transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm px-2 py-1"
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4" />
@@ -131,7 +119,7 @@ export function Header() {
             <div className="relative language-selector">
               <button
                 onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-                className={`flex items-center justify-center hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+                className="text-white flex items-center justify-center hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px]"
                 aria-label="Selecionar idioma"
               >
                 <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -156,7 +144,7 @@ export function Header() {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+              className="text-white hover:text-newt-red transition-colors duration-200 p-2 focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 rounded-sm min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Menu"
             >
               {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
@@ -165,7 +153,7 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden border-t border-gray-200 bg-white/98 backdrop-blur-sm px-2 transition-all duration-200 overflow-hidden mobile-menu ${
+        <div className={`lg:hidden border-t border-gray-200 bg-white/95 backdrop-blur-sm px-2 transition-all duration-200 overflow-hidden mobile-menu ${
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}>
             <nav className="py-4 space-y-1 pb-safe">
