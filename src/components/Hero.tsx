@@ -8,7 +8,12 @@ export function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = 64;
+      const elementPosition = element.offsetTop - headerHeight;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -34,7 +39,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full pt-20 sm:pt-24 lg:pt-28">
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full pt-20">
         <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
           {/* Welcome Badge */}
           <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">
@@ -57,7 +62,7 @@ export function Hero() {
               href="https://wa.me/5591998382662"
               target="_blank"
               rel="noopener noreferrer"
-              className="mobile-btn group bg-newt-red hover:bg-red-700 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg md:text-xl transition-colors duration-200 flex items-center space-x-3 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter min-h-[56px] sm:min-h-[60px]"
+              className="group bg-newt-red hover:bg-red-700 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold text-base sm:text-lg md:text-xl transition-colors duration-200 flex items-center space-x-3 w-full sm:w-auto justify-center focus:outline-none focus:ring-2 focus:ring-newt-red focus:ring-offset-2 focus:ring-offset-newt-black font-inter"
             >
               <span>{t.hero.cta1}</span>
               <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -65,7 +70,7 @@ export function Hero() {
             
             <button
               onClick={() => scrollToSection('services')}
-              className="mobile-btn border-2 border-white text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold transition-colors duration-200 w-full sm:w-auto font-inter min-h-[56px] sm:min-h-[60px] text-base sm:text-lg md:text-xl"
+              className="border-2 border-white text-white hover:bg-white hover:text-black px-8 sm:px-10 py-4 sm:py-5 rounded-xl font-bold transition-colors duration-200 w-full sm:w-auto font-inter text-base sm:text-lg md:text-xl"
             >
               {t.hero.cta2}
             </button>
