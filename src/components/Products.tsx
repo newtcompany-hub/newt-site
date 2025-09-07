@@ -9,13 +9,26 @@ export function Products() {
   // Prevent body scroll when modal is open
   React.useEffect(() => {
     if (selectedProduct !== null) {
-      document.body.style.overflow = 'hidden';
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
     } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
     }
     
     // Cleanup on unmount
     return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
       document.body.style.overflow = '';
     };
   }, [selectedProduct]);
@@ -151,66 +164,66 @@ export function Products() {
   };
 
   return (
-    <section id="products" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-newt-black">
-      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+    <section id="products" className="section-padding bg-newt-black pt-16 sm:pt-20 lg:pt-24">
+      <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-5xl mx-auto mb-12 sm:mb-16 md:mb-20 lg:mb-24">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-4 sm:mb-6 md:mb-8 lg:mb-10 font-poppins leading-tight">
+        <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
             {t.products.title}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed font-inter max-w-4xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed font-inter px-2">
             {t.products.subtitle}
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-6">
           {productData.map((product, index) => (
             <div
               key={index}
               onClick={() => setSelectedProduct(index)}
-              className={`group relative bg-gray-900 hover:bg-gray-800 p-6 sm:p-8 md:p-10 lg:p-12 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-gray-700 hover:border-newt-red transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-2xl min-h-[280px] sm:min-h-[320px] lg:min-h-[360px] ${
+              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
             >
               {/* Coming Soon Badge */}
               {product.comingSoon && (
-                <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-newt-red text-white text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold font-inter z-10 shadow-lg">
+                <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 bg-newt-red text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold font-inter z-10">
                   {t.common.comingSoon}
                 </div>
               )}
 
-              <div className="space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8">
+              <div className="space-y-3 sm:space-y-4">
                 {/* Icon */}
-                <div className={`inline-flex p-3 sm:p-4 md:p-5 lg:p-6 rounded-lg sm:rounded-xl ${
+                <div className={`inline-flex p-2 sm:p-3 rounded-lg ${
                   product.comingSoon 
                     ? 'bg-gray-700 text-gray-400' 
                     : 'bg-newt-red text-white group-hover:bg-red-500'
-                } transition-colors duration-300`}>
+                } transition-colors duration-200`}>
                   {getProductIcon(index)}
                 </div>
                 
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white font-poppins leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white font-poppins leading-tight">
                   {product.title}
                 </h3>
                 
-                <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed font-inter">
+                <p className="text-sm sm:text-base text-gray-400 leading-relaxed font-inter">
                   {product.desc}
                 </p>
                 
-                <ul className="space-y-3 sm:space-y-4 md:space-y-5">
+                <ul className="space-y-1.5 sm:space-y-2 md:space-y-3">
                   {product.features.slice(0, 3).map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-newt-red rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-sm sm:text-base md:text-lg text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-300">
+                    <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3">
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
+                      <span className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 font-inter transition-colors duration-200">
                         {feature}
                       </span>
                     </li>
                   ))}
                   {product.features.length > 3 && (
-                    <li className="flex items-start space-x-3 sm:space-x-4">
-                      <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-newt-red rounded-full flex-shrink-0 mt-2"></div>
-                      <span className="text-sm sm:text-base md:text-lg text-newt-red font-inter font-medium">
+                    <li className="flex items-center space-x-2 sm:space-x-3">
+                      <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
+                      <span className="text-sm sm:text-base text-newt-red font-inter font-medium">
                         +{product.features.length - 3} {locale === 'en' ? 'more features' : 'mais recursos'}
                       </span>
                     </li>
