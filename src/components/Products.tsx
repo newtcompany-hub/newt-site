@@ -6,6 +6,19 @@ export function Products() {
   const { t, locale } = useI18n();
   const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
 
+  // Prevent body scroll when modal is open
+  React.useEffect(() => {
+    if (selectedProduct !== null) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [selectedProduct]);
   const getProductIcon = (index: number) => {
     const icons = [
       // NewtMind - Custom SVG
@@ -195,16 +208,23 @@ export function Products() {
 
         {/* Modal */}
         {selectedProduct !== null && (
-          <div className="modal-overlay">
+          <div 
+            className="modal-overlay"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                closeModal();
+              }
+            }}
+          >
             <div className="modal-content">
               {/* Modal Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div className="flex items-center justify-between p-4 sm:p-6 border-b border-gray-200">
                 <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-newt-red text-white rounded-lg">
+                  <div className="p-2 sm:p-3 bg-newt-red text-white rounded-lg">
                     {getProductIcon(selectedProduct)}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-newt-black font-poppins">
+                    <h3 className="text-lg sm:text-xl font-bold text-newt-black font-poppins">
                       {productData[selectedProduct].title}
                     </h3>
                     {productData[selectedProduct].comingSoon && (
@@ -216,41 +236,41 @@ export function Products() {
                 </div>
                 <button
                   onClick={closeModal}
-                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 >
                   <X className="w-6 h-6 text-gray-500" />
                 </button>
               </div>
 
               {/* Modal Content */}
-              <div className="p-6">
-                <p className="text-gray-700 text-base leading-relaxed mb-6 font-inter">
+              <div className="p-4 sm:p-6">
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6 font-inter">
                   {productData[selectedProduct].detailedDesc}
                 </p>
 
                 {/* Features List */}
-                <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-newt-black mb-4 font-poppins">
+                <div className="mb-4 sm:mb-6">
+                  <h4 className="text-base sm:text-lg font-semibold text-newt-black mb-3 sm:mb-4 font-poppins">
                     {locale === 'en' ? 'Features:' : 'Recursos:'}
                   </h4>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 sm:space-y-3">
                     {productData[selectedProduct].features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-3">
                         <div className="w-2 h-2 bg-newt-red rounded-full flex-shrink-0"></div>
-                        <span className="text-gray-700 font-inter">{feature}</span>
+                        <span className="text-gray-700 font-inter text-sm sm:text-base">{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
+                <div className="flex flex-col gap-3">
                   {productData[selectedProduct].hasAccess && (
                     <a
                       href={productData[selectedProduct].accessLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center space-x-2 bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter"
+                      className="mobile-btn flex items-center justify-center space-x-2 bg-newt-red hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter min-h-[48px]"
                     >
                       <span>{locale === 'en' ? 'Access NewtMind' : 'Acessar NewtMind'}</span>
                       <ExternalLink className="w-4 h-4" />
@@ -260,7 +280,7 @@ export function Products() {
                   {productData[selectedProduct].whatsappMessage && (
                     <button
                       onClick={() => handleWhatsAppClick(productData[selectedProduct].whatsappMessage!)}
-                      className="flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter"
+                      className="mobile-btn flex items-center justify-center space-x-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter min-h-[48px]"
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>{locale === 'en' ? 'Learn More' : 'Saber Mais'}</span>
@@ -274,7 +294,7 @@ export function Products() {
                           ? `I'm interested in ${productData[selectedProduct].title}. When will it be available?`
                           : `Tenho interesse no ${productData[selectedProduct].title}. Quando estará disponível?`
                       )}
-                      className="flex items-center justify-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter"
+                      className="mobile-btn flex items-center justify-center space-x-2 bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 font-inter min-h-[48px]"
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>{locale === 'en' ? 'Get Notified' : 'Me Avisar'}</span>
