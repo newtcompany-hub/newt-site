@@ -133,6 +133,20 @@
   min-height: 48px;
 }
 
+/* Safe area for mobile devices */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+
+/* Mobile menu improvements */
+@media (max-width: 1023px) {
+  .mobile-menu {
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 /* Desktop harmonization */
 @media (min-width: 1024px) {
   .container {
