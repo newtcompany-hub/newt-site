@@ -14,19 +14,19 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <About />
         </section>
-        <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <Services />
         </section>
-        <section className="py-16 sm:py-20 lg:py-24 bg-newt-black">
+        <section className="py-12 sm:py-16 lg:py-20 bg-newt-black">
           <Products />
         </section>
-        <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <section className="py-12 sm:py-16 lg:py-20 bg-white">
           <FAQ />
         </section>
-        <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
           <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
             <Contact />
           </div>

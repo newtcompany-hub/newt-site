@@ -18,7 +18,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center">
+    <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center justify-center">
       {/* Enhanced Animated Background with Artistic Blur */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
@@ -39,8 +39,8 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full pt-20">
-        <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 animate-fade-in">
+      <div className="container mx-auto px-4 sm:px-6 md:px-6 lg:px-8 text-center relative z-10 w-full">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 animate-fade-in transform -translate-y-8 sm:-translate-y-12 md:-translate-y-16">
           {/* Welcome Badge */}
           <div className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm sm:text-base text-white font-medium animate-slide-up font-inter">
             {t.hero.welcome}
@@ -57,7 +57,7 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-6 sm:pt-8 md:pt-10 animate-slide-up-delay-2 px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4 sm:pt-6 md:pt-8 animate-slide-up-delay-2 px-4 sm:px-6">
             <a
               href="https://wa.me/5591998382662"
               target="_blank"

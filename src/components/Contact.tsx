@@ -164,7 +164,7 @@ Enviado através do site (${locale})`;
   return (
     <div id="contact" className="relative max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-4 sm:mb-8 md:mb-10 lg:mb-12">
+        <div className="text-center mb-6 sm:mb-10 md:mb-12 lg:mb-16">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
             {t.contact.title}
           </h2>
