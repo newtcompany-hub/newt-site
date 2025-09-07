@@ -164,11 +164,11 @@ Enviado através do site (${locale})`;
   return (
     <div id="contact" className="relative max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-6 sm:mb-10 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-newt-black mb-3 sm:mb-4 md:mb-6 font-poppins leading-tight">
+        <div className="text-center mb-4 sm:mb-8 md:mb-10 lg:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight">
             {t.contact.title}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-inter">
+          <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-inter">
             {t.contact.subtitle}
           </p>
         </div>
