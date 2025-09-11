@@ -17,7 +17,7 @@ export const translations = {
     // Hero
     hero: {
       welcome: 'A última peça que falta para o seu negócio',
-      headline: 'Agência de IA que escala seu negócio com automações N8N e marketing digital',
+      headline: 'Agência de IA que escala seu negócio com automações & marketing digital',
       subheadline: 'Newt Company: Especialistas em automações N8N, gestão de tráfego, consultoria e tunning business. Automatize WhatsApp, Instagram e processos.',
       cta1: 'Falar no WhatsApp',
       cta2: 'Ver Serviços'
