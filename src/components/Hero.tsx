@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
+import { AnimatedBackground } from './AnimatedBackground';
 
 export function Hero() {
   const { t } = useI18n();
@@ -19,8 +20,11 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden flex items-center" aria-labelledby="hero-heading">
+      {/* Animated Background */}
+      <AnimatedBackground />
+      
       {/* Enhanced Animated Background with Artistic Blur */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden opacity-30">
         <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-black opacity-90"></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-red-700 via-red-900 to-black opacity-80"></div>
         <div className="absolute inset-0 opacity-60">
