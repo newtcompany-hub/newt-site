@@ -1,10 +1,38 @@
 import React, { useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { X, ExternalLink, MessageCircle } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
 
 export function Products() {
   const { t, locale } = useI18n();
   const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const elements = entry.target.querySelectorAll('.animate-on-scroll');
+            elements.forEach((el, index) => {
+              setTimeout(() => {
+                el.classList.remove('animate-on-scroll');
+                el.classList.add('animate-scale-in');
+              }, index * 200);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   // Prevent body scroll when modal is open
   React.useEffect(() => {
@@ -151,10 +179,10 @@ export function Products() {
   };
 
   return (
-    <div id="products">
+    <div id="products" ref={sectionRef}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12">
+        <div className="text-center max-w-4xl mx-auto mb-4 sm:mb-8 md:mb-10 lg:mb-12 animate-on-scroll">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight" itemProp="name">
             {t.products.title}
           </h2>
@@ -169,7 +197,7 @@ export function Products() {
             <div
               key={index}
               onClick={() => setSelectedProduct(index)}
-              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] ${
+              className={`mobile-card group relative bg-gray-900 hover:bg-gray-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-700 hover:border-newt-red transition-all duration-200 cursor-pointer hover:scale-[1.02] animate-on-scroll ${
                 product.comingSoon ? 'opacity-75' : ''
               }`}
               itemScope itemType="https://schema.org/SoftwareApplication"

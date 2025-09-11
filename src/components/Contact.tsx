@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Send, Check } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
 
 export function Contact() {
   const { t, locale } = useI18n();
+  const sectionRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -16,6 +18,32 @@ export function Contact() {
     consent: false
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const elements = entry.target.querySelectorAll('.animate-on-scroll');
+            elements.forEach((el, index) => {
+              setTimeout(() => {
+                el.classList.remove('animate-on-scroll');
+                el.classList.add('animate-fade-in-up');
+              }, index * 100);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -162,9 +190,9 @@ Enviado através do site (${locale})`;
   };
 
   return (
-    <div id="contact" className="relative max-w-4xl mx-auto">
+    <div id="contact" className="relative max-w-4xl mx-auto" ref={sectionRef}>
         {/* Header */}
-        <div className="text-center mb-4 sm:mb-8 md:mb-10 lg:mb-12">
+        <div className="text-center mb-4 sm:mb-8 md:mb-10 lg:mb-12 animate-on-scroll">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-newt-black mb-2 sm:mb-3 md:mb-4 font-poppins leading-tight" itemProp="name">
             {t.contact.title}
           </h2>
@@ -174,7 +202,7 @@ Enviado através do site (${locale})`;
         </div>
 
         {/* Contact Form */}
-        <div>
+        <div className="animate-on-scroll">
           <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 md:p-10 rounded-xl sm:rounded-2xl shadow-lg border border-gray-200">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
               {/* Name */}
