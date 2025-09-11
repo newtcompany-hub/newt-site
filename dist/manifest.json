@@ -1,0 +1,64 @@
+{
+  "name": "Newt Company - Agência de IA e Automações",
+  "short_name": "Newt Company",
+  "description": "Agência especializada em IA, automações N8N, gestão de tráfego e consultoria",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0A",
+  "theme_color": "#E11D2A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/nova-foto 2.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "favicon"
+    },
+    {
+      "src": "/nova-foto 2.png", 
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "favicon"
+    },
+    {
+      "src": "/nova-foto 2.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/nova-foto 2.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/nova-foto 2.png",
+      "sizes": "96x96", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/nova-foto 2.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/nova-foto 2.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/nova-foto 2.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "pt-BR",
+  "scope": "/",
+  "id": "newtcompany"
+}
