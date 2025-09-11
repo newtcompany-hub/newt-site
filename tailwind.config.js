@@ -85,6 +85,9 @@ export default {
       },
       screens: {
         'xs': '475px',
+      },
+      maxWidth: {
+        'desktop': '90%',
       }
     },
   },
