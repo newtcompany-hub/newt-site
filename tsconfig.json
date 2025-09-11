@@ -1,13 +1,14 @@
 {
   "files": [],
   "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
     "noFallthroughCasesInSwitch": true,
-    
-    /* Path mapping */
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }
-    { "path": "./tsconfig.node.json" }
-  ]
+  }
 }
