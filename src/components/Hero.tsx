@@ -2,7 +2,6 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useI18n } from '../hooks/useI18n';
 import { AnimatedBackground } from './AnimatedBackground';
-import { AnimatedBackground } from './AnimatedBackground';
 
 export function Hero() {
   const { t } = useI18n();
