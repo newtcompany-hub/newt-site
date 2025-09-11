@@ -19,6 +19,13 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Add safe area support for iOS devices
+  useEffect(() => {
+    // Add CSS custom property for safe area
+    const root = document.documentElement;
+    root.style.setProperty('--safe-area-inset-top', 'env(safe-area-inset-top, 0px)');
+  }, []);
+
   // Close menus when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -61,7 +68,7 @@ export function Header() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-black/70 backdrop-blur-sm'
-    }`} role="banner">
+    } pt-safe-ios`} role="banner" style={{ paddingTop: 'max(env(safe-area-inset-top, 0px), 0.5rem)' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16" role="navigation" aria-label="Menu principal">
           {/* Logo */}
