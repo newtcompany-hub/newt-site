@@ -117,7 +117,7 @@ export const translations = {
       items: [
         {
           question: 'Qual o prazo médio de entrega?',
-          answer: 'Sites: 7-15 dias úteis. Automações: 5-10 dias. Consultoria: 2-5 dias. Prazos podem variar conforme complexidade.'
+          answer: 'Sites: 2-7 dias úteis. Automações: 3-10 dias úteis. Consultoria & Estratégias: 2-5 dias. Os prazos podem variar conforme a necessidade e complexidade do projeto.'
         },
         {
           question: 'Quantas revisões estão incluídas?',
